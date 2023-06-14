@@ -8,5 +8,10 @@
  * @author saliy5109
  */
 public class Unit {
+    public int speed;
     
+    public Unit()
+    {
+        speed = (int)(Math.random()*11);
+    }
 }

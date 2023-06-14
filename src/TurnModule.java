@@ -16,6 +16,20 @@ public class TurnModule {
     
     static Unit[] turnOrder = new Unit[battlePlaces];
     
+    public static void UpdateTurnOrder()
+    {
+        /*
+        This will update the turn order according to values. 
+
+        The first index unit will have it’s Unit Class hasTurn set to true.
+        The others will have their set to false.
+        hasTurn is inside of unit class and is used to check if it’s that unit’s turn
+
+        The method should also check if the next unit is an enemy, if so call AI to update.
+        */
+        
+    }
+    
                                 //Placement Order\\
     
     public static Unit[] placeOrder = new Unit[8];
@@ -40,8 +54,8 @@ public class TurnModule {
         */
         for (int count = 0; count < battlePlaces*2; count++)
         {
-            int place1 = (int)Math.random()*battlePlaces;
-            int place2 = (int)Math.random()*battlePlaces;
+            int place1 = (int)(Math.random()*battlePlaces);
+            int place2 = (int)(Math.random()*battlePlaces);
             //Swap
             Unit temp = placeOrder[place1];
             placeOrder[place1] = placeOrder[place2];
