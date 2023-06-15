@@ -164,10 +164,9 @@ public class TurnModule {
             sortStep is iterated each turn
             Repeating on the same step won't mess stuff up
             */
-            int startIndex = sortStep;
-            int minIndex = startIndex;
-            for (int i = startIndex+1; i < placeOrder.length; i++) {
-              if (placeOrder[i])
+            int min = sortStep;
+            for (int current = sortStep+1; i < placeOrder.length; i++) {
+              
             }
         }
     }
