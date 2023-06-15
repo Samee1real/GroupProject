@@ -166,8 +166,19 @@ public class TurnModule {
             */
             int min = sortStep;
             for (int current = sortStep+1; i < placeOrder.length; i++) {
+              //Finding Unit's place
+              int curVal = placeOrder.length-1;
+              int minVal = placeOrder.length-1;
+              //Setting to last place if null
+              if (placeOrder[current] != null) {curVal = placeOrder[current].place;}
+              if (placeOrder[min] != null) {minVal = placeOrder[min].place;}
               
+              if (curVal < minVal)  {min = current;}//If current < minimum then set current will be minimum for now
             }
+            //Swapping the starting index and the minimum (Notable issue: if sortStep is outofBound then this will produce an error)
+            Unit temp = placeOrder[sortStep];
+            placeOrder[sortStep] = placeOrder[min];
+            placeOrder[min] = temp;
         }
     }
     private class InsertionSort extends SelectionSort{
