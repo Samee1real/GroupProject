@@ -12,15 +12,31 @@ import java.util.ArrayList;
 
 public class TurnModule {
                                     //Settings\\
-    static int battlePlaces = 8;
-    static int turnOrderPlaces = 8;
+    
+    private static int battlePlaces = 8;
+    
                                 //Module Variables\\
     
     public static int round = 1;     
     
                                   //Turn Order\\
     
-    public static ArrayList<Unit> turnOrder = new ArrayList<Unit>();
+    private static ArrayList<Unit> turnOrder = new ArrayList<Unit>();
+    
+    public static void AddToTurnOrder(Unit unit) 
+    {
+        /*
+        Adds passed Unit to the end of turnOrder
+        */
+        turnOrder.add(unit);
+    }
+    public static void ResetTurnOrder()
+    {
+        /*
+        Sets the turnOrder array to null
+        */
+        turnOrder = new ArrayList<Unit>();
+    }
     
     public static void UpdateTurnOrder()
     {
@@ -51,9 +67,12 @@ public class TurnModule {
         newOrder.get(0).hasTurn = true; //After finalized, allow the first place their turn
         turnOrder = newOrder;// Replacing turnOrder with new
         
+        for (Unit u : turnOrder) {
+           System.out.print(u.name + "\t");
+        }
+        System.out.println("");
         //Implement AI Module HERE
     }
-    
     public static void NextTurn() 
     {
         /*
@@ -72,7 +91,7 @@ public class TurnModule {
     
                                 //Placement Order\\
     
-    public static Unit[] placeOrder = new Unit[8];
+    private static Unit[] placeOrder = new Unit[battlePlaces];
     
     public static int GetUnitPlace(Unit unit)
     {
@@ -85,6 +104,13 @@ public class TurnModule {
             }
         }
         return -1;
+    }
+    public static void ResetPlaceOrder() 
+    {
+        /*
+        Sets the placement order array to null
+        */
+        placeOrder = new Unit[battlePlaces];
     }
     
     public static void ScrambleOrder()
