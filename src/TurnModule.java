@@ -129,6 +129,7 @@ public class TurnModule {
     
                                     //Sorting Methods\\
     private static int sortStep = 0;//Used keep track of their sorting steps from turn to turn
+    private static SelectionSort sortMethod = new SelectionSort();  //Keeps track of which sorting method is being used
     public static void SetSortMethod(String method)
     {
         /*
@@ -159,8 +160,15 @@ public class TurnModule {
         public void Iterate() 
         {
             /*
-
+            Everything before startIndex is sorted and it is set to sortStep
+            sortStep is iterated each turn
+            Repeating on the same step won't mess stuff up
             */
+            int startIndex = sortStep;
+            int minIndex = startIndex;
+            for (int i = startIndex+1; i < placeOrder.length; i++) {
+              if (placeOrder[i])
+            }
         }
     }
     private class InsertionSort extends SelectionSort{
@@ -171,7 +179,7 @@ public class TurnModule {
         @Override public void Iterate()
         {
             /*
-
+              
             */
         }
     }
