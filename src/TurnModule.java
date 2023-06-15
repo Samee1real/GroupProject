@@ -13,7 +13,7 @@ import java.util.ArrayList;
 public class TurnModule {
                                     //Settings\\
     
-    private static int battlePlaces = 8;
+    private static final int battlePlaces = 8;
     
                                 //Module Variables\\
     
@@ -88,11 +88,10 @@ public class TurnModule {
         
         //Intergrate AI stuff here
     }
-    
+  
                                 //Placement Order\\
-    
     private static Unit[] placeOrder = new Unit[battlePlaces];
-    
+   
     public static int GetUnitPlace(Unit unit)
     {
         /*
@@ -112,7 +111,6 @@ public class TurnModule {
         */
         placeOrder = new Unit[battlePlaces];
     }
-    
     public static void ScrambleOrder()
     {
         /*
@@ -129,5 +127,52 @@ public class TurnModule {
         }
     }
     
-    
+                                    //Sorting Methods\\
+    private static int sortStep = 0;//Used keep track of their sorting steps from turn to turn
+    public static void SetSortMethod(String method)
+    {
+        /*
+        This will set the current sort order according to given order
+        And resets the sortstep since we are switching methods
+        */
+    }
+    public static void IterateSort()
+    {
+        /*
+        This will iterate one step in the current sort order and update the visuals
+        */
+        
+    }
+    /*
+        Empty constructers will be used to store which method is being used
+        When iterate method is called, it should overide according to correct method
+        The step variable is used by all sorts to keep track of their step
+    */
+    private class SelectionSort {
+        /*
+            This will be the default that other sorts will extend off
+            The basic sorting method would start from the left and go to the right. 
+            You will start off with this in the tutorial/beginning, therefore it's the default
+            Easiest to understand and slowest method
+        */
+        public SelectionSort() {}
+        public void Iterate() 
+        {
+            /*
+
+            */
+        }
+    }
+    private class InsertionSort extends SelectionSort{
+        /* 
+        Units on the right would stay there much longer than units on the left.
+        */
+        public InsertionSort() {}
+        @Override public void Iterate()
+        {
+            /*
+
+            */
+        }
+    }
 }
