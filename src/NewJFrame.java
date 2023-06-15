@@ -82,7 +82,7 @@ public class NewJFrame extends javax.swing.JFrame {
 
         jMenu1.setText("File");
 
-        jMenuItem1.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_X, java.awt.event.InputEvent.CTRL_MASK));
+        jMenuItem1.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_X, java.awt.event.InputEvent.CTRL_DOWN_MASK));
         jMenuItem1.setText("Exit");
         jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -114,9 +114,18 @@ public class NewJFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuItem1ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        jTextField1.setText("hey");
+           
+        TurnModule.NextTurn();
+        
+        for (Unit unit : TurnModule.turnOrder) {
+          //System.out.print(unit.name + " Score: " + (TurnModule.round-unit.lastRound)*unit.speed + "\t\t");
+          System.out.print(unit.name + "\t");
+        }
+        System.out.println("");
+        
+        /*jTextField1.setText("hey");
         this.setVisible(false);
-        new NewJFrame1().setVisible(true);
+        new NewJFrame1().setVisible(true);*/
         
     }//GEN-LAST:event_jButton1ActionPerformed
 
@@ -124,6 +133,19 @@ public class NewJFrame extends javax.swing.JFrame {
      * @param args the command line arguments
      */
     public static void main(String args[]) {
+        TurnModule.turnOrder.add(new Unit(5, "One:5"));
+        TurnModule.turnOrder.add(new Unit(6, "Two:6"));
+        TurnModule.turnOrder.add(new Unit(7, "Three:7"));
+        TurnModule.turnOrder.add(new Unit(8, "Four:8"));
+        TurnModule.turnOrder.add(new Unit(9, "Five:9"));
+        TurnModule.turnOrder.add(new Unit(10, "Six:10"));
+        TurnModule.turnOrder.add(new Unit(5, "Seven:5"));
+        TurnModule.turnOrder.add(new Unit(6, "Eight:6"));
+        TurnModule.UpdateTurnOrder();
+        for (Unit unit : TurnModule.turnOrder) {
+           System.out.print(unit.name + "\t");
+        }
+        System.out.println("");
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.

@@ -9,9 +9,17 @@
  */
 public class Unit {
     public int speed;
-    
-    public Unit()
+    public int lastRound;
+    public boolean hasTurn;
+    public String name = "Dummy"; //Testing variable
+    public Unit(int speed)
     {
-        speed = (int)(Math.random()*11);
+        this.speed = speed;
     }
+    public Unit(int speed, String name)
+    {
+        this(speed);
+        this.name = name;
+    }
+
 }

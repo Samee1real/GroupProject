@@ -7,14 +7,20 @@
  *
  * @author saliy5109
  */
+
+import java.util.ArrayList;
+
 public class TurnModule {
                                     //Settings\\
     static int battlePlaces = 8;
+    static int turnOrderPlaces = 8;
                                 //Module Variables\\
+    
+    public static int round = 1;     
     
                                   //Turn Order\\
     
-    static Unit[] turnOrder = new Unit[battlePlaces];
+    public static ArrayList<Unit> turnOrder = new ArrayList<Unit>();
     
     public static void UpdateTurnOrder()
     {
@@ -27,7 +33,40 @@ public class TurnModule {
 
         The method should also check if the next unit is an enemy, if so call AI to update.
         */
+        ArrayList<Unit> newOrder = new ArrayList<Unit>();   //Empty array used to create updated one
+        for (Unit unit : turnOrder) 
+        {
+            double score = (round-unit.lastRound)*unit.speed;
+            //Iterate to find correct position of the unit (Largest to smallest)
+            int index = newOrder.size(); // Empty Array OR score is the smaller ---> position should be last
+            for (int i = 0; i < newOrder.size(); i++) {
+                Unit iUnit = newOrder.get(i); 
+                if ((round-iUnit.lastRound)*iUnit.speed < score) 
+                { index = i; break; } 
+            }
+            //Setting position, will move right side from index (ArrayList.add())
+            newOrder.add(index, unit);
+            unit.hasTurn = false; //Only the first place(turn order) should have their turn
+        }
         
+        newOrder.get(0).hasTurn = true; //After finalized, allow the first place their turn
+        turnOrder = newOrder;// Replacing turnOrder with new
+    }
+    
+    public static void NextTurn() 
+    {
+        /*
+        Set the current’s unit’s last attacked to current round. Then Update Turn Order Method the attack order.
+        */
+        //Ending current unit's turn
+        turnOrder.get(0).hasTurn = false;
+        turnOrder.get(0).lastRound = round; //Set before it is incremented, so when calculated in Update it produces (1) next
+        
+        round++;//Increment round        
+        
+        UpdateTurnOrder();  //Now index 0 is the next unit to get their turn
+        
+        //Intergrate AI stuff here
     }
     
                                 //Placement Order\\
