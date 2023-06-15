@@ -27,8 +27,7 @@ public class TurnModule {
         /*
         This will update the turn order according to values. 
 
-        The first index unit will have it’s Unit Class hasTurn set to true.
-        The others will have their set to false.
+        The first index unit will have it’s Unit Class hasTurn set to true. The others false.
         hasTurn is inside of unit class and is used to check if it’s that unit’s turn
 
         The method should also check if the next unit is an enemy, if so call AI to update.
@@ -51,6 +50,8 @@ public class TurnModule {
         
         newOrder.get(0).hasTurn = true; //After finalized, allow the first place their turn
         turnOrder = newOrder;// Replacing turnOrder with new
+        
+        //Implement AI Module HERE
     }
     
     public static void NextTurn() 

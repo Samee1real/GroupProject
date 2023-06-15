@@ -12,7 +12,7 @@ public class Unit {
     public int lastRound;
     public boolean hasTurn;
     public String name = "Dummy"; //Testing variable
-    public Unit(int speed)
+    public Unit(int speed)  //all these constructers are just used for testing, feel free to delete
     {
         this.speed = speed;
     }
