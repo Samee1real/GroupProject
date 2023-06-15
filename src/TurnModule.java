@@ -175,11 +175,22 @@ public class TurnModule {
               
               if (curVal < minVal)  {min = current;}//If current < minimum then set current will be minimum for now
             }
-            //Swapping the starting index and the minimum (Notable issue: if sortStep is outofBound then this will produce an error)
+            //Swapping the starting index and the minimum (Notable issue: if sortStep is outofBound then this will produce an errorFIX!!!)
             Unit temp = placeOrder[sortStep];
             placeOrder[sortStep] = placeOrder[min];
             placeOrder[min] = temp;
         }
+    }
+    private class ReverseSelectionSort() 
+    {
+      /*
+        Instead of starting at 0, start at end and work your way left instead of right
+        This doeesn't change the end result, it will still be min -> max
+      */
+      int max = placeOrder.length-sortStep;
+      for (int current = 0; current > -1; current--) {
+        
+      }
     }
     private class InsertionSort extends SelectionSort{
         /* 
@@ -189,7 +200,7 @@ public class TurnModule {
         @Override public void Iterate()
         {
             /*
-              
+              Insertion sort would serve kinda like a filler method. The way the method would work makes it so units on the right would stay there much longer than units on the left.
             */
         }
     }
