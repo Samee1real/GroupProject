@@ -231,7 +231,23 @@ public class TurnModule {
             }
         }
     }
-    
+    private static class MergeSort extends SelectionSort {
+      /*
+      Merge sort would kind of be a wild/risky method, since the start they wouldn’t move much. 
+      But with time the changes wil exponentially.
+      */
+      public MergeSort() {}
+      @Override public Iterate() 
+      {
+        /*
+        This method works for any step expect 0 and below
+        */
+        
+        int step = Mathf.pow(2, sortStep);//Convert sortStep into how long each side should be step 0->1 | 1->2 | 2->4
+
+        for (int leftSide = 0; leftSide+step < placeOrder.size(); leftSide += step*2)
+      }
+    }
                                   //Functions For Sorting\\
     
     private static int GetIndexOrderValue(int index) {
