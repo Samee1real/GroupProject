@@ -230,6 +230,36 @@ public class TurnModule {
                 SwapUnitPositions(sortStep, 0);
             }
         }
+    } 
+   private static class BubbleSort extends SelectionSort{
+        /* 
+        Units with a higher index value gets sent to the correct place in the order
+        */
+        public BubbleSort() {}
+        @Override public void Iterate()
+        {
+            /*
+              For each iterate, traverse backwards to find item > starting item 
+              If none found that item is the largest in array
+              The first index iterated won't be need to go through (index 0)
+              This sort method will need to check if step is inbound
+            */
+            int i, j, temp;
+            int n = sortStep;
+            boolean swapped;
+            for (i = 0; i < n - 1; i++) {
+            swapped = false;
+            for (j = 0; j < n - i - 1; j++) {
+                if (arr[j] > arr[j + 1]) {
+                    // Swaps arr[j] and arr[j+1]
+                    temp = arr[j];
+                    arr[j] = arr[j + 1];
+                    arr[j + 1] = temp;
+                    swapped = true;
+                }
+            }
+        }
+        }
     }
     
                                   //Functions For Sorting\\
