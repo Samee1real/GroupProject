@@ -10,6 +10,7 @@
 public class Unit {
     public int speed;
     public int lastRound;
+    public int orderValue;
     public boolean hasTurn;
     public String name = "Dummy"; //Testing variable
     public Unit(int speed)  //all these constructers are just used for testing, feel free to delete

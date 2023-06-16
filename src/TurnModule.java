@@ -90,7 +90,7 @@ public class TurnModule {
     }
   
                                 //Placement Order\\
-    private static Unit[] placeOrder = new Unit[battlePlaces];
+    private static ArrayList<Unit> placeOrder = new ArrayList<Unit>(battlePlaces);
    
     public static int GetUnitPlace(Unit unit)
     {
@@ -98,7 +98,7 @@ public class TurnModule {
         Used to just get the positions of Units
         */
         for (int i = 0; i < battlePlaces; i++) {
-            if (placeOrder[i].equals(unit)) {
+            if (placeOrder.get(i).equals(unit)) {
                 return i;
             }
         }
@@ -109,7 +109,7 @@ public class TurnModule {
         /*
         Sets the placement order array to null
         */
-        placeOrder = new Unit[battlePlaces];
+        placeOrder = new ArrayList<Unit>(battlePlaces);
     }
     public static void ScrambleOrder()
     {
@@ -120,18 +120,16 @@ public class TurnModule {
         {
             int place1 = (int)(Math.random()*battlePlaces);
             int place2 = (int)(Math.random()*battlePlaces);
-            //Swap
-            Unit temp = placeOrder[place1];
-            placeOrder[place1] = placeOrder[place2];
-            placeOrder[place2] = temp;
+            SwapUnitPositions(place1, place2); //Swap
         }
     }
     
-                                    //Sorting Methods\\
+                                 //Sorting Methods\\
     private static int sortStep = 0;//Used keep track of their sorting steps from turn to turn
     private static SelectionSort sortMethod = new SelectionSort();  //Keeps track of which sorting method is being used
     public static void SetSortMethod(String method)
     {
+
         /*
         This will set the current sort order according to given order
         And resets the sortstep since we are switching methods
@@ -149,7 +147,7 @@ public class TurnModule {
         When iterate method is called, it should overide according to correct method
         The step variable is used by all sorts to keep track of their step
     */
-    private class SelectionSort {
+    private static class SelectionSort {
         /*
             This will be the default that other sorts will extend off
             The basic sorting method would start from the left and go to the right. 
@@ -160,39 +158,54 @@ public class TurnModule {
         public void Iterate() 
         {
             /*
-            Everything before startIndex is sorted and it is set to sortStep
+            Everything before starting index(sortStep) is already sorted
             sortStep is iterated each turn
             Repeating on the same step won't mess stuff up
+            The last index iterated won't be need to go through (last index)
+            This sort method will need to check if step is inbound
             */
-            int min = sortStep;
-            for (int current = sortStep+1; i < placeOrder.length; i++) {
-              //Finding Unit's place
-              int curVal = placeOrder.length-1;
-              int minVal = placeOrder.length-1;
-              //Setting to last place if null
-              if (placeOrder[current] != null) {curVal = placeOrder[current].place;}
-              if (placeOrder[min] != null) {minVal = placeOrder[min].place;}
-              
-              if (curVal < minVal)  {min = current;}//If current < minimum then set current will be minimum for now
+            if (sortStep >= 0 && sortStep < placeOrder.size()) {
+                int min = sortStep;
+                for (int current = sortStep+1; current < placeOrder.size()-1; current++) {
+                  int curVal = GetIndexOrderValue(current); //Getting Unit's Order Value
+                  int minVal = GetIndexOrderValue(min);
+                  //If current < minimum then set current will be minimum for now
+                  if (curVal < minVal)  {
+                      min = current;
+                  }
+                }
+                SwapUnitPositions(sortStep, min);//Swapping 
             }
-            //Swapping the starting index and the minimum (Notable issue: if sortStep is outofBound then this will produce an errorFIX!!!)
-            Unit temp = placeOrder[sortStep];
-            placeOrder[sortStep] = placeOrder[min];
-            placeOrder[min] = temp;
         }
     }
-    private class ReverseSelectionSort() 
-    {
+    private static class ReverseSelectionSort extends SelectionSort{
       /*
         Instead of starting at 0, start at end and work your way left instead of right
         This doeesn't change the end result, it will still be min -> max
       */
-      int max = placeOrder.length-sortStep;
-      for (int current = 0; current > -1; current--) {
-        
+      public ReverseSelectionSort(){}
+      @Override public void Iterate() {
+        /*
+          Everything after starting index(sortStep) is already sorted
+          The last index iterated won't be need to go through (index size-1)
+          This sort method will need to check if step is inbound
+        */
+        if (sortStep >= 0 && sortStep < placeOrder.size()) {
+            int max = placeOrder.size()-sortStep;
+            for (int current = max-1; current >= 0; current--) {
+                int curVal = GetIndexOrderValue(current); //Getting Unit's Order Value
+                int maxVal = GetIndexOrderValue(max);
+                //If current > maximum then set current will be maximum for now
+                if (curVal > maxVal)  {
+                    max = current;
+                }
+            }
+            SwapUnitPositions(sortStep, max);//Swap
+            
+        }
       }
     }
-    private class InsertionSort extends SelectionSort{
+    private static class InsertionSort extends SelectionSort{
         /* 
         Units on the right would stay there much longer than units on the left.
         */
@@ -200,8 +213,44 @@ public class TurnModule {
         @Override public void Iterate()
         {
             /*
-              Insertion sort would serve kinda like a filler method. The way the method would work makes it so units on the right would stay there much longer than units on the left.
+              For each iterate, traverse backwards to find item > starting item 
+              If none found that item is the largest in array
+              The first index iterated won't be need to go through (index 0)
+              This sort method will need to check if step is inbound
             */
+            if (sortStep > 0 && sortStep < placeOrder.size()) {//Ignore first index (0)
+                int orderVal = GetIndexOrderValue(sortStep);
+                for (int current = sortStep-1; current >= 0; current--) {
+                    int curVal = GetIndexOrderValue(current);
+                    if (curVal > orderVal) {
+                        SwapUnitPositions(sortStep, current+1);//Swap
+                    }
+                }
+                //Item is the highest, swap with first index
+                SwapUnitPositions(sortStep, 0);
+            }
         }
+    }
+    
+                                  //Functions For Sorting\\
+    
+    private static int GetIndexOrderValue(int index) {
+        /*
+        Finds the Unit in placeOrder by the passed index 
+        Return the order value(the value that will be used when sorting places
+        If it's null at given index, the order value is the last index (length-1)
+        */
+        int orderVal = placeOrder.size()-1;
+        if (placeOrder.get(index) != null) {orderVal = placeOrder.get(index).orderValue;}
+        return orderVal;
+    }
+    
+    private static void SwapUnitPositions(int a, int b) {
+        /*
+        This will swap the Units of the given indexs in Placement Order
+        */
+        Unit temp = placeOrder.get(a);
+        placeOrder.set(a, placeOrder.get(b));
+        placeOrder.set(b, temp);
     }
 }
