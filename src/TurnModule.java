@@ -161,20 +161,20 @@ public class TurnModule {
             Everything before starting index(sortStep) is already sorted
             sortStep is iterated each turn
             Repeating on the same step won't mess stuff up
-            The last index iterated won't be need to go through (last index)
+            The first index iterated won't be need to go through (0)
             This sort method will need to check if step is inbound
             */
             if (sortStep < placeOrder.size()) {
-                int min = sortStep;
-                for (int current = sortStep+1; current < placeOrder.size()-1; current++) {
+                int max = sortStep;
+                for (int current = sortStep+1; current < placeOrder.size(); current++) {   //Skips index 0
                   int curVal = GetOrderValueOfIndex(current); //Getting Unit's Order Value
-                  int minVal = GetOrderValueOfIndex(min);
+                  int maxVal = GetOrderValueOfIndex(max);
                   //If current < minimum then set current will be minimum for now
-                  if (curVal < minVal)  {
-                      min = current;
+                  if (curVal > maxVal)  {
+                      max = current;
                   }
                 }
-                SwapUnitPositions(sortStep, min);//Swapping 
+                SwapUnitPositions(sortStep, max);//Swapping 
             }
         }
     }
@@ -191,16 +191,16 @@ public class TurnModule {
           This sort method will need to check if step is inbound
         */
         if (sortStep < placeOrder.size()) {
-            int max = placeOrder.size()-sortStep;
-            for (int current = max-1; current >= 0; current--) {
+            int min = placeOrder.size()-1-sortStep;
+            for (int current = min-1; current >= 0; current--) {
                 int curVal = GetOrderValueOfIndex(current); //Getting Unit's Order Value
-                int maxVal = GetOrderValueOfIndex(max);
+                int minVal = GetOrderValueOfIndex(min);
                 //If current > maximum then set current will be maximum for now
-                if (curVal > maxVal)  {
-                    max = current;
+                if (curVal < minVal)  {
+                    min = current;
                 }
             }
-            SwapUnitPositions(sortStep, max);//Swap
+            SwapUnitPositions(placeOrder.size()-1-sortStep, min);//Swap
             
         }
       }
@@ -218,58 +218,54 @@ public class TurnModule {
               The first index iterated won't be need to go through (index 0)
               This sort method will need to check if step is inbound
             */
-            if (sortStep < placeOrder.size()) {//Ignore first index (0)
-                int orderVal = GetOrderValueOfIndex(sortStep);
-                for (int current = sortStep-1; current >= 0; current--) {
-                    int curVal = GetOrderValueOfIndex(current);
-                    if (curVal > orderVal) {
-                        SwapUnitPositions(sortStep, current+1);//Swap
+            if (sortStep+1 < placeOrder.size()) {
+                for (int i = sortStep+1; i > 0; i--) { //Ignore first index (0)
+                    if (GetOrderValueOfIndex(i) > GetOrderValueOfIndex(i-1)) {
+                        SwapUnitPositions(i, i-1);//Swap
                     }
                 }
-                //Item is the highest, swap with first index
-                SwapUnitPositions(sortStep, 0);
             }
         }
     }
     private static class MergeSort extends SelectionSort {
-      /*
-      Merge sort would kind of be a wild/risky method, since the start they wouldn’t move much. 
-      But with time the changes wil exponentially.
-      */
-      public MergeSort() {}
-      @Override public void Iterate() 
-      {
         /*
-        This method works for any step expect 0 and below (I removed if statement, sortSort will never reach below 1, add if statement back if needed)
+        Merge sort would kind of be a wild/risky method, since the start they wouldn’t move much. 
+        But with time the changes wil exponentially.
         */
-        int step = (int)Math.pow(2, sortStep);//Convert sortStep into how long each side should be step 0->1 | 1->2 | 2->4
-        for (int ls = 0; ls + step < step; ls += step*2) {  //Traversing through each pair
-            /*Hops from the start of leftside to the start of the next leftside | 'ls' will always be the start of current left side
-            If there is no right side paired with a leftside, then there is no need to sort that pair | Only when a full leftside + at least one right*/
-            int r = ls+step; 
-            //Left Bound and Right Bound determines where each side ends 
-            int lb = r; //Numerically = last index of left + 1 | This variable will change inside sub loop (Adding right side to left)
-            int rb = r+step; //Numerically = last index of right + 1 | 
-            if (rb > placeOrder.size()) {rb = placeOrder.size();} //There a chance that the right side isn't a full one
-            for (int l = ls; l < lb && r < rb; l++) {
-                /* How sides are sorted: Right side will be added to the left
-                There is no reason left is choosen for the for loop | Once any of the two reaches their boundary, the loop ends*/
-                if (GetOrderValueOfIndex(r) > GetOrderValueOfIndex(l)) {   //Order is largest to smallest
-                    /*  Current right is > than left, therefore current right should be placed before the left                 
-                    When the loop iterate again, the left index still should point to current left item
-                    Therefore left will need to be incremented, which is done through the loop,
+        public MergeSort() {}
+        @Override public void Iterate() 
+        {
+            /*
+            This method works for any step expect 0 and below (I removed if statement, sortSort will never reach below 1, add if statement back if needed)
+            */
+            int step = (int)Math.pow(2, sortStep);//Convert sortStep into how long each side should be step 0->1 | 1->2 | 2->4
+            for (int ls = 0; ls + step < placeOrder.size(); ls += step*2) {  //Traversing through each pair
+                /*Hops from the start of leftside to the start of the next leftside | 'ls' will always be the start of current left side
+                If there is no right side paired with a leftside, then there is no need to sort that pair | Only when a full leftside + at least one right*/
+                int r = ls+step; 
+                //Left Bound and Right Bound determines where each side ends 
+                int lb = r; //Numerically = last index of left + 1 | This variable will change inside sub loop (Adding right side to left)
+                int rb = r+step; //Numerically = last index of right + 1 | 
+                if (rb > placeOrder.size()) {rb = placeOrder.size();} //There a chance that the right side isn't a full one
+                for (int l = ls; l < lb && r < rb; l++) {
+                    /* How sides are sorted: Right side will be added to the left
+                    There is no reason left is choosen for the for loop | Once any of the two reaches their boundary, the loop ends*/
+                    if (GetOrderValueOfIndex(r) > GetOrderValueOfIndex(l)) {   //Order is largest to smallest
+                        /*  Current right is > than left, therefore current right should be placed before the left                 
+                        When the loop iterate again, the left index still should point to current left item
+                        Therefore left will need to be incremented, which is done through the loop,
+                        */
+                        placeOrder.add(l,placeOrder.remove(r));
+                        lb++; //Moving the right item will cause the left side to increase by one | therefore increase left bound by one | no need for right side
+                        r++; //The next right index should be the item after current right | therefore increment the right side
+                    }
+                    /*Else 
+                    Current right < left, meaning current left > any right, therefore positions of current left is confirmed
+                    Move on to the next left item, which is done through loop
                     */
-                    placeOrder.add(l,placeOrder.remove(r));
-                    lb++; //Moving the right item will cause the left side to increase by one | therefore increase left bound by one | no need for right side
-                    r++; //The next right index should be the item after current right | therefore increment the right side
                 }
-                /*Else 
-                Current right < left, meaning current left > any right, therefore positions of current left is confirmed
-                Move on to the next left item, which is done through loop
-                */
             }
         }
-    }
     }
     private static class QuickSort extends SelectionSort
     {

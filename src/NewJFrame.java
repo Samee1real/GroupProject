@@ -1,3 +1,9 @@
+
+import Testing.TestingInsertion;
+import Testing.TestingMerge;
+import Testing.TestingRevSelection;
+import Testing.TestingSelection;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -114,18 +120,19 @@ public class NewJFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuItem1ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-                          
+        TestingMerge.Iterate();
+        //TestingSelection.sortStep++;
         /*jTextField1.setText("hey");
         this.setVisible(false);
         new NewJFrame1().setVisible(true);*/
-        
+ 
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
      */
     public static void main(String args[]) {
-        
+        TestingMerge.Create();
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
