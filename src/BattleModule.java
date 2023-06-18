@@ -33,7 +33,7 @@ public class BattleModule {
         */
         if (active) {  
             
-            TurnModule.ScrambleOrder();//Scramble Placement Order
+            OrderModule.ScrambleOrder();//Scramble Placement Order
             TurnModule.UpdateTurnOrder();//Setups up order and gives first unit their turn
             //Mostly GUI Visual stuff here            
         }
@@ -44,7 +44,7 @@ public class BattleModule {
             Clean up variables and reset stuff
         */
         TurnModule.ResetTurnOrder();//Reset Turn Order
-        TurnModule.ResetPlaceOrder();//Reset Placement Order
+        OrderModule.ResetPlaceOrder();//Reset Placement Order
         TurnModule.round = 1; //Resets the round
     }
 }
