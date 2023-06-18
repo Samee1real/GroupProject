@@ -136,13 +136,13 @@
                       <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
                       <Component id="position4" min="-2" pref="190" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
+                      <Component id="position5" min="-2" pref="190" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
                       <Component id="position6" min="-2" pref="190" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
                       <Component id="position7" min="-2" pref="190" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
                       <Component id="position8" min="-2" pref="190" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
-                      <Component id="position5" min="-2" pref="190" max="-2" attributes="0"/>
                       <EmptySpace pref="61" max="32767" attributes="0"/>
                   </Group>
               </Group>
@@ -153,10 +153,10 @@
                       <EmptySpace min="-2" pref="45" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="103" alignment="0" groupAlignment="3" attributes="0">
+                              <Component id="position5" alignment="3" min="-2" pref="336" max="-2" attributes="0"/>
                               <Component id="position6" alignment="3" min="-2" pref="336" max="-2" attributes="0"/>
                               <Component id="position7" alignment="3" min="-2" pref="336" max="-2" attributes="0"/>
                               <Component id="position8" alignment="3" min="-2" pref="336" max="-2" attributes="0"/>
-                              <Component id="position5" alignment="3" min="-2" pref="336" max="-2" attributes="0"/>
                           </Group>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="position1" alignment="3" min="-2" pref="336" max="-2" attributes="0"/>
@@ -191,22 +191,22 @@
                 <Property name="text" type="java.lang.String" value="position4"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JLabel" name="position5">
+            <Component class="javax.swing.JLabel" name="position8">
               <Properties>
                 <Property name="text" type="java.lang.String" value="position8"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JLabel" name="position6">
+            <Component class="javax.swing.JLabel" name="position5">
               <Properties>
                 <Property name="text" type="java.lang.String" value="position5"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JLabel" name="position7">
+            <Component class="javax.swing.JLabel" name="position6">
               <Properties>
                 <Property name="text" type="java.lang.String" value="position6"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JLabel" name="position8">
+            <Component class="javax.swing.JLabel" name="position7">
               <Properties>
                 <Property name="text" type="java.lang.String" value="position7"/>
               </Properties>

@@ -23,6 +23,12 @@ public class BattleFrame extends javax.swing.JFrame {
         initComponents();
         UIManager.AddLabelPosition(position1, 0);
         UIManager.AddLabelPosition(position2, 1);
+        UIManager.AddLabelPosition(position3, 2);
+        UIManager.AddLabelPosition(position4,3);
+        UIManager.AddLabelPosition(position5,4);
+        UIManager.AddLabelPosition(position6, 5);
+        UIManager.AddLabelPosition(position7, 6);
+        UIManager.AddLabelPosition(position8,7);
     }
 
     /**
@@ -40,10 +46,10 @@ public class BattleFrame extends javax.swing.JFrame {
         position2 = new javax.swing.JLabel();
         position3 = new javax.swing.JLabel();
         position4 = new javax.swing.JLabel();
+        position8 = new javax.swing.JLabel();
         position5 = new javax.swing.JLabel();
         position6 = new javax.swing.JLabel();
         position7 = new javax.swing.JLabel();
-        position8 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu2 = new javax.swing.JMenu();
@@ -71,13 +77,13 @@ public class BattleFrame extends javax.swing.JFrame {
 
         position4.setText("position4");
 
-        position5.setText("position8");
+        position8.setText("position8");
 
-        position6.setText("position5");
+        position5.setText("position5");
 
-        position7.setText("position6");
+        position6.setText("position6");
 
-        position8.setText("position7");
+        position7.setText("position7");
 
         javax.swing.GroupLayout positionPanelLayout = new javax.swing.GroupLayout(positionPanel);
         positionPanel.setLayout(positionPanelLayout);
@@ -93,13 +99,13 @@ public class BattleFrame extends javax.swing.JFrame {
                 .addGap(20, 20, 20)
                 .addComponent(position4, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(20, 20, 20)
+                .addComponent(position5, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(20, 20, 20)
                 .addComponent(position6, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(20, 20, 20)
                 .addComponent(position7, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(20, 20, 20)
                 .addComponent(position8, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(20, 20, 20)
-                .addComponent(position5, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(61, Short.MAX_VALUE))
         );
         positionPanelLayout.setVerticalGroup(
@@ -108,10 +114,10 @@ public class BattleFrame extends javax.swing.JFrame {
                 .addGap(45, 45, 45)
                 .addGroup(positionPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(positionPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(position5, javax.swing.GroupLayout.PREFERRED_SIZE, 336, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(position6, javax.swing.GroupLayout.PREFERRED_SIZE, 336, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(position7, javax.swing.GroupLayout.PREFERRED_SIZE, 336, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(position8, javax.swing.GroupLayout.PREFERRED_SIZE, 336, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(position5, javax.swing.GroupLayout.PREFERRED_SIZE, 336, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(position8, javax.swing.GroupLayout.PREFERRED_SIZE, 336, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(positionPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(position1, javax.swing.GroupLayout.PREFERRED_SIZE, 336, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(position2, javax.swing.GroupLayout.PREFERRED_SIZE, 336, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -187,6 +193,7 @@ public class BattleFrame extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
+       UIManager.MovePosition(7,0, 250);
     }//GEN-LAST:event_jButton1ActionPerformed
    
     /**
