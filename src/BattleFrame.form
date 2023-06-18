@@ -103,7 +103,7 @@
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace min="-2" pref="144" max="-2" attributes="0"/>
                   <Component id="positionPanel" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="431" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="417" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -164,66 +164,42 @@
           <SubComponents>
             <Component class="javax.swing.JLabel" name="position1">
               <Properties>
-                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/test.png"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value="jLabel1"/>
+                <Property name="text" type="java.lang.String" value="position1"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="position2">
               <Properties>
-                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/test.png"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value="jLabel1"/>
+                <Property name="text" type="java.lang.String" value="position2"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="position3">
               <Properties>
-                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/test.png"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value="jLabel1"/>
+                <Property name="text" type="java.lang.String" value="position3"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="position4">
               <Properties>
-                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/test.png"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value="jLabel1"/>
+                <Property name="text" type="java.lang.String" value="position4"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="position5">
               <Properties>
-                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/test.png"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value="jLabel1"/>
+                <Property name="text" type="java.lang.String" value="position8"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="position6">
               <Properties>
-                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/test.png"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value="jLabel1"/>
+                <Property name="text" type="java.lang.String" value="position5"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="position7">
               <Properties>
-                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/test.png"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value="jLabel1"/>
+                <Property name="text" type="java.lang.String" value="position6"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="position8">
               <Properties>
-                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/test.png"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value="jLabel1"/>
+                <Property name="text" type="java.lang.String" value="position7"/>
               </Properties>
             </Component>
           </SubComponents>

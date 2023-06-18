@@ -56,29 +56,21 @@ public class BattleFrame extends javax.swing.JFrame {
 
         positionPanel.setBackground(new java.awt.Color(255, 255, 255));
 
-        position1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/test.png"))); // NOI18N
-        position1.setText("jLabel1");
+        position1.setText("position1");
 
-        position2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/test.png"))); // NOI18N
-        position2.setText("jLabel1");
+        position2.setText("position2");
 
-        position3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/test.png"))); // NOI18N
-        position3.setText("jLabel1");
+        position3.setText("position3");
 
-        position4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/test.png"))); // NOI18N
-        position4.setText("jLabel1");
+        position4.setText("position4");
 
-        position5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/test.png"))); // NOI18N
-        position5.setText("jLabel1");
+        position5.setText("position8");
 
-        position6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/test.png"))); // NOI18N
-        position6.setText("jLabel1");
+        position6.setText("position5");
 
-        position7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/test.png"))); // NOI18N
-        position7.setText("jLabel1");
+        position7.setText("position6");
 
-        position8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/test.png"))); // NOI18N
-        position8.setText("jLabel1");
+        position8.setText("position7");
 
         javax.swing.GroupLayout positionPanelLayout = new javax.swing.GroupLayout(positionPanel);
         positionPanel.setLayout(positionPanelLayout);
@@ -131,7 +123,7 @@ public class BattleFrame extends javax.swing.JFrame {
             .addGroup(mainLayout.createSequentialGroup()
                 .addGap(144, 144, 144)
                 .addComponent(positionPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(431, 431, 431))
+                .addGap(417, 417, 417))
         );
 
         jMenu2.setText("Edit");
