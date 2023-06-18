@@ -114,9 +114,7 @@ public class NewJFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuItem1ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-           
-        TurnModule.NextTurn();
-                
+                          
         /*jTextField1.setText("hey");
         this.setVisible(false);
         new NewJFrame1().setVisible(true);*/
@@ -127,15 +125,7 @@ public class NewJFrame extends javax.swing.JFrame {
      * @param args the command line arguments
      */
     public static void main(String args[]) {
-        TurnModule.AddToTurnOrder(new Unit(5, "One:5"));
-        TurnModule.AddToTurnOrder(new Unit(6, "Two:6"));
-        TurnModule.AddToTurnOrder(new Unit(7, "Three:7"));
-        TurnModule.AddToTurnOrder(new Unit(8, "Four:8"));
-        TurnModule.AddToTurnOrder(new Unit(9, "Five:9"));
-        TurnModule.AddToTurnOrder(new Unit(10, "Six:10"));
-        TurnModule.AddToTurnOrder(new Unit(5, "Seven:5"));
-        TurnModule.AddToTurnOrder(new Unit(6, "Eight:6"));
-        TurnModule.UpdateTurnOrder();
+        
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.

@@ -298,17 +298,14 @@ public class TurnModule {
         }
         @Override public void Iterate() 
         {  
-            /*
-            
-            */
             ArrayList<ArrayList<Integer>> newGroups = new ArrayList<>();
             
             for (ArrayList<Integer> parseInfo : parseGroups) {
-                if (parseInfo.get(0) > parseInfo.get(1)) {  //base case
+                if (parseInfo.get(0) < parseInfo.get(1)) {  //base case
                     int pivot = parseInfo.get(1), pivotValue = GetOrderValueOfIndex(pivot); 
                     int left = parseInfo.get(0);
 
-                    for (int i = left+1; i < pivot; i++) {
+                    for (int i = left; i < pivot; i++) {
                         if (GetOrderValueOfIndex(i) > pivotValue) {
                             SwapUnitPositions(i, left);
                             left++;
@@ -320,6 +317,8 @@ public class TurnModule {
                     addParseInfo(newGroups, left+1, parseInfo.get(1));
                 }
             }
+            
+            parseGroups = newGroups; //Apply new groups
         }
     }
     /*private static class BubbleSort extends SelectionSort{        EXTRA FEATURE
