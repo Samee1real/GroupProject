@@ -29,25 +29,109 @@ public class BattleFrame extends javax.swing.JFrame {
     private void initComponents() {
 
         main = new javax.swing.JPanel();
+        positionPanel = new javax.swing.JPanel();
+        position1 = new javax.swing.JLabel();
+        position2 = new javax.swing.JLabel();
+        position3 = new javax.swing.JLabel();
+        position4 = new javax.swing.JLabel();
+        position5 = new javax.swing.JLabel();
+        position6 = new javax.swing.JLabel();
+        position7 = new javax.swing.JLabel();
+        position8 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu2 = new javax.swing.JMenu();
         jMenu1 = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setMaximumSize(new java.awt.Dimension(1920, 1080));
-        setMinimumSize(new java.awt.Dimension(1920, 1080));
-        setPreferredSize(new java.awt.Dimension(1920, 1080));
+        setMaximumSize(new java.awt.Dimension(1782, 972));
+        setMinimumSize(new java.awt.Dimension(1782, 972));
+        setPreferredSize(new java.awt.Dimension(1782, 972));
+        setResizable(false);
+
+        main.setBackground(new java.awt.Color(60, 63, 64));
+        main.setMaximumSize(new java.awt.Dimension(1782, 972));
+        main.setMinimumSize(new java.awt.Dimension(1782, 972));
+        main.setPreferredSize(new java.awt.Dimension(1782, 972));
+
+        positionPanel.setBackground(new java.awt.Color(255, 255, 255));
+
+        position1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/test.png"))); // NOI18N
+        position1.setText("jLabel1");
+
+        position2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/test.png"))); // NOI18N
+        position2.setText("jLabel1");
+
+        position3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/test.png"))); // NOI18N
+        position3.setText("jLabel1");
+
+        position4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/test.png"))); // NOI18N
+        position4.setText("jLabel1");
+
+        position5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/test.png"))); // NOI18N
+        position5.setText("jLabel1");
+
+        position6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/test.png"))); // NOI18N
+        position6.setText("jLabel1");
+
+        position7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/test.png"))); // NOI18N
+        position7.setText("jLabel1");
+
+        position8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/test.png"))); // NOI18N
+        position8.setText("jLabel1");
+
+        javax.swing.GroupLayout positionPanelLayout = new javax.swing.GroupLayout(positionPanel);
+        positionPanel.setLayout(positionPanelLayout);
+        positionPanelLayout.setHorizontalGroup(
+            positionPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(positionPanelLayout.createSequentialGroup()
+                .addGap(61, 61, 61)
+                .addComponent(position1, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(20, 20, 20)
+                .addComponent(position2, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(20, 20, 20)
+                .addComponent(position3, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(20, 20, 20)
+                .addComponent(position4, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(20, 20, 20)
+                .addComponent(position6, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(20, 20, 20)
+                .addComponent(position7, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(20, 20, 20)
+                .addComponent(position8, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(20, 20, 20)
+                .addComponent(position5, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(61, Short.MAX_VALUE))
+        );
+        positionPanelLayout.setVerticalGroup(
+            positionPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(positionPanelLayout.createSequentialGroup()
+                .addGap(45, 45, 45)
+                .addGroup(positionPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(position1, javax.swing.GroupLayout.PREFERRED_SIZE, 336, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(position2, javax.swing.GroupLayout.PREFERRED_SIZE, 336, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(position3, javax.swing.GroupLayout.PREFERRED_SIZE, 336, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(position4, javax.swing.GroupLayout.PREFERRED_SIZE, 336, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(positionPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(position6, javax.swing.GroupLayout.PREFERRED_SIZE, 336, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(position7, javax.swing.GroupLayout.PREFERRED_SIZE, 336, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(position8, javax.swing.GroupLayout.PREFERRED_SIZE, 336, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(position5, javax.swing.GroupLayout.PREFERRED_SIZE, 336, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(0, 16, Short.MAX_VALUE))
+        );
 
         javax.swing.GroupLayout mainLayout = new javax.swing.GroupLayout(main);
         main.setLayout(mainLayout);
         mainLayout.setHorizontalGroup(
             mainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1920, Short.MAX_VALUE)
+            .addComponent(positionPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         mainLayout.setVerticalGroup(
             mainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1057, Short.MAX_VALUE)
+            .addGroup(mainLayout.createSequentialGroup()
+                .addGap(144, 144, 144)
+                .addComponent(positionPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(431, 431, 431))
         );
 
         jMenu2.setText("Edit");
@@ -72,11 +156,13 @@ public class BattleFrame extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(main, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(main, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(main, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(main, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
@@ -90,6 +176,9 @@ public class BattleFrame extends javax.swing.JFrame {
      * @param args the command line arguments
      */
     public static void main(String args[]) {
+        
+        
+        
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
@@ -127,5 +216,14 @@ public class BattleFrame extends javax.swing.JFrame {
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JPanel main;
+    private javax.swing.JLabel position1;
+    private javax.swing.JLabel position2;
+    private javax.swing.JLabel position3;
+    private javax.swing.JLabel position4;
+    private javax.swing.JLabel position5;
+    private javax.swing.JLabel position6;
+    private javax.swing.JLabel position7;
+    private javax.swing.JLabel position8;
+    private javax.swing.JPanel positionPanel;
     // End of variables declaration//GEN-END:variables
 }
