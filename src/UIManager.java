@@ -20,12 +20,23 @@ public class UIManager {
                                              //Initalization\\
     
     private static javax.swing.JLabel[] positions = new javax.swing.JLabel[battlePlaces];
+    private static int[][] posArrows = new int[battlePlaces][2];
+    private static javax.swing.JLabel redArrow;
+    private static javax.swing.JLabel blueArrow;
     
-    public static void AddLabelPosition(javax.swing.JLabel label, int pos) 
+    public static void InitilizePosition(javax.swing.JLabel unit, javax.swing.JLabel arrow, int pos) 
     {
-        positions[pos] = label;
+        positions[pos] = unit; 
+        posArrows[pos][0] = arrow.getLocation().x; posArrows[pos][1] = arrow.getLocation().y;
+        System.out.println(posArrows[pos][0] + " " + posArrows[pos][1]);
+        arrow.setVisible(false);
+    }
+    public static void InitilizeMainArrows(javax.swing.JLabel red, javax.swing.JLabel blue)
+    {
+        redArrow = red; blueArrow = blue;
     }
     
+                                            //Unit Position Visuals\\
     public static void MovePosition(int pos, int location, double dur)
     {
         tweenLabelTask taskPlace = new tweenLabelTask(positions[pos], positions[location].getLocation().x, positions[location].getLocation().y, dur);
@@ -49,6 +60,17 @@ public class UIManager {
         task1.start(); task2.start();
     }
     
+                                              //Sorting Visuals\\
+    
+    public static void PositionArrow(String color, int pos)
+    {
+        javax.swing.JLabel arrow = redArrow;
+        if (color.equals("Blue")) {arrow = blueArrow;}
+        arrow.setLocation(posArrows[pos][0], posArrows[pos][1]);
+    }
+    
+                                            //Easing and Tweening\\
+                
     public static class tweenLabelTask extends Thread
     {
         private javax.swing.JLabel label;
