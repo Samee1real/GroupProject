@@ -14,12 +14,12 @@ import java.util.logging.Logger;
  *
  * @author rkaune
  */
-public class BattleFrame extends javax.swing.JFrame {
+public class arrrr extends javax.swing.JFrame {
 
     /**
      * Creates new form NewJFrame
      */
-    public BattleFrame() {
+    public arrrr() {
         initComponents();
         UIManager.InitilizePosition(position1, arrow1, 0);
         UIManager.InitilizePosition(position2, arrow2, 1);
@@ -69,9 +69,7 @@ public class BattleFrame extends javax.swing.JFrame {
         jMenuItem1 = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setMaximumSize(new java.awt.Dimension(1782, 972));
         setMinimumSize(new java.awt.Dimension(1782, 972));
-        setPreferredSize(new java.awt.Dimension(1782, 972));
         setResizable(false);
 
         main.setBackground(new java.awt.Color(60, 63, 64));
