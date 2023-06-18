@@ -164,11 +164,11 @@ public class TurnModule {
             The last index iterated won't be need to go through (last index)
             This sort method will need to check if step is inbound
             */
-            if (sortStep >= 0 && sortStep < placeOrder.size()) {
+            if (sortStep < placeOrder.size()) {
                 int min = sortStep;
                 for (int current = sortStep+1; current < placeOrder.size()-1; current++) {
-                  int curVal = GetIndexOrderValue(current); //Getting Unit's Order Value
-                  int minVal = GetIndexOrderValue(min);
+                  int curVal = GetOrderValueOfIndex(current); //Getting Unit's Order Value
+                  int minVal = GetOrderValueOfIndex(min);
                   //If current < minimum then set current will be minimum for now
                   if (curVal < minVal)  {
                       min = current;
@@ -190,11 +190,11 @@ public class TurnModule {
           The last index iterated won't be need to go through (index size-1)
           This sort method will need to check if step is inbound
         */
-        if (sortStep >= 0 && sortStep < placeOrder.size()) {
+        if (sortStep < placeOrder.size()) {
             int max = placeOrder.size()-sortStep;
             for (int current = max-1; current >= 0; current--) {
-                int curVal = GetIndexOrderValue(current); //Getting Unit's Order Value
-                int maxVal = GetIndexOrderValue(max);
+                int curVal = GetOrderValueOfIndex(current); //Getting Unit's Order Value
+                int maxVal = GetOrderValueOfIndex(max);
                 //If current > maximum then set current will be maximum for now
                 if (curVal > maxVal)  {
                     max = current;
@@ -218,10 +218,10 @@ public class TurnModule {
               The first index iterated won't be need to go through (index 0)
               This sort method will need to check if step is inbound
             */
-            if (sortStep > 0 && sortStep < placeOrder.size()) {//Ignore first index (0)
-                int orderVal = GetIndexOrderValue(sortStep);
+            if (sortStep < placeOrder.size()) {//Ignore first index (0)
+                int orderVal = GetOrderValueOfIndex(sortStep);
                 for (int current = sortStep-1; current >= 0; current--) {
-                    int curVal = GetIndexOrderValue(current);
+                    int curVal = GetOrderValueOfIndex(current);
                     if (curVal > orderVal) {
                         SwapUnitPositions(sortStep, current+1);//Swap
                     }
@@ -237,20 +237,105 @@ public class TurnModule {
       But with time the changes wil exponentially.
       */
       public MergeSort() {}
-      @Override public Iterate() 
+      @Override public void Iterate() 
       {
         /*
-        This method works for any step expect 0 and below
+        This method works for any step expect 0 and below (I removed if statement, sortSort will never reach below 1, add if statement back if needed)
         */
-        
-        int step = Mathf.pow(2, sortStep);//Convert sortStep into how long each side should be step 0->1 | 1->2 | 2->4
-
-        for (int leftSide = 0; leftSide+step < placeOrder.size(); leftSide += step*2)
-      }
+        int step = (int)Math.pow(2, sortStep);//Convert sortStep into how long each side should be step 0->1 | 1->2 | 2->4
+        for (int ls = 0; ls + step < step; ls += step*2) {  //Traversing through each pair
+            /*Hops from the start of leftside to the start of the next leftside | 'ls' will always be the start of current left side
+            If there is no right side paired with a leftside, then there is no need to sort that pair | Only when a full leftside + at least one right*/
+            int r = ls+step; 
+            //Left Bound and Right Bound determines where each side ends 
+            int lb = r; //Numerically = last index of left + 1 | This variable will change inside sub loop (Adding right side to left)
+            int rb = r+step; //Numerically = last index of right + 1 | 
+            if (rb > placeOrder.size()) {rb = placeOrder.size();} //There a chance that the right side isn't a full one
+            for (int l = ls; l < lb && r < rb; l++) {
+                /* How sides are sorted: Right side will be added to the left
+                There is no reason left is choosen for the for loop | Once any of the two reaches their boundary, the loop ends*/
+                if (GetOrderValueOfIndex(r) > GetOrderValueOfIndex(l)) {   //Order is largest to smallest
+                    /*  Current right is > than left, therefore current right should be placed before the left                 
+                    When the loop iterate again, the left index still should point to current left item
+                    Therefore left will need to be incremented, which is done through the loop,
+                    */
+                    placeOrder.add(l,placeOrder.remove(r));
+                    lb++; //Moving the right item will cause the left side to increase by one | therefore increase left bound by one | no need for right side
+                    r++; //The next right index should be the item after current right | therefore increment the right side
+                }
+                /*Else 
+                Current right < left, meaning current left > any right, therefore positions of current left is confirmed
+                Move on to the next left item, which is done through loop
+                */
+            }
+        }
     }
+    }
+    private static class QuickSort extends SelectionSort
+    {
+        /*
+        This method will be one of the fastest, and because of it's nature, it will always place the last unit in it's correct position first
+        Each iteration/turn will be a complete sort of that pivot 
+        Pivot will be placed at the end.
+        */
+        private ArrayList<ArrayList<Integer>> parseGroups = new ArrayList<>();  //Look into below function for desc
+        private void addParseInfo(ArrayList<ArrayList<Integer>> array, int start, int end)
+        {
+            /*How parseGroups work:
+            This arraylist is used to keep track of how quickSort divides the main array with each pivot
+            The integer array should only contain two integers:
+            start- the point where the group starts
+            end- the point where the group ends
+            */
+            ArrayList<Integer> info = new ArrayList<>();
+            info.add(start); info.add(end);
+            array.add(info);
+        }
+        
+        public QuickSort() 
+        {
+            addParseInfo(parseGroups, 0, placeOrder.size()-1);  //Adds placeOrder
+        }
+        @Override public void Iterate() 
+        {  
+            /*
+            
+            */
+            ArrayList<ArrayList<Integer>> newGroups = new ArrayList<>();
+            
+            for (ArrayList<Integer> parseInfo : parseGroups) {
+                if (parseInfo.get(0) > parseInfo.get(1)) {  //base case
+                    int pivot = parseInfo.get(1), pivotValue = GetOrderValueOfIndex(pivot); 
+                    int left = parseInfo.get(0);
+
+                    for (int i = left+1; i < pivot; i++) {
+                        if (GetOrderValueOfIndex(i) > pivotValue) {
+                            SwapUnitPositions(i, left);
+                            left++;
+                        }
+                    }
+                    SwapUnitPositions(pivot, left);
+                    //Add to groups
+                    addParseInfo(newGroups, parseInfo.get(0), left-1);
+                    addParseInfo(newGroups, left+1, parseInfo.get(1));
+                }
+            }
+        }
+    }
+    /*private static class BubbleSort extends SelectionSort{        EXTRA FEATURE
+        /* 
+        Units with a higher index value gets sent to the correct place in the order
+        
+        public BubbleSort() {}
+        @Override public void Iterate()
+        {
+        
+        }
+    }*/
+   
                                   //Functions For Sorting\\
     
-    private static int GetIndexOrderValue(int index) {
+    private static int GetOrderValueOfIndex(int index) {
         /*
         Finds the Unit in placeOrder by the passed index 
         Return the order value(the value that will be used when sorting places
