@@ -19,10 +19,8 @@ public class UIManager {
     
                                              //Initalization\\
     
-    private static javax.swing.JLabel[] positions = new javax.swing.JLabel[battlePlaces];
-    private static int[][] posArrows = new int[battlePlaces][2];
-    private static javax.swing.JLabel redArrow;
-    private static javax.swing.JLabel blueArrow;
+    
+    
     
     public static void InitilizePosition(javax.swing.JLabel unit, javax.swing.JLabel arrow, int pos) 
     {
@@ -37,6 +35,8 @@ public class UIManager {
     }
     
                                             //Unit Position Visuals\\
+    private static javax.swing.JLabel[] positions = new javax.swing.JLabel[battlePlaces];
+    
     public static void MovePosition(int pos, int location, double dur)
     {
         tweenLabelTask taskPlace = new tweenLabelTask(positions[pos], positions[location].getLocation().x, positions[location].getLocation().y, dur);
@@ -61,6 +61,9 @@ public class UIManager {
     }
     
                                               //Sorting Visuals\\
+    private static int[][] posArrows = new int[battlePlaces][2];
+    private static javax.swing.JLabel redArrow;
+    private static javax.swing.JLabel blueArrow;
     
     public static void PositionArrow(String color, int pos)
     {

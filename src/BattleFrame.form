@@ -64,6 +64,13 @@
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
           <Component id="main" alignment="0" max="-2" attributes="0"/>
+          <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
+              <Group type="102" attributes="0">
+                  <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
+                  <Component id="sortPanel" max="32767" attributes="0"/>
+                  <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
+              </Group>
+          </Group>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
@@ -71,6 +78,13 @@
           <Group type="102" attributes="0">
               <Component id="main" max="-2" attributes="0"/>
               <EmptySpace max="32767" attributes="0"/>
+          </Group>
+          <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
+              <Group type="102" alignment="0" attributes="0">
+                  <EmptySpace min="-2" pref="1" max="-2" attributes="0"/>
+                  <Component id="sortPanel" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace max="32767" attributes="0"/>
+              </Group>
           </Group>
       </Group>
     </DimensionLayout>
@@ -98,15 +112,9 @@
               <Group type="102" attributes="0">
                   <EmptySpace min="-2" pref="752" max="-2" attributes="0"/>
                   <Component id="jButton1" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace pref="955" max="32767" attributes="0"/>
+                  <EmptySpace max="32767" attributes="0"/>
               </Group>
-              <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
-                  <Group type="102" attributes="0">
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="sortPanel" max="32767" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                  </Group>
-              </Group>
+              <Component id="positionPanel" alignment="0" max="32767" attributes="0"/>
           </Group>
         </DimensionLayout>
         <DimensionLayout dim="1">
@@ -114,28 +122,15 @@
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace min="-2" pref="49" max="-2" attributes="0"/>
                   <Component id="jButton1" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace pref="900" max="32767" attributes="0"/>
-              </Group>
-              <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="154" max="-2" attributes="0"/>
-                      <Component id="sortPanel" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="409" max="32767" attributes="0"/>
-                  </Group>
+                  <EmptySpace min="-2" pref="201" max="-2" attributes="0"/>
+                  <Component id="positionPanel" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
       </Layout>
       <SubComponents>
-        <Component class="javax.swing.JButton" name="jButton1">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="jButton1"/>
-          </Properties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton1ActionPerformed"/>
-          </Events>
-        </Component>
-        <Container class="javax.swing.JPanel" name="sortPanel">
+        <Container class="javax.swing.JPanel" name="positionPanel">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -146,239 +141,260 @@
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="positionPanel" max="32767" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                  </Group>
-                  <Group type="102" attributes="0">
-                      <EmptySpace min="116" pref="116" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Group type="102" attributes="0">
-                              <Component id="arrow1" min="-2" pref="128" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="71" max="-2" attributes="0"/>
-                              <Component id="arrow2" min="-2" pref="128" max="-2" attributes="0"/>
-                          </Group>
-                          <Group type="102" attributes="0">
-                              <Component id="redArrow" min="-2" pref="128" max="-2" attributes="0"/>
-                              <EmptySpace max="32767" attributes="0"/>
-                              <Component id="blueArrow" min="-2" pref="128" max="-2" attributes="0"/>
-                          </Group>
-                      </Group>
-                      <EmptySpace min="-2" pref="45" max="-2" attributes="0"/>
-                      <Component id="arrow3" min="-2" pref="128" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="61" max="-2" attributes="0"/>
-                      <Component id="arrow4" min="-2" pref="128" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="86" max="-2" attributes="0"/>
-                      <Component id="arrow5" min="-2" pref="128" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="73" max="-2" attributes="0"/>
-                      <Component id="arrow6" min="-2" pref="128" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="76" max="-2" attributes="0"/>
-                      <Component id="arrow7" min="-2" pref="128" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="79" max="-2" attributes="0"/>
-                      <Component id="arrow8" min="-2" pref="128" max="-2" attributes="0"/>
-                      <EmptySpace max="32767" attributes="0"/>
+                      <Component id="position1" min="-2" pref="155" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="60" max="-2" attributes="0"/>
+                      <Component id="position2" min="-2" pref="155" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="60" max="-2" attributes="0"/>
+                      <Component id="position3" min="-2" pref="155" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="60" max="-2" attributes="0"/>
+                      <Component id="position4" min="-2" pref="155" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="60" max="-2" attributes="0"/>
+                      <Component id="position5" min="-2" pref="155" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="60" max="-2" attributes="0"/>
+                      <Component id="position6" min="-2" pref="155" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="60" max="-2" attributes="0"/>
+                      <Component id="position7" min="-2" pref="155" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="60" max="-2" attributes="0"/>
+                      <Component id="position8" min="-2" pref="155" max="-2" attributes="0"/>
+                      <EmptySpace pref="61" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="positionPanel" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="arrow1" min="-2" max="-2" attributes="0"/>
-                          <Component id="arrow2" min="-2" max="-2" attributes="0"/>
-                          <Component id="arrow3" min="-2" max="-2" attributes="0"/>
-                          <Component id="arrow4" min="-2" max="-2" attributes="0"/>
-                          <Component id="arrow5" min="-2" max="-2" attributes="0"/>
-                          <Component id="arrow6" min="-2" max="-2" attributes="0"/>
-                          <Component id="arrow7" min="-2" max="-2" attributes="0"/>
-                          <Component id="arrow8" min="-2" max="-2" attributes="0"/>
+                  <Group type="102" attributes="0">
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="position1" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="position3" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="position5" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="position2" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="position4" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="position6" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="position7" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="position8" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="redArrow" min="-2" max="-2" attributes="0"/>
-                          <Component id="blueArrow" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace pref="193" max="32767" attributes="0"/>
+                      <EmptySpace min="-2" pref="1" max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
           </Layout>
           <SubComponents>
-            <Container class="javax.swing.JPanel" name="positionPanel">
-              <Properties>
-                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="ff" green="ff" red="ff" type="rgb"/>
-                </Property>
-              </Properties>
-
-              <Layout>
-                <DimensionLayout dim="0">
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" attributes="0">
-                          <EmptySpace min="-2" pref="61" max="-2" attributes="0"/>
-                          <Component id="position1" min="-2" pref="190" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
-                          <Component id="position2" min="-2" pref="190" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
-                          <Component id="position3" min="-2" pref="190" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
-                          <Component id="position4" min="-2" pref="190" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
-                          <Component id="position5" min="-2" pref="190" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
-                          <Component id="position6" min="-2" pref="190" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
-                          <Component id="position7" min="-2" pref="190" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
-                          <Component id="position8" min="-2" pref="190" max="-2" attributes="0"/>
-                          <EmptySpace pref="37" max="32767" attributes="0"/>
-                      </Group>
-                  </Group>
-                </DimensionLayout>
-                <DimensionLayout dim="1">
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="45" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="103" alignment="0" groupAlignment="3" attributes="0">
-                                  <Component id="position5" alignment="3" min="-2" pref="336" max="-2" attributes="0"/>
-                                  <Component id="position6" alignment="3" min="-2" pref="336" max="-2" attributes="0"/>
-                                  <Component id="position7" alignment="3" min="-2" pref="336" max="-2" attributes="0"/>
-                                  <Component id="position8" alignment="3" min="-2" pref="336" max="-2" attributes="0"/>
-                              </Group>
-                              <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="position1" alignment="3" min="-2" pref="336" max="-2" attributes="0"/>
-                                  <Component id="position2" alignment="3" min="-2" pref="336" max="-2" attributes="0"/>
-                                  <Component id="position3" alignment="3" min="-2" pref="336" max="-2" attributes="0"/>
-                                  <Component id="position4" alignment="3" min="-2" pref="336" max="-2" attributes="0"/>
-                              </Group>
-                          </Group>
-                          <EmptySpace min="0" pref="16" max="32767" attributes="0"/>
-                      </Group>
-                  </Group>
-                </DimensionLayout>
-              </Layout>
-              <SubComponents>
-                <Component class="javax.swing.JLabel" name="position1">
-                  <Properties>
-                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="3" name="/test.png"/>
-                    </Property>
-                    <Property name="text" type="java.lang.String" value="position1"/>
-                  </Properties>
-                </Component>
-                <Component class="javax.swing.JLabel" name="position2">
-                  <Properties>
-                    <Property name="text" type="java.lang.String" value="position2"/>
-                  </Properties>
-                </Component>
-                <Component class="javax.swing.JLabel" name="position3">
-                  <Properties>
-                    <Property name="text" type="java.lang.String" value="position3"/>
-                  </Properties>
-                </Component>
-                <Component class="javax.swing.JLabel" name="position4">
-                  <Properties>
-                    <Property name="text" type="java.lang.String" value="position4"/>
-                  </Properties>
-                </Component>
-                <Component class="javax.swing.JLabel" name="position8">
-                  <Properties>
-                    <Property name="text" type="java.lang.String" value="position8"/>
-                  </Properties>
-                </Component>
-                <Component class="javax.swing.JLabel" name="position5">
-                  <Properties>
-                    <Property name="text" type="java.lang.String" value="position5"/>
-                  </Properties>
-                </Component>
-                <Component class="javax.swing.JLabel" name="position6">
-                  <Properties>
-                    <Property name="text" type="java.lang.String" value="position6"/>
-                  </Properties>
-                </Component>
-                <Component class="javax.swing.JLabel" name="position7">
-                  <Properties>
-                    <Property name="text" type="java.lang.String" value="position7"/>
-                  </Properties>
-                </Component>
-              </SubComponents>
-            </Container>
-            <Component class="javax.swing.JLabel" name="arrow1">
+            <Component class="javax.swing.JLabel" name="position1">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/testArrow.png"/>
+                  <Image iconType="3" name="/test.png"/>
                 </Property>
+                <Property name="text" type="java.lang.String" value="position1"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JLabel" name="arrow2">
+            <Component class="javax.swing.JLabel" name="position3">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/testArrow.png"/>
+                  <Image iconType="3" name="/test.png"/>
                 </Property>
+                <Property name="text" type="java.lang.String" value="position1"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JLabel" name="arrow3">
+            <Component class="javax.swing.JLabel" name="position5">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/testArrow.png"/>
+                  <Image iconType="3" name="/test.png"/>
                 </Property>
+                <Property name="text" type="java.lang.String" value="position1"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JLabel" name="arrow4">
+            <Component class="javax.swing.JLabel" name="position2">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/testArrow.png"/>
+                  <Image iconType="3" name="/test.png"/>
                 </Property>
+                <Property name="text" type="java.lang.String" value="position1"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JLabel" name="arrow5">
+            <Component class="javax.swing.JLabel" name="position4">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/testArrow.png"/>
+                  <Image iconType="3" name="/test.png"/>
                 </Property>
+                <Property name="text" type="java.lang.String" value="position1"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JLabel" name="arrow6">
+            <Component class="javax.swing.JLabel" name="position6">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/testArrow.png"/>
+                  <Image iconType="3" name="/test.png"/>
                 </Property>
+                <Property name="text" type="java.lang.String" value="position1"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JLabel" name="arrow7">
+            <Component class="javax.swing.JLabel" name="position7">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/testArrow.png"/>
+                  <Image iconType="3" name="/test.png"/>
                 </Property>
+                <Property name="text" type="java.lang.String" value="position1"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JLabel" name="arrow8">
+            <Component class="javax.swing.JLabel" name="position8">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/testArrow.png"/>
+                  <Image iconType="3" name="/test.png"/>
                 </Property>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JLabel" name="redArrow">
-              <Properties>
-                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/testArrow.png"/>
-                </Property>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JLabel" name="blueArrow">
-              <Properties>
-                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/testArrow.png"/>
-                </Property>
+                <Property name="text" type="java.lang.String" value="position1"/>
               </Properties>
             </Component>
           </SubComponents>
         </Container>
+        <Component class="javax.swing.JButton" name="jButton1">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="jButton1"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton1ActionPerformed"/>
+          </Events>
+        </Component>
+      </SubComponents>
+    </Container>
+    <Container class="javax.swing.JPanel" name="sortPanel">
+      <Properties>
+        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="ff" green="ff" red="ff" type="rgb"/>
+        </Property>
+      </Properties>
+
+      <Layout>
+        <DimensionLayout dim="0">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" attributes="0">
+                  <EmptySpace min="116" pref="116" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                      <Group type="102" attributes="0">
+                          <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
+                          <Component id="arrow1" min="-2" pref="21" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="142" max="-2" attributes="0"/>
+                          <Component id="arrow2" min="-2" pref="128" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" attributes="0">
+                          <Component id="redArrow" min="-2" pref="128" max="-2" attributes="0"/>
+                          <EmptySpace max="32767" attributes="0"/>
+                          <Component id="blueArrow" min="-2" pref="128" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+                  <EmptySpace min="-2" pref="45" max="-2" attributes="0"/>
+                  <Component id="arrow3" min="-2" pref="128" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="61" max="-2" attributes="0"/>
+                  <Component id="arrow4" min="-2" pref="128" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="86" max="-2" attributes="0"/>
+                  <Component id="arrow5" min="-2" pref="128" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="73" max="-2" attributes="0"/>
+                  <Component id="arrow6" min="-2" pref="128" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="76" max="-2" attributes="0"/>
+                  <Component id="arrow7" min="-2" pref="128" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="79" max="-2" attributes="0"/>
+                  <Component id="arrow8" min="-2" pref="128" max="-2" attributes="0"/>
+                  <EmptySpace pref="139" max="32767" attributes="0"/>
+              </Group>
+          </Group>
+        </DimensionLayout>
+        <DimensionLayout dim="1">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" alignment="0" attributes="0">
+                  <EmptySpace min="-2" pref="415" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="arrow2" min="-2" max="-2" attributes="0"/>
+                      <Component id="arrow3" min="-2" max="-2" attributes="0"/>
+                      <Component id="arrow4" min="-2" max="-2" attributes="0"/>
+                      <Component id="arrow5" min="-2" max="-2" attributes="0"/>
+                      <Component id="arrow6" min="-2" max="-2" attributes="0"/>
+                      <Component id="arrow7" min="-2" max="-2" attributes="0"/>
+                      <Component id="arrow8" min="-2" max="-2" attributes="0"/>
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace min="-2" pref="58" max="-2" attributes="0"/>
+                          <Component id="arrow1" min="-2" pref="32" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="redArrow" min="-2" max="-2" attributes="0"/>
+                      <Component id="blueArrow" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace pref="193" max="32767" attributes="0"/>
+              </Group>
+          </Group>
+        </DimensionLayout>
+      </Layout>
+      <SubComponents>
+        <Component class="javax.swing.JLabel" name="arrow1">
+          <Properties>
+            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+              <Image iconType="3" name="/testArrow.png"/>
+            </Property>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="arrow2">
+          <Properties>
+            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+              <Image iconType="3" name="/testArrow.png"/>
+            </Property>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="arrow3">
+          <Properties>
+            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+              <Image iconType="3" name="/testArrow.png"/>
+            </Property>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="arrow4">
+          <Properties>
+            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+              <Image iconType="3" name="/testArrow.png"/>
+            </Property>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="arrow5">
+          <Properties>
+            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+              <Image iconType="3" name="/testArrow.png"/>
+            </Property>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="arrow6">
+          <Properties>
+            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+              <Image iconType="3" name="/testArrow.png"/>
+            </Property>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="arrow7">
+          <Properties>
+            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+              <Image iconType="3" name="/testArrow.png"/>
+            </Property>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="arrow8">
+          <Properties>
+            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+              <Image iconType="3" name="/testArrow.png"/>
+            </Property>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="redArrow">
+          <Properties>
+            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+              <Image iconType="3" name="/testArrow.png"/>
+            </Property>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="blueArrow">
+          <Properties>
+            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+              <Image iconType="3" name="/testArrow.png"/>
+            </Property>
+          </Properties>
+        </Component>
       </SubComponents>
     </Container>
   </SubComponents>
