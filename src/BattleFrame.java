@@ -119,6 +119,11 @@ public class BattleFrame extends javax.swing.JFrame {
 
         position1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Crusader.png"))); // NOI18N
         position1.setText("position1");
+        position1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                position1MouseEntered(evt);
+            }
+        });
 
         position3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Crusader.png"))); // NOI18N
         position3.setText("position1");
@@ -128,6 +133,11 @@ public class BattleFrame extends javax.swing.JFrame {
 
         position2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Crusader.png"))); // NOI18N
         position2.setText("position1");
+        position2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                position2MouseEntered(evt);
+            }
+        });
 
         position4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Crusader.png"))); // NOI18N
         position4.setText("position1");
@@ -466,6 +476,7 @@ public class BattleFrame extends javax.swing.JFrame {
         // TODO add your handling code here:
         
         UIManager.UpdateHitButtons(MovesetModule.GetMoveHitLocations(OrderModule.GetUnitAtIndex(5), OrderModule.GetUnitAtIndex(0).moveset.get(0)), true);
+        UIManager.MovePosition(2, 5, 250);
     }//GEN-LAST:event_move1ActionPerformed
 
     private void move2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_move2ActionPerformed
@@ -483,7 +494,16 @@ public class BattleFrame extends javax.swing.JFrame {
     private void move5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_move5ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_move5ActionPerformed
-   
+
+    private void position1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_position1MouseEntered
+        // TODO add your handling code here:
+        //UpdateUnitInfo(UIManager.positions[0])
+    }//GEN-LAST:event_position1MouseEntered
+
+    private void position2MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_position2MouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_position2MouseEntered
+ 
     /**
      * @param args the command line arguments
      */

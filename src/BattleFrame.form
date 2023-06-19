@@ -213,6 +213,9 @@
                 </Property>
                 <Property name="text" type="java.lang.String" value="position1"/>
               </Properties>
+              <Events>
+                <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="position1MouseEntered"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JLabel" name="position3">
               <Properties>
@@ -237,6 +240,9 @@
                 </Property>
                 <Property name="text" type="java.lang.String" value="position1"/>
               </Properties>
+              <Events>
+                <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="position2MouseEntered"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JLabel" name="position4">
               <Properties>
