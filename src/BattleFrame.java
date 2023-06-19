@@ -194,7 +194,7 @@ public class BattleFrame extends javax.swing.JFrame {
                         .addComponent(arrow1)
                         .addGap(168, 168, 168)
                         .addComponent(arrow2)
-                        .addGap(168, 168, 168)
+                        .addGap(162, 162, 162)
                         .addComponent(arrow3)
                         .addGap(168, 168, 168)
                         .addComponent(arrow4)
@@ -212,7 +212,7 @@ public class BattleFrame extends javax.swing.JFrame {
         sortPanelLayout.setVerticalGroup(
             sortPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(sortPanelLayout.createSequentialGroup()
-                .addGap(140, 140, 140)
+                .addGap(47, 47, 47)
                 .addGroup(sortPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(arrow8)
                     .addComponent(arrow7)
@@ -376,7 +376,7 @@ public class BattleFrame extends javax.swing.JFrame {
         moveSetPanelLayout.setVerticalGroup(
             moveSetPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(moveSetPanelLayout.createSequentialGroup()
-                .addGap(18, 18, 18)
+                .addGap(15, 15, 15)
                 .addComponent(move1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(move2, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -386,15 +386,19 @@ public class BattleFrame extends javax.swing.JFrame {
                 .addComponent(move4, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(move5, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(388, Short.MAX_VALUE))
+                .addContainerGap(178, Short.MAX_VALUE))
         );
 
         infoPanel.setBackground(new java.awt.Color(102, 102, 102));
         infoPanel.setEnabled(false);
 
+        healthLabel.setFont(new java.awt.Font("Monotype Corsiva", 0, 36)); // NOI18N
+        healthLabel.setForeground(new java.awt.Color(255, 153, 153));
         healthLabel.setText("Health:");
 
-        defenceLabel.setText("Defence");
+        defenceLabel.setFont(new java.awt.Font("Monotype Corsiva", 0, 36)); // NOI18N
+        defenceLabel.setForeground(new java.awt.Color(51, 255, 255));
+        defenceLabel.setText("Defence:");
 
         speedLabel.setText("Speed:");
 
@@ -429,7 +433,7 @@ public class BattleFrame extends javax.swing.JFrame {
                     .addComponent(speedLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(60, 60, 60)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(226, Short.MAX_VALUE))
+                .addContainerGap(178, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout mainLayout = new javax.swing.GroupLayout(main);
@@ -443,7 +447,7 @@ public class BattleFrame extends javax.swing.JFrame {
                 .addComponent(moveSetPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(infoPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addGap(0, 2, Short.MAX_VALUE))
         );
         mainLayout.setVerticalGroup(
             mainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
