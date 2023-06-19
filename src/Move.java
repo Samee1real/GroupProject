@@ -10,13 +10,15 @@
 public class Move
     {
         public String name;
+        public String desc;
         public int dmg;
         public int rangeLeft, rangeRight;
         
         public Move()
         {
             name = "Default";
-            rangeLeft = 1; rangeRight = 1;
+            desc = "Default desc";
+            rangeLeft = 1; rangeRight = 0;
         }
         
         //Create subclasses for moves

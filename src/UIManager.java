@@ -16,6 +16,7 @@ import java.util.logging.Logger;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JTextArea;
 
 public class UIManager {
                                                 //Settings\\
@@ -49,6 +50,10 @@ public class UIManager {
     public static void InitilizeMoveButton(JButton button) 
     {
         moveButtons.add(button);
+    }
+    public static void InitilizeMoveInfo(JTextArea area) 
+    {
+        moveInfo = area;
     }
                                             //Unit Position Visuals\\
     private static javax.swing.JLabel[] positions = new javax.swing.JLabel[battlePlaces];
@@ -93,6 +98,7 @@ public class UIManager {
     private static JLabel healthLabel, defenceLabel, speedLabel;
     private static ArrayList<JButton> hitButtons = new ArrayList<JButton>();
     private static ArrayList<JButton> moveButtons = new ArrayList<JButton>();
+    private static JTextArea moveInfo;
     
     public static void UpdateUnitInfo(Unit unit)
     {
@@ -121,7 +127,13 @@ public class UIManager {
             moveButtons.get(i).setText(unit.moveset.get(i).name + unit.id);
         }
     }
-    
+    public static void UpdateMoveInfo(Unit unit, Move move) 
+    {
+        if (MovesetModule.IsMoveAv1ailable(unit, move)) 
+        {moveInfo.setText(move.desc);}
+        else 
+        {moveInfo.setText("This move is not available");}
+    }
                                             //Easing and Tweening\\
                 
     public static class tweenLabelTask extends Thread
