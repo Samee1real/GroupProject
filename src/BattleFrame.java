@@ -62,6 +62,22 @@ public class BattleFrame extends javax.swing.JFrame {
         arrow8 = new javax.swing.JLabel();
         redArrow = new javax.swing.JLabel();
         blueArrow = new javax.swing.JLabel();
+        selectionPanel = new javax.swing.JPanel();
+        select1 = new javax.swing.JButton();
+        select2 = new javax.swing.JButton();
+        select3 = new javax.swing.JButton();
+        select4 = new javax.swing.JButton();
+        select5 = new javax.swing.JButton();
+        select7 = new javax.swing.JButton();
+        select8 = new javax.swing.JButton();
+        select9 = new javax.swing.JButton();
+        moveSetPanel = new javax.swing.JPanel();
+        move1 = new javax.swing.JButton();
+        move2 = new javax.swing.JButton();
+        move3 = new javax.swing.JButton();
+        move4 = new javax.swing.JButton();
+        move5 = new javax.swing.JButton();
+        infoPanel = new javax.swing.JPanel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu2 = new javax.swing.JMenu();
         jMenu1 = new javax.swing.JMenu();
@@ -197,7 +213,7 @@ public class BattleFrame extends javax.swing.JFrame {
         sortPanelLayout.setVerticalGroup(
             sortPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(sortPanelLayout.createSequentialGroup()
-                .addGap(185, 185, 185)
+                .addGap(140, 140, 140)
                 .addGroup(sortPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(arrow8)
                     .addComponent(arrow7)
@@ -215,12 +231,191 @@ public class BattleFrame extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
+        selectionPanel.setBackground(new java.awt.Color(153, 153, 153));
+
+        select1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/selector.png"))); // NOI18N
+        select1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                select1ActionPerformed(evt);
+            }
+        });
+
+        select2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/selector.png"))); // NOI18N
+        select2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                select2ActionPerformed(evt);
+            }
+        });
+
+        select3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/selector.png"))); // NOI18N
+        select3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                select3ActionPerformed(evt);
+            }
+        });
+
+        select4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/selector.png"))); // NOI18N
+        select4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                select4ActionPerformed(evt);
+            }
+        });
+
+        select5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/selector.png"))); // NOI18N
+        select5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                select5ActionPerformed(evt);
+            }
+        });
+
+        select7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/selector.png"))); // NOI18N
+        select7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                select7ActionPerformed(evt);
+            }
+        });
+
+        select8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/selector.png"))); // NOI18N
+        select8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                select8ActionPerformed(evt);
+            }
+        });
+
+        select9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/selector.png"))); // NOI18N
+        select9.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                select9ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout selectionPanelLayout = new javax.swing.GroupLayout(selectionPanel);
+        selectionPanel.setLayout(selectionPanelLayout);
+        selectionPanelLayout.setHorizontalGroup(
+            selectionPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(selectionPanelLayout.createSequentialGroup()
+                .addGap(75, 75, 75)
+                .addComponent(select1)
+                .addGap(93, 93, 93)
+                .addComponent(select2)
+                .addGap(93, 93, 93)
+                .addComponent(select3)
+                .addGap(93, 93, 93)
+                .addComponent(select4)
+                .addGap(93, 93, 93)
+                .addComponent(select5)
+                .addGap(93, 93, 93)
+                .addComponent(select7)
+                .addGap(93, 93, 93)
+                .addComponent(select8)
+                .addGap(93, 93, 93)
+                .addComponent(select9)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        selectionPanelLayout.setVerticalGroup(
+            selectionPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(selectionPanelLayout.createSequentialGroup()
+                .addGroup(selectionPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(select1)
+                    .addComponent(select2)
+                    .addComponent(select3)
+                    .addComponent(select4)
+                    .addComponent(select5)
+                    .addComponent(select7)
+                    .addComponent(select8)
+                    .addComponent(select9))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        moveSetPanel.setBackground(new java.awt.Color(102, 102, 102));
+        moveSetPanel.setEnabled(false);
+
+        move1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                move1ActionPerformed(evt);
+            }
+        });
+
+        move2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                move2ActionPerformed(evt);
+            }
+        });
+
+        move3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                move3ActionPerformed(evt);
+            }
+        });
+
+        move4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                move4ActionPerformed(evt);
+            }
+        });
+
+        move5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                move5ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout moveSetPanelLayout = new javax.swing.GroupLayout(moveSetPanel);
+        moveSetPanel.setLayout(moveSetPanelLayout);
+        moveSetPanelLayout.setHorizontalGroup(
+            moveSetPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(moveSetPanelLayout.createSequentialGroup()
+                .addGap(15, 15, 15)
+                .addGroup(moveSetPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(move1, javax.swing.GroupLayout.PREFERRED_SIZE, 672, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(move2, javax.swing.GroupLayout.PREFERRED_SIZE, 672, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(move3, javax.swing.GroupLayout.PREFERRED_SIZE, 672, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(move4, javax.swing.GroupLayout.PREFERRED_SIZE, 672, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(move5, javax.swing.GroupLayout.PREFERRED_SIZE, 672, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(15, Short.MAX_VALUE))
+        );
+        moveSetPanelLayout.setVerticalGroup(
+            moveSetPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(moveSetPanelLayout.createSequentialGroup()
+                .addGap(18, 18, 18)
+                .addComponent(move1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(move2, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(move3, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(move4, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(move5, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(388, Short.MAX_VALUE))
+        );
+
+        infoPanel.setBackground(new java.awt.Color(102, 102, 102));
+        infoPanel.setEnabled(false);
+
+        javax.swing.GroupLayout infoPanelLayout = new javax.swing.GroupLayout(infoPanel);
+        infoPanel.setLayout(infoPanelLayout);
+        infoPanelLayout.setHorizontalGroup(
+            infoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 1067, Short.MAX_VALUE)
+        );
+        infoPanelLayout.setVerticalGroup(
+            infoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 388, Short.MAX_VALUE)
+        );
+
         javax.swing.GroupLayout mainLayout = new javax.swing.GroupLayout(main);
         main.setLayout(mainLayout);
         mainLayout.setHorizontalGroup(
             mainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(positionPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(sortPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(selectionPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(mainLayout.createSequentialGroup()
+                .addComponent(moveSetPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(infoPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         mainLayout.setVerticalGroup(
             mainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -228,7 +423,12 @@ public class BattleFrame extends javax.swing.JFrame {
                 .addComponent(sortPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(positionPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(386, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(selectionPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(mainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(moveSetPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(infoPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
         );
 
         jMenu2.setText("Edit");
@@ -268,6 +468,58 @@ public class BattleFrame extends javax.swing.JFrame {
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
         System.exit(0);       
     }//GEN-LAST:event_jMenuItem1ActionPerformed
+
+    private void select1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_select1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_select1ActionPerformed
+
+    private void select2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_select2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_select2ActionPerformed
+
+    private void select3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_select3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_select3ActionPerformed
+
+    private void select4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_select4ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_select4ActionPerformed
+
+    private void select5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_select5ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_select5ActionPerformed
+
+    private void select7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_select7ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_select7ActionPerformed
+
+    private void select8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_select8ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_select8ActionPerformed
+
+    private void select9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_select9ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_select9ActionPerformed
+
+    private void move1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_move1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_move1ActionPerformed
+
+    private void move2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_move2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_move2ActionPerformed
+
+    private void move3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_move3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_move3ActionPerformed
+
+    private void move4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_move4ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_move4ActionPerformed
+
+    private void move5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_move5ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_move5ActionPerformed
    
     /**
      * @param args the command line arguments
@@ -314,11 +566,18 @@ public class BattleFrame extends javax.swing.JFrame {
     private javax.swing.JLabel arrow7;
     private javax.swing.JLabel arrow8;
     private javax.swing.JLabel blueArrow;
+    private javax.swing.JPanel infoPanel;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JPanel main;
+    private javax.swing.JButton move1;
+    private javax.swing.JButton move2;
+    private javax.swing.JButton move3;
+    private javax.swing.JButton move4;
+    private javax.swing.JButton move5;
+    private javax.swing.JPanel moveSetPanel;
     private javax.swing.JLabel position1;
     private javax.swing.JLabel position2;
     private javax.swing.JLabel position3;
@@ -329,6 +588,15 @@ public class BattleFrame extends javax.swing.JFrame {
     private javax.swing.JLabel position8;
     private javax.swing.JPanel positionPanel;
     private javax.swing.JLabel redArrow;
+    private javax.swing.JButton select1;
+    private javax.swing.JButton select2;
+    private javax.swing.JButton select3;
+    private javax.swing.JButton select4;
+    private javax.swing.JButton select5;
+    private javax.swing.JButton select7;
+    private javax.swing.JButton select8;
+    private javax.swing.JButton select9;
+    private javax.swing.JPanel selectionPanel;
     private javax.swing.JPanel sortPanel;
     // End of variables declaration//GEN-END:variables
 }

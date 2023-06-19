@@ -31,7 +31,7 @@ public class UIManager {
         positions[pos] = unit; 
         posArrows[pos][0] = arrow.getLocation().x; posArrows[pos][1] = arrow.getLocation().y;
         System.out.println(posArrows[pos][0] + " " + posArrows[pos][1]);
-        arrow.setVisible(false);
+        arrow.setVisible(true);
     }
     public static void InitilizeMainArrows(javax.swing.JLabel red, javax.swing.JLabel blue)
     {
