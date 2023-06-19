@@ -68,6 +68,14 @@ public class BattleFrame extends javax.swing.JFrame {
         position6 = new javax.swing.JLabel();
         position7 = new javax.swing.JLabel();
         position8 = new javax.swing.JLabel();
+        select1 = new javax.swing.JButton();
+        select2 = new javax.swing.JButton();
+        select3 = new javax.swing.JButton();
+        select4 = new javax.swing.JButton();
+        select5 = new javax.swing.JButton();
+        select6 = new javax.swing.JButton();
+        select7 = new javax.swing.JButton();
+        select8 = new javax.swing.JButton();
         sortPanel = new javax.swing.JPanel();
         arrow1 = new javax.swing.JLabel();
         arrow2 = new javax.swing.JLabel();
@@ -79,15 +87,6 @@ public class BattleFrame extends javax.swing.JFrame {
         arrow8 = new javax.swing.JLabel();
         redArrow = new javax.swing.JLabel();
         blueArrow = new javax.swing.JLabel();
-        selectionPanel = new javax.swing.JPanel();
-        select1 = new javax.swing.JButton();
-        select2 = new javax.swing.JButton();
-        select3 = new javax.swing.JButton();
-        select4 = new javax.swing.JButton();
-        select5 = new javax.swing.JButton();
-        select6 = new javax.swing.JButton();
-        select7 = new javax.swing.JButton();
-        select8 = new javax.swing.JButton();
         moveSetPanel = new javax.swing.JPanel();
         move1 = new javax.swing.JButton();
         move2 = new javax.swing.JButton();
@@ -121,20 +120,42 @@ public class BattleFrame extends javax.swing.JFrame {
         position1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Crusader.png"))); // NOI18N
         position1.setText("position1");
 
+        position3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Crusader.png"))); // NOI18N
         position3.setText("position1");
 
+        position5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Crusader.png"))); // NOI18N
         position5.setText("position1");
 
         position2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Crusader.png"))); // NOI18N
         position2.setText("position1");
 
+        position4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Crusader.png"))); // NOI18N
         position4.setText("position1");
 
+        position6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Crusader.png"))); // NOI18N
         position6.setText("position1");
 
+        position7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Crusader.png"))); // NOI18N
         position7.setText("position1");
 
+        position8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Crusader.png"))); // NOI18N
         position8.setText("position1");
+
+        select1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/selector.png"))); // NOI18N
+
+        select2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/selector.png"))); // NOI18N
+
+        select3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/selector.png"))); // NOI18N
+
+        select4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/selector.png"))); // NOI18N
+
+        select5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/selector.png"))); // NOI18N
+
+        select6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/selector.png"))); // NOI18N
+
+        select7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/selector.png"))); // NOI18N
+
+        select8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/selector.png"))); // NOI18N
 
         javax.swing.GroupLayout positionPanelLayout = new javax.swing.GroupLayout(positionPanel);
         positionPanel.setLayout(positionPanelLayout);
@@ -142,21 +163,37 @@ public class BattleFrame extends javax.swing.JFrame {
             positionPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(positionPanelLayout.createSequentialGroup()
                 .addGap(61, 61, 61)
-                .addComponent(position1, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(positionPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(select1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(position1, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(60, 60, 60)
-                .addComponent(position2, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(positionPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(position2, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(select2, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(60, 60, 60)
-                .addComponent(position3, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(positionPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(position3, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(select3, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(60, 60, 60)
-                .addComponent(position4, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(positionPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(position4, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(select4, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(60, 60, 60)
-                .addComponent(position5, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(positionPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(position5, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(select5, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(60, 60, 60)
-                .addComponent(position6, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(positionPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(position6, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(select6, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(60, 60, 60)
-                .addComponent(position7, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(positionPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(position7, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(select7, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(60, 60, 60)
-                .addComponent(position8, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(positionPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(position8, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(select8, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         positionPanelLayout.setVerticalGroup(
@@ -171,7 +208,17 @@ public class BattleFrame extends javax.swing.JFrame {
                     .addComponent(position6)
                     .addComponent(position7)
                     .addComponent(position8))
-                .addGap(1, 1, 1))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(positionPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(select1)
+                    .addComponent(select2)
+                    .addComponent(select3)
+                    .addComponent(select4)
+                    .addComponent(select5)
+                    .addComponent(select6)
+                    .addComponent(select7)
+                    .addComponent(select8))
+                .addGap(5, 5, 5))
         );
 
         sortPanel.setBackground(new java.awt.Color(51, 51, 51));
@@ -245,102 +292,6 @@ public class BattleFrame extends javax.swing.JFrame {
                     .addComponent(redArrow)
                     .addComponent(blueArrow))
                 .addContainerGap())
-        );
-
-        selectionPanel.setBackground(new java.awt.Color(153, 153, 153));
-
-        select1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/selector.png"))); // NOI18N
-        select1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                select1ActionPerformed(evt);
-            }
-        });
-
-        select2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/selector.png"))); // NOI18N
-        select2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                select2ActionPerformed(evt);
-            }
-        });
-
-        select3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/selector.png"))); // NOI18N
-        select3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                select3ActionPerformed(evt);
-            }
-        });
-
-        select4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/selector.png"))); // NOI18N
-        select4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                select4ActionPerformed(evt);
-            }
-        });
-
-        select5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/selector.png"))); // NOI18N
-        select5.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                select5ActionPerformed(evt);
-            }
-        });
-
-        select6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/selector.png"))); // NOI18N
-        select6.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                select6ActionPerformed(evt);
-            }
-        });
-
-        select7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/selector.png"))); // NOI18N
-        select7.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                select7ActionPerformed(evt);
-            }
-        });
-
-        select8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/selector.png"))); // NOI18N
-        select8.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                select8ActionPerformed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout selectionPanelLayout = new javax.swing.GroupLayout(selectionPanel);
-        selectionPanel.setLayout(selectionPanelLayout);
-        selectionPanelLayout.setHorizontalGroup(
-            selectionPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(selectionPanelLayout.createSequentialGroup()
-                .addGap(83, 83, 83)
-                .addComponent(select1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(select2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(select3)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(select4)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(select5)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(select6)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(select7)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(select8)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        selectionPanelLayout.setVerticalGroup(
-            selectionPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(selectionPanelLayout.createSequentialGroup()
-                .addGroup(selectionPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(select1)
-                    .addComponent(select2)
-                    .addComponent(select3)
-                    .addComponent(select4)
-                    .addComponent(select5)
-                    .addComponent(select6)
-                    .addComponent(select7)
-                    .addComponent(select8))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         moveSetPanel.setBackground(new java.awt.Color(102, 102, 102));
@@ -455,7 +406,6 @@ public class BattleFrame extends javax.swing.JFrame {
             mainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(positionPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(sortPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(selectionPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(mainLayout.createSequentialGroup()
                 .addComponent(moveSetPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -468,8 +418,6 @@ public class BattleFrame extends javax.swing.JFrame {
                 .addComponent(sortPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(positionPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(selectionPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(mainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(moveSetPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -513,38 +461,6 @@ public class BattleFrame extends javax.swing.JFrame {
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
         System.exit(0);       
     }//GEN-LAST:event_jMenuItem1ActionPerformed
-
-    private void select1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_select1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_select1ActionPerformed
-
-    private void select2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_select2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_select2ActionPerformed
-
-    private void select3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_select3ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_select3ActionPerformed
-
-    private void select4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_select4ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_select4ActionPerformed
-
-    private void select5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_select5ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_select5ActionPerformed
-
-    private void select6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_select6ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_select6ActionPerformed
-
-    private void select7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_select7ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_select7ActionPerformed
-
-    private void select8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_select8ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_select8ActionPerformed
 
     private void move1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_move1ActionPerformed
         // TODO add your handling code here:
@@ -647,7 +563,6 @@ public class BattleFrame extends javax.swing.JFrame {
     private javax.swing.JButton select6;
     private javax.swing.JButton select7;
     private javax.swing.JButton select8;
-    private javax.swing.JPanel selectionPanel;
     private javax.swing.JPanel sortPanel;
     private javax.swing.JLabel speedLabel;
     // End of variables declaration//GEN-END:variables
