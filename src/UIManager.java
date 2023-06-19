@@ -13,6 +13,7 @@ import java.time.Duration;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 
@@ -40,6 +41,10 @@ public class UIManager {
     public static void InitilizeGUI(JLabel health, JLabel defence, JLabel speed)
     {
         healthLabel = health; defenceLabel = defence; speedLabel = speed;
+    }
+    public static void InitilizeHitButton(JButton button, int pos)
+    {
+        hitButtons.add(pos, button);
     }
                                             //Unit Position Visuals\\
     private static javax.swing.JLabel[] positions = new javax.swing.JLabel[battlePlaces];
@@ -82,6 +87,7 @@ public class UIManager {
                                               //GUI Visuals\\
     
     private static JLabel healthLabel, defenceLabel, speedLabel;
+    private static ArrayList<JButton> hitButtons = new ArrayList<JButton>();
     
     public static void UpdateUnitInfo(Unit unit)
     {
@@ -89,7 +95,19 @@ public class UIManager {
         healthLabel.setText("Defence: " + unit.defence);
         healthLabel.setText("Speed: " + unit.speed);
     }
-    
+    public static void UpdateHitButtons(ArrayList<Integer> posList, boolean toggle) 
+    {
+        
+        for (int i = 0; i < hitButtons.size(); i++) {
+            boolean show = false;
+            if (toggle) {
+                for (Integer pos : posList) {
+                    if (pos == i) {show = true;}
+                }
+            }
+            hitButtons.get(i).setVisible(show);
+        }
+    }
                                             //Easing and Tweening\\
                 
     public static class tweenLabelTask extends Thread

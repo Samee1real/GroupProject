@@ -13,11 +13,14 @@ import java.util.ArrayList;
 public class OrderModule {
                                         //Settings\\
     
-    private static final int battlePlaces = 8;
+    public static final int battlePlaces = 8;
     
                                     //Placement Order\\
     private static ArrayList<Unit> placeOrder = new ArrayList<Unit>(battlePlaces);
-   
+    public static void AddUnit(Unit unit, int pos)
+    {
+        placeOrder.add(pos, unit);
+    }
     public static int GetUnitPlace(Unit unit)
     {
         /*
@@ -29,6 +32,10 @@ public class OrderModule {
             }
         }
         return -1;
+    }
+    public static Unit GetUnitAtIndex(int index)
+    {
+        return placeOrder.get(index);
     }
     public static void ResetPlaceOrder() 
     {
@@ -51,6 +58,7 @@ public class OrderModule {
     }
     
                                  //Sorting Methods\\
+    
     private static int sortStep = 0;//Used keep track of their sorting steps from turn to turn
     private static SelectionSort sortMethod = new SelectionSort();  //Keeps track of which sorting method is being used
     public static void SetSortMethod(String method)

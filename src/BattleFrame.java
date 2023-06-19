@@ -29,7 +29,24 @@ public class BattleFrame extends javax.swing.JFrame {
         UIManager.InitilizePosition(position6, arrow6, 5);
         UIManager.InitilizePosition(position7, arrow7, 6);
         UIManager.InitilizePosition(position8, arrow8, 7);
+        OrderModule.AddUnit(new Unit(), 0);
+        OrderModule.AddUnit(new Unit(), 1);
+        OrderModule.AddUnit(new Unit(),2);
+        OrderModule.AddUnit(new Unit(), 3);
+        OrderModule.AddUnit(new Unit(), 4);
+        OrderModule.AddUnit(new Unit(), 5);
+        OrderModule.AddUnit(new Unit(), 6);
+        OrderModule.AddUnit(new Unit(), 7);
         UIManager.InitilizeMainArrows(redArrow, blueArrow);
+        UIManager.InitilizeGUI(healthLabel, defenceLabel, speedLabel);
+        UIManager.InitilizeHitButton(select1, 0);
+        UIManager.InitilizeHitButton(select2, 1);
+        UIManager.InitilizeHitButton(select3, 2);
+        UIManager.InitilizeHitButton(select4, 3);
+        UIManager.InitilizeHitButton(select5, 4);
+        UIManager.InitilizeHitButton(select6, 5);
+        UIManager.InitilizeHitButton(select7, 6);
+        UIManager.InitilizeHitButton(select8, 7);
     }
 
     /**
@@ -68,9 +85,9 @@ public class BattleFrame extends javax.swing.JFrame {
         select3 = new javax.swing.JButton();
         select4 = new javax.swing.JButton();
         select5 = new javax.swing.JButton();
+        select6 = new javax.swing.JButton();
         select7 = new javax.swing.JButton();
         select8 = new javax.swing.JButton();
-        select9 = new javax.swing.JButton();
         moveSetPanel = new javax.swing.JPanel();
         move1 = new javax.swing.JButton();
         move2 = new javax.swing.JButton();
@@ -267,6 +284,13 @@ public class BattleFrame extends javax.swing.JFrame {
             }
         });
 
+        select6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/selector.png"))); // NOI18N
+        select6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                select6ActionPerformed(evt);
+            }
+        });
+
         select7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/selector.png"))); // NOI18N
         select7.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -281,34 +305,27 @@ public class BattleFrame extends javax.swing.JFrame {
             }
         });
 
-        select9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/selector.png"))); // NOI18N
-        select9.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                select9ActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout selectionPanelLayout = new javax.swing.GroupLayout(selectionPanel);
         selectionPanel.setLayout(selectionPanelLayout);
         selectionPanelLayout.setHorizontalGroup(
             selectionPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(selectionPanelLayout.createSequentialGroup()
-                .addGap(75, 75, 75)
+                .addGap(83, 83, 83)
                 .addComponent(select1)
-                .addGap(93, 93, 93)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(select2)
-                .addGap(93, 93, 93)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(select3)
-                .addGap(93, 93, 93)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(select4)
-                .addGap(93, 93, 93)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(select5)
-                .addGap(93, 93, 93)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(select6)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(select7)
-                .addGap(93, 93, 93)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(select8)
-                .addGap(93, 93, 93)
-                .addComponent(select9)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         selectionPanelLayout.setVerticalGroup(
@@ -320,9 +337,9 @@ public class BattleFrame extends javax.swing.JFrame {
                     .addComponent(select3)
                     .addComponent(select4)
                     .addComponent(select5)
+                    .addComponent(select6)
                     .addComponent(select7)
-                    .addComponent(select8)
-                    .addComponent(select9))
+                    .addComponent(select8))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -517,6 +534,10 @@ public class BattleFrame extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_select5ActionPerformed
 
+    private void select6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_select6ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_select6ActionPerformed
+
     private void select7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_select7ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_select7ActionPerformed
@@ -525,12 +546,10 @@ public class BattleFrame extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_select8ActionPerformed
 
-    private void select9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_select9ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_select9ActionPerformed
-
     private void move1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_move1ActionPerformed
         // TODO add your handling code here:
+        
+        UIManager.UpdateHitButtons(MovesetModule.GetMoveHitLocations(OrderModule.GetUnitAtIndex(5), OrderModule.GetUnitAtIndex(0).moveset.get(0)), true);
     }//GEN-LAST:event_move1ActionPerformed
 
     private void move2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_move2ActionPerformed
@@ -625,9 +644,9 @@ public class BattleFrame extends javax.swing.JFrame {
     private javax.swing.JButton select3;
     private javax.swing.JButton select4;
     private javax.swing.JButton select5;
+    private javax.swing.JButton select6;
     private javax.swing.JButton select7;
     private javax.swing.JButton select8;
-    private javax.swing.JButton select9;
     private javax.swing.JPanel selectionPanel;
     private javax.swing.JPanel sortPanel;
     private javax.swing.JLabel speedLabel;
