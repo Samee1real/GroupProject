@@ -33,6 +33,11 @@ public class Unit {
         tracker++;  
         moveset.add(new Move());
     }
+    public Unit(int orderValue) 
+    {
+        this();
+        this.orderValue = orderValue;
+    }
     public boolean equals(Unit unit)
     {
         if (unit.id == id) {return true;}
@@ -41,7 +46,7 @@ public class Unit {
     
     
     //Add subclass for each unit, they just need a constructer to set the values 
-    //Make sure to always call super.this(); to set up the id for the unit
+    //Make sure to always call super; to set up the id for the unit
     //public Ranger extends Unit 
     //moveset.add("Basic Swing") 
 }

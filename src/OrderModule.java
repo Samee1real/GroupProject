@@ -37,6 +37,13 @@ public class OrderModule {
     {
         return placeOrder.get(index);
     }
+    public static Unit GetUnitByValue(int value)
+    {
+        for (Unit unit : placeOrder) {
+            if (unit.orderValue == value) {return unit;}
+        }
+        return new Unit();
+    }
     public static void ResetPlaceOrder() 
     {
         /*

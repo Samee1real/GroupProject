@@ -46,6 +46,10 @@ public class UIManager {
     {
         hitButtons.add(pos, button);
     }
+    public static void InitilizeMoveButton(JButton button) 
+    {
+        moveButtons.add(button);
+    }
                                             //Unit Position Visuals\\
     private static javax.swing.JLabel[] positions = new javax.swing.JLabel[battlePlaces];
     
@@ -88,12 +92,13 @@ public class UIManager {
     
     private static JLabel healthLabel, defenceLabel, speedLabel;
     private static ArrayList<JButton> hitButtons = new ArrayList<JButton>();
+    private static ArrayList<JButton> moveButtons = new ArrayList<JButton>();
     
     public static void UpdateUnitInfo(Unit unit)
     {
         healthLabel.setText("Health: " + unit.health);
-        healthLabel.setText("Defence: " + unit.defence);
-        healthLabel.setText("Speed: " + unit.speed);
+        defenceLabel.setText("Defence: " + unit.defence);
+        speedLabel.setText("Speed: " + unit.speed);
     }
     public static void UpdateHitButtons(ArrayList<Integer> posList, boolean toggle) 
     {
@@ -108,6 +113,15 @@ public class UIManager {
             hitButtons.get(i).setVisible(show);
         }
     }
+    public static void UpdateMoveButtons(Unit unit)
+    {
+        System.out.println("move"+moveButtons.size());
+        for (int i = 0; i < moveButtons.size() && i < unit.moveset.size() ; i++) {
+            System.out.println("umm");
+            moveButtons.get(i).setText(unit.moveset.get(i).name + unit.id);
+        }
+    }
+    
                                             //Easing and Tweening\\
                 
     public static class tweenLabelTask extends Thread
