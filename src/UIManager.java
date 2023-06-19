@@ -7,10 +7,14 @@
  *
  * @author Samee
  */
+import java.awt.Container;
+import java.awt.Font;
 import java.time.Duration;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
 
 public class UIManager {
                                                 //Settings\\
@@ -33,7 +37,6 @@ public class UIManager {
     {
         redArrow = red; blueArrow = blue;
     }
-    
                                             //Unit Position Visuals\\
     private static javax.swing.JLabel[] positions = new javax.swing.JLabel[battlePlaces];
     
@@ -71,6 +74,8 @@ public class UIManager {
         if (color.equals("Blue")) {arrow = blueArrow;}
         arrow.setLocation(posArrows[pos][0], posArrows[pos][1]);
     }
+  
+    
     
                                             //Easing and Tweening\\
                 

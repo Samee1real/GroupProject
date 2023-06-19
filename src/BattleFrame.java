@@ -42,6 +42,15 @@ public class BattleFrame extends javax.swing.JFrame {
     private void initComponents() {
 
         main = new javax.swing.JPanel();
+        positionPanel = new javax.swing.JPanel();
+        position1 = new javax.swing.JLabel();
+        position3 = new javax.swing.JLabel();
+        position5 = new javax.swing.JLabel();
+        position2 = new javax.swing.JLabel();
+        position4 = new javax.swing.JLabel();
+        position6 = new javax.swing.JLabel();
+        position7 = new javax.swing.JLabel();
+        position8 = new javax.swing.JLabel();
         sortPanel = new javax.swing.JPanel();
         arrow1 = new javax.swing.JLabel();
         arrow2 = new javax.swing.JLabel();
@@ -53,16 +62,6 @@ public class BattleFrame extends javax.swing.JFrame {
         arrow8 = new javax.swing.JLabel();
         redArrow = new javax.swing.JLabel();
         blueArrow = new javax.swing.JLabel();
-        positionPanel = new javax.swing.JPanel();
-        position1 = new javax.swing.JLabel();
-        position3 = new javax.swing.JLabel();
-        position5 = new javax.swing.JLabel();
-        position2 = new javax.swing.JLabel();
-        position4 = new javax.swing.JLabel();
-        position6 = new javax.swing.JLabel();
-        position7 = new javax.swing.JLabel();
-        position8 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu2 = new javax.swing.JMenu();
         jMenu1 = new javax.swing.JMenu();
@@ -79,81 +78,7 @@ public class BattleFrame extends javax.swing.JFrame {
         main.setMinimumSize(new java.awt.Dimension(1782, 972));
         main.setPreferredSize(new java.awt.Dimension(1782, 972));
 
-        sortPanel.setBackground(new java.awt.Color(255, 255, 255));
-
-        arrow1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/testArrow.png"))); // NOI18N
-
-        arrow2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/testArrow.png"))); // NOI18N
-
-        arrow3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/testArrow.png"))); // NOI18N
-
-        arrow4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/testArrow.png"))); // NOI18N
-
-        arrow5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/testArrow.png"))); // NOI18N
-
-        arrow6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/testArrow.png"))); // NOI18N
-
-        arrow7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/testArrow.png"))); // NOI18N
-
-        arrow8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/testArrow.png"))); // NOI18N
-
-        redArrow.setIcon(new javax.swing.ImageIcon(getClass().getResource("/testArrow.png"))); // NOI18N
-
-        blueArrow.setIcon(new javax.swing.ImageIcon(getClass().getResource("/testArrow.png"))); // NOI18N
-
-        javax.swing.GroupLayout sortPanelLayout = new javax.swing.GroupLayout(sortPanel);
-        sortPanel.setLayout(sortPanelLayout);
-        sortPanelLayout.setHorizontalGroup(
-            sortPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(sortPanelLayout.createSequentialGroup()
-                .addGap(116, 116, 116)
-                .addGroup(sortPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(sortPanelLayout.createSequentialGroup()
-                        .addGap(36, 36, 36)
-                        .addComponent(arrow1, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(142, 142, 142)
-                        .addComponent(arrow2, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(sortPanelLayout.createSequentialGroup()
-                        .addComponent(redArrow, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(blueArrow, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(45, 45, 45)
-                .addComponent(arrow3, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(61, 61, 61)
-                .addComponent(arrow4, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(86, 86, 86)
-                .addComponent(arrow5, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(73, 73, 73)
-                .addComponent(arrow6, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(76, 76, 76)
-                .addComponent(arrow7, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(79, 79, 79)
-                .addComponent(arrow8, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        sortPanelLayout.setVerticalGroup(
-            sortPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(sortPanelLayout.createSequentialGroup()
-                .addGap(415, 415, 415)
-                .addGroup(sortPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(arrow2)
-                    .addComponent(arrow3)
-                    .addComponent(arrow4)
-                    .addComponent(arrow5)
-                    .addComponent(arrow6)
-                    .addComponent(arrow7)
-                    .addComponent(arrow8)
-                    .addGroup(sortPanelLayout.createSequentialGroup()
-                        .addGap(58, 58, 58)
-                        .addComponent(arrow1, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(sortPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(redArrow)
-                    .addComponent(blueArrow))
-                .addContainerGap(1447, Short.MAX_VALUE))
-        );
-
-        positionPanel.setBackground(new java.awt.Color(255, 255, 255));
+        positionPanel.setBackground(new java.awt.Color(153, 153, 153));
 
         position1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/test.png"))); // NOI18N
         position1.setText("position1");
@@ -200,7 +125,7 @@ public class BattleFrame extends javax.swing.JFrame {
                 .addComponent(position7, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(60, 60, 60)
                 .addComponent(position8, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(49, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         positionPanelLayout.setVerticalGroup(
             positionPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -217,34 +142,93 @@ public class BattleFrame extends javax.swing.JFrame {
                 .addGap(1, 1, 1))
         );
 
-        jButton1.setText("jButton1");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
+        sortPanel.setBackground(new java.awt.Color(51, 51, 51));
+        sortPanel.setOpaque(false);
+
+        arrow1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/redArrow2.png"))); // NOI18N
+
+        arrow2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/redArrow2.png"))); // NOI18N
+
+        arrow3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/redArrow2.png"))); // NOI18N
+
+        arrow4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/redArrow2.png"))); // NOI18N
+
+        arrow5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/redArrow2.png"))); // NOI18N
+
+        arrow6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/redArrow2.png"))); // NOI18N
+
+        arrow7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/redArrow2.png"))); // NOI18N
+
+        arrow8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/redArrow2.png"))); // NOI18N
+
+        redArrow.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/redArrow2.png"))); // NOI18N
+
+        blueArrow.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/blueArrow.png"))); // NOI18N
+
+        javax.swing.GroupLayout sortPanelLayout = new javax.swing.GroupLayout(sortPanel);
+        sortPanel.setLayout(sortPanelLayout);
+        sortPanelLayout.setHorizontalGroup(
+            sortPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(sortPanelLayout.createSequentialGroup()
+                .addGap(19, 19, 19)
+                .addComponent(redArrow)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(sortPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(sortPanelLayout.createSequentialGroup()
+                        .addGap(53, 53, 53)
+                        .addComponent(arrow1)
+                        .addGap(168, 168, 168)
+                        .addComponent(arrow2)
+                        .addGap(168, 168, 168)
+                        .addComponent(arrow3)
+                        .addGap(168, 168, 168)
+                        .addComponent(arrow4)
+                        .addGap(168, 168, 168)
+                        .addComponent(arrow5)
+                        .addGap(168, 168, 168)
+                        .addComponent(arrow6)
+                        .addGap(168, 168, 168)
+                        .addComponent(arrow7)
+                        .addGap(168, 168, 168)
+                        .addComponent(arrow8))
+                    .addComponent(blueArrow))
+                .addGap(105, 105, 105))
+        );
+        sortPanelLayout.setVerticalGroup(
+            sortPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(sortPanelLayout.createSequentialGroup()
+                .addGap(185, 185, 185)
+                .addGroup(sortPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(arrow8)
+                    .addComponent(arrow7)
+                    .addComponent(arrow6)
+                    .addComponent(arrow5)
+                    .addComponent(arrow4)
+                    .addComponent(arrow3)
+                    .addComponent(arrow2)
+                    .addComponent(arrow1)))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, sortPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(sortPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(redArrow)
+                    .addComponent(blueArrow))
+                .addContainerGap())
+        );
 
         javax.swing.GroupLayout mainLayout = new javax.swing.GroupLayout(main);
         main.setLayout(mainLayout);
         mainLayout.setHorizontalGroup(
             mainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(mainLayout.createSequentialGroup()
-                .addGap(752, 752, 752)
-                .addComponent(jButton1)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addComponent(positionPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(sortPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         mainLayout.setVerticalGroup(
             mainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(mainLayout.createSequentialGroup()
-                .addGap(49, 49, 49)
-                .addComponent(jButton1)
-                .addGap(201, 201, 201)
-                .addComponent(positionPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(sortPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(positionPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(386, Short.MAX_VALUE))
         );
 
         jMenu2.setText("Edit");
@@ -284,12 +268,6 @@ public class BattleFrame extends javax.swing.JFrame {
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
         System.exit(0);       
     }//GEN-LAST:event_jMenuItem1ActionPerformed
-
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-       UIManager.MovePosition(7,0, 250);
-       UIManager.PositionArrow("Blue", 4);
-    }//GEN-LAST:event_jButton1ActionPerformed
    
     /**
      * @param args the command line arguments
@@ -336,7 +314,6 @@ public class BattleFrame extends javax.swing.JFrame {
     private javax.swing.JLabel arrow7;
     private javax.swing.JLabel arrow8;
     private javax.swing.JLabel blueArrow;
-    private javax.swing.JButton jButton1;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuBar jMenuBar1;
