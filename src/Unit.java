@@ -8,19 +8,21 @@
  * @author saliy5109
  */
 public class Unit {
-    public int speed;
-    public int lastRound;
-    public int orderValue;
-    public boolean hasTurn;
-    public String name = "Dummy"; //Testing variable
-    public Unit(int speed)  //all these constructers are just used for testing, feel free to delete
+    public boolean team; //true if it's your team
+    
+    public int lastRound; //dont change
+    public int orderValue; //the starting position (from index 0)
+    public boolean hasTurn; //dont change
+    
+    public int health;  //health of unit
+    public int defence; //reduces incoming damage by this amount
+    public int speed;   // 10 is the base speed, meaning a unit with 20 speed would be twice as fast (20 speed is a little op)
+    
+    public Unit()
     {
-        this.speed = speed;
+        //Default states (ADD)
     }
-    public Unit(int speed, String name)
-    {
-        this(speed);
-        this.name = name;
-    }
-
+    
+    //Add subclass for each unit, they just need a constructer to set the values
+    //public Ranger extends Unit 
 }

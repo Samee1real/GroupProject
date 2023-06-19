@@ -78,6 +78,11 @@ public class BattleFrame extends javax.swing.JFrame {
         move4 = new javax.swing.JButton();
         move5 = new javax.swing.JButton();
         infoPanel = new javax.swing.JPanel();
+        healthLabel = new javax.swing.JLabel();
+        defenceLabel = new javax.swing.JLabel();
+        speedLabel = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        movesetInfo = new javax.swing.JTextArea();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu2 = new javax.swing.JMenu();
         jMenu1 = new javax.swing.JMenu();
@@ -96,28 +101,22 @@ public class BattleFrame extends javax.swing.JFrame {
 
         positionPanel.setBackground(new java.awt.Color(153, 153, 153));
 
-        position1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/test.png"))); // NOI18N
+        position1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Crusader.png"))); // NOI18N
         position1.setText("position1");
 
-        position3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/test.png"))); // NOI18N
         position3.setText("position1");
 
-        position5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/test.png"))); // NOI18N
         position5.setText("position1");
 
-        position2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/test.png"))); // NOI18N
+        position2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Crusader.png"))); // NOI18N
         position2.setText("position1");
 
-        position4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/test.png"))); // NOI18N
         position4.setText("position1");
 
-        position6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/test.png"))); // NOI18N
         position6.setText("position1");
 
-        position7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/test.png"))); // NOI18N
         position7.setText("position1");
 
-        position8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/test.png"))); // NOI18N
         position8.setText("position1");
 
         javax.swing.GroupLayout positionPanelLayout = new javax.swing.GroupLayout(positionPanel);
@@ -393,15 +392,44 @@ public class BattleFrame extends javax.swing.JFrame {
         infoPanel.setBackground(new java.awt.Color(102, 102, 102));
         infoPanel.setEnabled(false);
 
+        healthLabel.setText("Health:");
+
+        defenceLabel.setText("Defence");
+
+        speedLabel.setText("Speed:");
+
+        movesetInfo.setColumns(20);
+        movesetInfo.setRows(5);
+        movesetInfo.setText("info about move");
+        jScrollPane1.setViewportView(movesetInfo);
+
         javax.swing.GroupLayout infoPanelLayout = new javax.swing.GroupLayout(infoPanel);
         infoPanel.setLayout(infoPanelLayout);
         infoPanelLayout.setHorizontalGroup(
             infoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1067, Short.MAX_VALUE)
+            .addGroup(infoPanelLayout.createSequentialGroup()
+                .addGap(44, 44, 44)
+                .addGroup(infoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 899, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(infoPanelLayout.createSequentialGroup()
+                        .addComponent(healthLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 291, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(50, 50, 50)
+                        .addComponent(defenceLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 291, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(speedLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 291, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(83, Short.MAX_VALUE))
         );
         infoPanelLayout.setVerticalGroup(
             infoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 388, Short.MAX_VALUE)
+            .addGroup(infoPanelLayout.createSequentialGroup()
+                .addGap(25, 25, 25)
+                .addGroup(infoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(healthLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(defenceLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(speedLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(60, 60, 60)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(226, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout mainLayout = new javax.swing.GroupLayout(main);
@@ -566,11 +594,14 @@ public class BattleFrame extends javax.swing.JFrame {
     private javax.swing.JLabel arrow7;
     private javax.swing.JLabel arrow8;
     private javax.swing.JLabel blueArrow;
+    private javax.swing.JLabel defenceLabel;
+    private javax.swing.JLabel healthLabel;
     private javax.swing.JPanel infoPanel;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JPanel main;
     private javax.swing.JButton move1;
     private javax.swing.JButton move2;
@@ -578,6 +609,7 @@ public class BattleFrame extends javax.swing.JFrame {
     private javax.swing.JButton move4;
     private javax.swing.JButton move5;
     private javax.swing.JPanel moveSetPanel;
+    private javax.swing.JTextArea movesetInfo;
     private javax.swing.JLabel position1;
     private javax.swing.JLabel position2;
     private javax.swing.JLabel position3;
@@ -598,5 +630,6 @@ public class BattleFrame extends javax.swing.JFrame {
     private javax.swing.JButton select9;
     private javax.swing.JPanel selectionPanel;
     private javax.swing.JPanel sortPanel;
+    private javax.swing.JLabel speedLabel;
     // End of variables declaration//GEN-END:variables
 }

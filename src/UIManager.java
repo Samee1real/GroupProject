@@ -37,6 +37,10 @@ public class UIManager {
     {
         redArrow = red; blueArrow = blue;
     }
+    public static void InitilizeGUI(JLabel health, JLabel defence, JLabel speed)
+    {
+        healthLabel = health; defenceLabel = defence; speedLabel = speed;
+    }
                                             //Unit Position Visuals\\
     private static javax.swing.JLabel[] positions = new javax.swing.JLabel[battlePlaces];
     
@@ -75,7 +79,16 @@ public class UIManager {
         arrow.setLocation(posArrows[pos][0], posArrows[pos][1]);
     }
   
+                                              //GUI Visuals\\
     
+    private static JLabel healthLabel, defenceLabel, speedLabel;
+    
+    public static void UpdateUnitInfo(Unit unit)
+    {
+        healthLabel.setText("Health: " + unit.health);
+        healthLabel.setText("Defence: " + unit.defence);
+        healthLabel.setText("Speed: " + unit.speed);
+    }
     
                                             //Easing and Tweening\\
                 

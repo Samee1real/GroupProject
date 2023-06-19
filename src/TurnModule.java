@@ -59,11 +59,6 @@ public class TurnModule {
         
         newOrder.get(0).hasTurn = true; //After finalized, allow the first place their turn
         turnOrder = newOrder;// Replacing turnOrder with new
-        
-        for (Unit u : turnOrder) {
-           System.out.print(u.name + "\t");
-        }
-        System.out.println("");
         //Implement AI Module HERE
     }
     public static void NextTurn() 
