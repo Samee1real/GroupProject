@@ -62,6 +62,7 @@ public class BattleFrame extends javax.swing.JFrame {
         arrow8 = new javax.swing.JLabel();
         redArrow = new javax.swing.JLabel();
         blueArrow = new javax.swing.JLabel();
+        sortSlot1 = new javax.swing.JButton();
         selectionPanel = new javax.swing.JPanel();
         select1 = new javax.swing.JButton();
         select2 = new javax.swing.JButton();
@@ -180,6 +181,10 @@ public class BattleFrame extends javax.swing.JFrame {
 
         blueArrow.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/blueArrow.png"))); // NOI18N
 
+        sortSlot1.setBackground(new java.awt.Color(102, 153, 255));
+        sortSlot1.setFont(new java.awt.Font("Eras Medium ITC", 0, 24)); // NOI18N
+        sortSlot1.setText("jButton1");
+
         javax.swing.GroupLayout sortPanelLayout = new javax.swing.GroupLayout(sortPanel);
         sortPanel.setLayout(sortPanelLayout);
         sortPanelLayout.setHorizontalGroup(
@@ -189,6 +194,10 @@ public class BattleFrame extends javax.swing.JFrame {
                 .addComponent(redArrow)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(sortPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(sortPanelLayout.createSequentialGroup()
+                        .addComponent(blueArrow)
+                        .addGap(725, 725, 725)
+                        .addComponent(sortSlot1))
                     .addGroup(sortPanelLayout.createSequentialGroup()
                         .addGap(53, 53, 53)
                         .addComponent(arrow1)
@@ -205,14 +214,15 @@ public class BattleFrame extends javax.swing.JFrame {
                         .addGap(168, 168, 168)
                         .addComponent(arrow7)
                         .addGap(168, 168, 168)
-                        .addComponent(arrow8))
-                    .addComponent(blueArrow))
-                .addGap(105, 105, 105))
+                        .addComponent(arrow8)))
+                .addContainerGap())
         );
         sortPanelLayout.setVerticalGroup(
             sortPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(sortPanelLayout.createSequentialGroup()
-                .addGap(47, 47, 47)
+                .addGap(19, 19, 19)
+                .addComponent(sortSlot1)
+                .addGap(5, 5, 5)
                 .addGroup(sortPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(arrow8)
                     .addComponent(arrow7)
@@ -400,9 +410,12 @@ public class BattleFrame extends javax.swing.JFrame {
         defenceLabel.setForeground(new java.awt.Color(51, 255, 255));
         defenceLabel.setText("Defence:");
 
+        speedLabel.setFont(new java.awt.Font("Monotype Corsiva", 0, 36)); // NOI18N
+        speedLabel.setForeground(new java.awt.Color(102, 255, 102));
         speedLabel.setText("Speed:");
 
         movesetInfo.setColumns(20);
+        movesetInfo.setFont(new java.awt.Font("Lucida Calligraphy", 1, 14)); // NOI18N
         movesetInfo.setRows(5);
         movesetInfo.setText("info about move");
         jScrollPane1.setViewportView(movesetInfo);
@@ -634,6 +647,7 @@ public class BattleFrame extends javax.swing.JFrame {
     private javax.swing.JButton select9;
     private javax.swing.JPanel selectionPanel;
     private javax.swing.JPanel sortPanel;
+    private javax.swing.JButton sortSlot1;
     private javax.swing.JLabel speedLabel;
     // End of variables declaration//GEN-END:variables
 }
