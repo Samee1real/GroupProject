@@ -89,9 +89,7 @@ public class BattleFrame extends javax.swing.JFrame {
         jMenuItem1 = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setMaximumSize(new java.awt.Dimension(1782, 972));
         setMinimumSize(new java.awt.Dimension(1782, 972));
-        setPreferredSize(new java.awt.Dimension(1782, 972));
         setResizable(false);
 
         main.setBackground(new java.awt.Color(60, 63, 64));
