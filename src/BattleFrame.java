@@ -642,8 +642,7 @@ public class BattleFrame extends javax.swing.JFrame {
     private void move1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_move1ActionPerformed
         // TODO add your handling code here:
         UIManager.UpdateHitButtons(MovesetModule.GetMoveHitLocations(OrderModule.GetUnitAtIndex(5), OrderModule.GetUnitAtIndex(0).moveset.get(0)), true);
-        //UIManager.MovePosition(2, 5, 250);
-        UIManager.movePosition(2, 5, 250);
+        UIManager.MovePosition(2, 5, 250);
     }//GEN-LAST:event_move1ActionPerformed
 
     private void move2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_move2ActionPerformed
