@@ -11,6 +11,7 @@ import java.awt.Point;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.Icon;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JTextArea;
@@ -35,15 +36,11 @@ public class UIManager {
     public static void InitilizePosition(JLabel label, JLabel arrow, int pos)
     {
         labelOrder.add(pos, label);
+        labelIdOrder.add(pos, pos);
         positionLocations.add(pos, label.getLocation());
         posArrows[pos][0] = arrow.getLocation().x; posArrows[pos][1] = arrow.getLocation().y;
         arrow.setVisible(true);
     }
-    public static void InitilizeLabelUnit(int pos, Unit unit)
-    {
-        
-    }
-    
     public static void InitilizeMainArrows(javax.swing.JLabel red, javax.swing.JLabel blue)
     {
         redArrow = red; blueArrow = blue;
@@ -67,14 +64,17 @@ public class UIManager {
                                             //Unit Position Visuals\\
     
     public static ArrayList<JLabel> labelOrder = new ArrayList<>(battlePlaces);
+    public static ArrayList<Integer> labelIdOrder = new ArrayList<>(battlePlaces);
     private static ArrayList<Point> positionLocations = new ArrayList<>(battlePlaces);
-    //private static ArrayList<Unit> labelUnit = new ArrayList<Unit>(battlePlaces);
     
     public static void SwapLabelOrderPositions(int a, int b)
     {
         JLabel temp = labelOrder.get(a);
         labelOrder.set(a, labelOrder.get(b));
         labelOrder.set(b, temp);
+        int tempId = labelIdOrder.get(a);
+        labelIdOrder.set(a, labelIdOrder.get(b));
+        labelIdOrder.set(b, tempId);
     }
     public static void MovePosition(int pos, int location, double dur)
     {
@@ -141,15 +141,10 @@ public class UIManager {
         for (int i = 0; i < moveButtons.size(); i++) {
             moveButtons.get(i).setVisible(true);
             if (i < unit.moveset.size()) {
-                moveButtons.get(i).setText(unit.moveset.get(i).name + unit.id);
+               moveButtons.get(i).setText(unit.moveset.get(i).name + unit.id);
             } else 
             {moveButtons.get(i).setVisible(false);}
         }
-        /*for (int i = 0; i < moveButtons.size() && i < unit.moveset.size() ; i++) {
-            
-                moveButtons.get(i).setText(unit.moveset.get(i).name + unit.id);
-
-        }*/
     }
     public static void UpdateMoveInfo(Unit unit, Move move) 
     {
@@ -170,14 +165,11 @@ public class UIManager {
         {
             this.label = label; this.dur = dur;
             goal = point;
-            System.out.println("goal x is " + goal.x + " given has " + point.x);
         }
         public void run()
         {
-            System.out.println("STARTED");
             double time = 0;
             Point start = label.getLocation();
-            System.out.println("start is  " +  start);
             while (time < dur) {
                 //Incrementing/Waiting Time
                 try {
@@ -192,6 +184,7 @@ public class UIManager {
                 int y = start.y + (int)((goal.y-start.y)*easeTime);
                 label.setLocation(x, y);    
             }
+            label.setLocation(goal);
         }
     }
     

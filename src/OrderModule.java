@@ -74,14 +74,35 @@ public class OrderModule {
         /*
         This will set the current sort order according to given order
         And resets the sortstep since we are switching methods
-        */
+         */
+        switch (method) {
+            case "Selection":
+                sortMethod = new SelectionSort();
+                break;
+            case "ReverseSelection":
+                sortMethod = new ReverseSelectionSort();
+                break;
+            case "Insertion":
+                sortMethod = new InsertionSort();
+                break;
+            case "Merge":
+                sortMethod = new MergeSort();
+                break;
+            case "Quick":
+                sortMethod = new QuickSort();
+                break;
+            default:
+                sortMethod = new SelectionSort();
+                break;
+        }
     }
     public static void IterateSort()
     {
         /*
         This will iterate one step in the current sort order and update the visuals
         */
-        
+        sortMethod.Iterate();
+        sortStep++;
     }
     /*
         Empty constructers will be used to store which method is being used
@@ -280,6 +301,7 @@ public class OrderModule {
         */
         int orderVal = placeOrder.size()-1;
         if (placeOrder.get(index) != null) {orderVal = placeOrder.get(index).orderValue;}
+        else {System.out.println("NOT HERE");}
         return orderVal;
     }
     
@@ -290,6 +312,7 @@ public class OrderModule {
         Unit temp = placeOrder.get(a);
         placeOrder.set(a, placeOrder.get(b));
         placeOrder.set(b, temp);
+        UIManager.SwapPosition(a, b, 250);
         UIManager.SwapLabelOrderPositions(a, b);
     }
 }

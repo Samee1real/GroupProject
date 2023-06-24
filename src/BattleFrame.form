@@ -179,7 +179,6 @@
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                   <Image iconType="3" name="/Images/Crusader.png"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="position1"/>
               </Properties>
               <Events>
                 <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="position1MouseEntered"/>
@@ -187,7 +186,9 @@
             </Component>
             <Component class="javax.swing.JLabel" name="position3">
               <Properties>
-                <Property name="text" type="java.lang.String" value="position1"/>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/Images/Crusader.png"/>
+                </Property>
               </Properties>
               <Events>
                 <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="position3MouseEntered"/>
@@ -195,7 +196,9 @@
             </Component>
             <Component class="javax.swing.JLabel" name="position5">
               <Properties>
-                <Property name="text" type="java.lang.String" value="position1"/>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/Images/Crusader.png"/>
+                </Property>
               </Properties>
               <Events>
                 <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="position5MouseEntered"/>
@@ -206,7 +209,6 @@
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                   <Image iconType="3" name="/Images/Crusader.png"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="position1"/>
               </Properties>
               <Events>
                 <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="position2MouseEntered"/>
@@ -214,31 +216,30 @@
             </Component>
             <Component class="javax.swing.JLabel" name="position4">
               <Properties>
-                <Property name="text" type="java.lang.String" value="position1"/>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/Images/Crusader.png"/>
+                </Property>
               </Properties>
               <Events>
                 <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="position4MouseEntered"/>
               </Events>
             </Component>
             <Component class="javax.swing.JLabel" name="position6">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="position1"/>
-              </Properties>
               <Events>
                 <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="position6MouseEntered"/>
               </Events>
             </Component>
             <Component class="javax.swing.JLabel" name="position7">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="position1"/>
-              </Properties>
               <Events>
                 <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="position7MouseEntered"/>
               </Events>
             </Component>
             <Component class="javax.swing.JLabel" name="position8">
               <Properties>
-                <Property name="text" type="java.lang.String" value="position1"/>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/Images/redArrow.png"/>
+                </Property>
+                <Property name="toolTipText" type="java.lang.String" value=""/>
               </Properties>
               <Events>
                 <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="position8MouseEntered"/>

@@ -126,21 +126,20 @@ public class BattleFrame extends javax.swing.JFrame {
         positionPanel.setBackground(new java.awt.Color(153, 153, 153));
 
         position1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Crusader.png"))); // NOI18N
-        position1.setText("position1");
         position1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 position1MouseEntered(evt);
             }
         });
 
-        position3.setText("position1");
+        position3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Crusader.png"))); // NOI18N
         position3.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 position3MouseEntered(evt);
             }
         });
 
-        position5.setText("position1");
+        position5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Crusader.png"))); // NOI18N
         position5.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 position5MouseEntered(evt);
@@ -148,35 +147,33 @@ public class BattleFrame extends javax.swing.JFrame {
         });
 
         position2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Crusader.png"))); // NOI18N
-        position2.setText("position1");
         position2.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 position2MouseEntered(evt);
             }
         });
 
-        position4.setText("position1");
+        position4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Crusader.png"))); // NOI18N
         position4.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 position4MouseEntered(evt);
             }
         });
 
-        position6.setText("position1");
         position6.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 position6MouseEntered(evt);
             }
         });
 
-        position7.setText("position1");
         position7.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 position7MouseEntered(evt);
             }
         });
 
-        position8.setText("position1");
+        position8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/redArrow.png"))); // NOI18N
+        position8.setToolTipText("");
         position8.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 position8MouseEntered(evt);
@@ -641,8 +638,9 @@ public class BattleFrame extends javax.swing.JFrame {
     
     private void move1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_move1ActionPerformed
         // TODO add your handling code here:
-        UIManager.UpdateHitButtons(MovesetModule.GetMoveHitLocations(OrderModule.GetUnitAtIndex(5), OrderModule.GetUnitAtIndex(0).moveset.get(0)), true);
-        UIManager.MovePosition(2, 5, 250);
+        //UIManager.UpdateHitButtons(MovesetModule.GetMoveHitLocations(OrderModule.GetUnitAtIndex(5), OrderModule.GetUnitAtIndex(0).moveset.get(0)), true);
+        //UIManager.MovePosition(2, 5, 250);
+        OrderModule.IterateSort();
     }//GEN-LAST:event_move1ActionPerformed
 
     private void move2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_move2ActionPerformed
@@ -666,7 +664,11 @@ public class BattleFrame extends javax.swing.JFrame {
     private Unit selectedUnit = new Unit();
     
     private void position1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_position1MouseEntered
-        selectedUnit = OrderModule.GetUnitByValue(0);
+        int pos = 0;
+        for (int i = 0; i < UIManager.labelIdOrder.size(); i++) {
+            if (UIManager.labelIdOrder.get(i) == 0) {pos = i;}
+        }
+        selectedUnit = OrderModule.GetUnitAtIndex(pos);
         UIManager.UpdateUnitInfo(selectedUnit);
         UIManager.UpdateMoveButtons(selectedUnit);
     }//GEN-LAST:event_position1MouseEntered
@@ -713,8 +715,6 @@ public class BattleFrame extends javax.swing.JFrame {
         UIManager.UpdateMoveButtons(selectedUnit);
     }//GEN-LAST:event_position8MouseEntered
 
-                                                                                //Move Button Hovered Over, Show Move info\\
-    
     private void moveSetPanelMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_moveSetPanelMouseEntered
         UIManager.UpdateMoveInfo(selectedUnit, selectedUnit.moveset.get(0));
     }//GEN-LAST:event_moveSetPanelMouseEntered
