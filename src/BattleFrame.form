@@ -99,7 +99,7 @@
               <Component id="sortPanel" max="32767" attributes="0"/>
               <Component id="selectionPanel" alignment="0" max="32767" attributes="0"/>
               <Group type="102" alignment="0" attributes="0">
-                  <Component id="moveSetPanel" min="-2" max="-2" attributes="0"/>
+                  <Component id="moveSetPanel" max="32767" attributes="0"/>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Component id="infoPanel" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
@@ -116,7 +116,7 @@
                   <Component id="selectionPanel" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="moveSetPanel" min="-2" max="-2" attributes="0"/>
+                      <Component id="moveSetPanel" max="32767" attributes="0"/>
                       <Component id="infoPanel" min="-2" max="-2" attributes="0"/>
                   </Group>
               </Group>
@@ -540,6 +540,12 @@
               <Color blue="66" green="66" red="66" type="rgb"/>
             </Property>
             <Property name="enabled" type="boolean" value="false"/>
+            <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+              <Dimension value="[702, 467]"/>
+            </Property>
+            <Property name="minimumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+              <Dimension value="[702, 467]"/>
+            </Property>
           </Properties>
 
           <Layout>

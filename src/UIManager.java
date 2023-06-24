@@ -121,11 +121,18 @@ public class UIManager {
     }
     public static void UpdateMoveButtons(Unit unit)
     {
-        System.out.println("move"+moveButtons.size());
-        for (int i = 0; i < moveButtons.size() && i < unit.moveset.size() ; i++) {
-            System.out.println("umm");
-            moveButtons.get(i).setText(unit.moveset.get(i).name + unit.id);
+        for (int i = 0; i < moveButtons.size(); i++) {
+            moveButtons.get(i).setVisible(true);
+            if (i < unit.moveset.size()) {
+                moveButtons.get(i).setText(unit.moveset.get(i).name + unit.id);
+            } else 
+            {moveButtons.get(i).setVisible(false);}
         }
+        /*for (int i = 0; i < moveButtons.size() && i < unit.moveset.size() ; i++) {
+            
+                moveButtons.get(i).setText(unit.moveset.get(i).name + unit.id);
+
+        }*/
     }
     public static void UpdateMoveInfo(Unit unit, Move move) 
     {
