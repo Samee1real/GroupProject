@@ -76,7 +76,7 @@ public class UIManager {
         labelIdOrder.set(a, labelIdOrder.get(b));
         labelIdOrder.set(b, tempId);
     }
-    public static void MovePosition(int pos, int location, double dur)
+    /*public static void MovePosition(int pos, int location, double dur)
     {
         TweenLabelTask swap = new TweenLabelTask(labelOrder.get(pos), positionLocations.get(location), dur);
         swap.start();
@@ -86,15 +86,16 @@ public class UIManager {
             TweenLabelTask task = new TweenLabelTask(labelOrder.get(i), positionLocations.get(i+direction), dur);
             task.start();
         }
-    }
+    }*/
     public static void SwapPosition(int pos1, int pos2, int dur) 
     {
         /*
         
         */
-        TweenLabelTask task1 = new TweenLabelTask(labelOrder.get(pos1), positionLocations.get(pos2), dur);
-        TweenLabelTask task2 = new TweenLabelTask(labelOrder.get(pos2), positionLocations.get(pos1), dur);
+        TweenLabelTask task1 = new TweenLabelTask(labelOrder.get(pos1), positionLocations.get(pos2), dur, labelOrder.get(pos2).getIcon());
+        TweenLabelTask task2 = new TweenLabelTask(labelOrder.get(pos2), positionLocations.get(pos1), dur, labelOrder.get(pos1).getIcon());
         task1.start(); task2.start();
+        
     }
  
     
@@ -160,11 +161,12 @@ public class UIManager {
         private JLabel label;
         private Point goal;
         private double dur; 
+        private Icon icon;
         
-        public TweenLabelTask(javax.swing.JLabel label, Point point, double dur)
+        public TweenLabelTask(javax.swing.JLabel label, Point point, double dur, Icon icon)
         {
             this.label = label; this.dur = dur;
-            goal = point;
+            goal = point; this.icon = icon;
         }
         public void run()
         {
@@ -184,7 +186,8 @@ public class UIManager {
                 int y = start.y + (int)((goal.y-start.y)*easeTime);
                 label.setLocation(x, y);    
             }
-            label.setLocation(goal);
+            label.setIcon(icon);
+            label.setLocation(start);
         }
     }
     
