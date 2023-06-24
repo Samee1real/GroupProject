@@ -7,15 +7,11 @@
  *
  * @author Samee
  */
-import java.awt.Container;
-import java.awt.Font;
 import java.awt.Point;
-import java.time.Duration;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JButton;
-import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JTextArea;
 
@@ -38,7 +34,6 @@ public class UIManager {
     }*/
     public static void InitilizePosition(JLabel label, JLabel arrow, int pos)
     {
-        System.out.println("INITILIZING POS LOCATION: " + label.getLocation());
         labelOrder.add(pos, label);
         positionLocations.add(pos, label.getLocation());
         posArrows[pos][0] = arrow.getLocation().x; posArrows[pos][1] = arrow.getLocation().y;
@@ -75,6 +70,12 @@ public class UIManager {
     private static ArrayList<Point> positionLocations = new ArrayList<>(battlePlaces);
     //private static ArrayList<Unit> labelUnit = new ArrayList<Unit>(battlePlaces);
     
+    public static void SwapLabelOrderPositions(int a, int b)
+    {
+        JLabel temp = labelOrder.get(a);
+        labelOrder.set(a, labelOrder.get(b));
+        labelOrder.set(b, temp);
+    }
     public static void MovePosition(int pos, int location, double dur)
     {
         TweenLabelTask swap = new TweenLabelTask(labelOrder.get(pos), positionLocations.get(location), dur);

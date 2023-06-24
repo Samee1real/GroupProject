@@ -197,6 +197,7 @@ public class OrderModule {
                         Therefore left will need to be incremented, which is done through the loop,
                         */
                         placeOrder.add(l,placeOrder.remove(r));
+                        UIManager.labelOrder.add(1, UIManager.labelOrder.remove(r)); //Updating Label Positions as well
                         lb++; //Moving the right item will cause the left side to increase by one | therefore increase left bound by one | no need for right side
                         r++; //The next right index should be the item after current right | therefore increment the right side
                     }
@@ -289,5 +290,6 @@ public class OrderModule {
         Unit temp = placeOrder.get(a);
         placeOrder.set(a, placeOrder.get(b));
         placeOrder.set(b, temp);
+        UIManager.SwapLabelOrderPositions(a, b);
     }
 }
