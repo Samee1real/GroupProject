@@ -134,14 +134,14 @@ public class BattleFrame extends javax.swing.JFrame {
 
         positionPanel.setBackground(new java.awt.Color(153, 153, 153));
 
-        position1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Crusader.png"))); // NOI18N
+        position1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Leader.png"))); // NOI18N
         position1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 position1MouseEntered(evt);
             }
         });
 
-        position3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Crusader.png"))); // NOI18N
+        position3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Ranger.png"))); // NOI18N
         position3.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 position3MouseEntered(evt);
@@ -155,7 +155,7 @@ public class BattleFrame extends javax.swing.JFrame {
             }
         });
 
-        position2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Crusader.png"))); // NOI18N
+        position2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Healer.png"))); // NOI18N
         position2.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 position2MouseEntered(evt);
@@ -169,14 +169,14 @@ public class BattleFrame extends javax.swing.JFrame {
             }
         });
 
-        position6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Crusader.png"))); // NOI18N
+        position6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Dagger.png"))); // NOI18N
         position6.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 position6MouseEntered(evt);
             }
         });
 
-        position7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Crusader.png"))); // NOI18N
+        position7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Shooter.png"))); // NOI18N
         position7.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 position7MouseEntered(evt);
@@ -196,8 +196,8 @@ public class BattleFrame extends javax.swing.JFrame {
         positionPanelLayout.setHorizontalGroup(
             positionPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(positionPanelLayout.createSequentialGroup()
-                .addGap(61, 61, 61)
-                .addComponent(position1, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(64, 64, 64)
+                .addComponent(position1)
                 .addGap(60, 60, 60)
                 .addComponent(position2, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(60, 60, 60)
@@ -212,7 +212,7 @@ public class BattleFrame extends javax.swing.JFrame {
                 .addComponent(position7, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(60, 60, 60)
                 .addComponent(position8, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(61, Short.MAX_VALUE))
         );
         positionPanelLayout.setVerticalGroup(
             positionPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
