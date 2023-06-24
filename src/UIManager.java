@@ -39,7 +39,7 @@ public class UIManager {
         labelIdOrder.add(pos, pos);
         positionLocations.add(pos, label.getLocation());
         posArrows[pos][0] = arrow.getLocation().x; posArrows[pos][1] = arrow.getLocation().y;
-        arrow.setVisible(true);
+        arrow.setVisible(false);
     }
     public static void InitilizeMainArrows(javax.swing.JLabel red, javax.swing.JLabel blue)
     {
@@ -106,9 +106,15 @@ public class UIManager {
     
     public static void PositionArrow(String color, int pos)
     {
-        javax.swing.JLabel arrow = redArrow;
+        JLabel arrow = redArrow;
         if (color.equals("Blue")) {arrow = blueArrow;}
         arrow.setLocation(posArrows[pos][0], posArrows[pos][1]);
+    }
+    public static void ToggleArrow(String color, boolean visible)
+    {
+        JLabel arrow = redArrow;
+        if (color.equals("Blue")) {arrow = blueArrow;}
+        arrow.setVisible(visible);
     }
   
                                               //GUI Visuals\\

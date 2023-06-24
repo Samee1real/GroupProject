@@ -1,5 +1,7 @@
 
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
@@ -67,7 +69,7 @@ public class OrderModule {
                                  //Sorting Methods\\
     
     private static int sortStep = 0;//Used keep track of their sorting steps from turn to turn
-    private static SelectionSort sortMethod = new SelectionSort();  //Keeps track of which sorting method is being used
+    private static String sortMethod = "Selection";  //Keeps track of which sorting method is being used
     public static void SetSortMethod(String method)
     {
 
@@ -75,41 +77,42 @@ public class OrderModule {
         This will set the current sort order according to given order
         And resets the sortstep since we are switching methods
          */
-        switch (method) {
-            case "Selection":
-                sortMethod = new SelectionSort();
-                break;
-            case "ReverseSelection":
-                sortMethod = new ReverseSelectionSort();
-                break;
-            case "Insertion":
-                sortMethod = new InsertionSort();
-                break;
-            case "Merge":
-                sortMethod = new MergeSort();
-                break;
-            case "Quick":
-                sortMethod = new QuickSort();
-                break;
-            default:
-                sortMethod = new SelectionSort();
-                break;
-        }
+        sortMethod = method;
     }
     public static void IterateSort()
     {
         /*
         This will iterate one step in the current sort order and update the visuals
         */
-        sortMethod.Iterate();
-        sortStep++;
+        SelectionSort method;
+        switch (sortMethod) {
+            case "Selection":
+                method = new SelectionSort();
+                break;
+            /*case "ReverseSelection":
+                method = new ReverseSelectionSort();
+                break;*/
+            case "Insertion":
+                method = new InsertionSort();
+                break;
+            case "Merge":
+                method = new MergeSort();
+                break;
+            case "Quick":
+                method = new QuickSort();
+                break;
+            default:
+                method = new SelectionSort();
+                break;
+        }
+        method.start();
     }
     /*
         Empty constructers will be used to store which method is being used
         When iterate method is called, it should overide according to correct method
         The step variable is used by all sorts to keep track of their step
     */
-    private static class SelectionSort {
+    private static class SelectionSort extends Thread {
         /*
             This will be the default that other sorts will extend off
             The basic sorting method would start from the left and go to the right. 
@@ -117,7 +120,7 @@ public class OrderModule {
             Easiest to understand and slowest method
         */
         public SelectionSort() {}
-        public void Iterate() 
+        public void run() 
         {
             /*
             Everything before starting index(sortStep) is already sorted
@@ -128,18 +131,37 @@ public class OrderModule {
             */
             if (sortStep < placeOrder.size()) {
                 int max = sortStep;
+                UIManager.ToggleArrow("Red", true);
+                UIManager.ToggleArrow("Blue", true);
                 for (int current = sortStep+1; current < placeOrder.size(); current++) {   //Skips index 0
-                  int curVal = GetOrderValueOfIndex(current); //Getting Unit's Order Value
-                  int maxVal = GetOrderValueOfIndex(max);
-                  //If current < minimum then set current will be minimum for now
-                  if (curVal > maxVal)  {
-                      max = current;
-                  }
+                    int curVal = GetOrderValueOfIndex(current); //Getting Unit's Order Value
+                    int maxVal = GetOrderValueOfIndex(max);
+                    //If current < minimum then set current will be minimum for now
+                    UIManager.PositionArrow("Blue", current);
+                    UIManager.PositionArrow("Red", max);
+                    try {
+                        Thread.sleep(300);
+                    } catch (InterruptedException ex) {
+                        Logger.getLogger(OrderModule.class.getName()).log(Level.SEVERE, null, ex);
+                    }
+                    if (curVal > maxVal)  {
+                        max = current;
+                        //UIManager.ToggleArrow("Red", false);
+                    }      
+                    UIManager.PositionArrow("Red", max);
+                    try {
+                        Thread.sleep(150);
+                    } catch (InterruptedException ex) {
+                        Logger.getLogger(OrderModule.class.getName()).log(Level.SEVERE, null, ex);
+                    }
                 }
                 if (sortStep != max) {
                     SwapUnitPositions(sortStep, max);//Swapping 
                 }
+                UIManager.ToggleArrow("Red", false);
+                UIManager.ToggleArrow("Blue", false);
             }
+            sortStep++;
         }
     }
     private static class ReverseSelectionSort extends SelectionSort{
@@ -148,7 +170,7 @@ public class OrderModule {
         This doeesn't change the end result, it will still be min -> max
       */
       public ReverseSelectionSort(){}
-      @Override public void Iterate() {
+      @Override public void run() {
         /*
           Everything after starting index(sortStep) is already sorted
           The last index iterated won't be need to go through (index size-1)
@@ -163,6 +185,11 @@ public class OrderModule {
                 if (curVal < minVal)  {
                     min = current;
                 }
+                try {
+                    Thread.sleep(500);
+                } catch (InterruptedException ex) {
+                    Logger.getLogger(OrderModule.class.getName()).log(Level.SEVERE, null, ex);
+                }
             }
             if (sortStep != min) {
                 SwapUnitPositions(sortStep, min);//Swapping 
@@ -175,7 +202,7 @@ public class OrderModule {
         Units on the right would stay there much longer than units on the left.
         */
         public InsertionSort() {}
-        @Override public void Iterate()
+        @Override public void run()
         {
             /*
               For each iterate, traverse backwards to find item > starting item 
@@ -185,11 +212,24 @@ public class OrderModule {
             */
             if (sortStep+1 < placeOrder.size()) {
                 for (int i = sortStep+1; i > 0; i--) { //Ignore first index (0)
+                    UIManager.PositionArrow("Blue", i);
+                    try {
+                        Thread.sleep(300);
+                    } catch (InterruptedException ex) {
+                        Logger.getLogger(OrderModule.class.getName()).log(Level.SEVERE, null, ex);
+                    }
                     if (GetOrderValueOfIndex(i) > GetOrderValueOfIndex(i-1)) {
+                        UIManager.PositionArrow("Red", i);
                         SwapUnitPositions(i, i-1);//Swap
+                    }
+                    try {
+                        Thread.sleep(700);
+                    } catch (InterruptedException ex) {
+                        Logger.getLogger(OrderModule.class.getName()).log(Level.SEVERE, null, ex);
                     }
                 }
             }
+            sortStep++;
         }
     }
     private static class MergeSort extends SelectionSort {
@@ -198,7 +238,7 @@ public class OrderModule {
         But with time the changes wil exponentially.
         */
         public MergeSort() {}
-        @Override public void Iterate() 
+        @Override public void run() 
         {
             /*
             This method works for any step expect 0 and below (I removed if statement, sortSort will never reach below 1, add if statement back if needed)
@@ -230,6 +270,11 @@ public class OrderModule {
                     Current right < left, meaning current left > any right, therefore positions of current left is confirmed
                     Move on to the next left item, which is done through loop
                     */
+                    try {
+                        Thread.sleep(500);
+                    } catch (InterruptedException ex) {
+                        Logger.getLogger(OrderModule.class.getName()).log(Level.SEVERE, null, ex);
+                    }
                 }
             }
         }
@@ -259,7 +304,7 @@ public class OrderModule {
         {
             addParseInfo(parseGroups, 0, placeOrder.size()-1);  //Adds placeOrder
         }
-        @Override public void Iterate() 
+        @Override public void run() 
         {  
             ArrayList<ArrayList<Integer>> newGroups = new ArrayList<>();
             
@@ -272,6 +317,11 @@ public class OrderModule {
                         if (GetOrderValueOfIndex(i) > pivotValue) {
                             SwapUnitPositions(i, left);
                             left++;
+                        }
+                        try {
+                            Thread.sleep(500);
+                        } catch (InterruptedException ex) {
+                            Logger.getLogger(OrderModule.class.getName()).log(Level.SEVERE, null, ex);
                         }
                     }
                     SwapUnitPositions(pivot, left);
