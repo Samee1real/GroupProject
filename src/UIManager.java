@@ -9,6 +9,7 @@
  */
 import java.awt.Container;
 import java.awt.Font;
+import java.awt.Point;
 import java.time.Duration;
 import java.util.ArrayList;
 import java.util.logging.Level;
@@ -20,7 +21,7 @@ import javax.swing.JTextArea;
 
 public class UIManager {
                                                 //Settings\\
-    private static int battlePlaces = 8;
+    private static final int battlePlaces = 8;
     private static final double easingThreadSpeed = 5;
     
                                              //Initalization\\
@@ -28,13 +29,26 @@ public class UIManager {
     
     
     
-    public static void InitilizePosition(javax.swing.JLabel unit, javax.swing.JLabel arrow, int pos) 
+    /*public static void InitilizePosition(javax.swing.JLabel unit, javax.swing.JLabel arrow, int pos) 
     {
         positions[pos] = unit; 
         posArrows[pos][0] = arrow.getLocation().x; posArrows[pos][1] = arrow.getLocation().y;
         System.out.println(posArrows[pos][0] + " " + posArrows[pos][1]);
         arrow.setVisible(true);
+    }*/
+    public static void InitilizePosition(JLabel label, JLabel arrow, int pos)
+    {
+        System.out.println("INITILIZING POS LOCATION: " + label.getLocation());
+        labelOrder.add(pos, label);
+        positionLocations.add(pos, label.getLocation());
+        posArrows[pos][0] = arrow.getLocation().x; posArrows[pos][1] = arrow.getLocation().y;
+        arrow.setVisible(true);
     }
+    public static void InitilizeLabelUnit(int pos, Unit unit)
+    {
+        
+    }
+    
     public static void InitilizeMainArrows(javax.swing.JLabel red, javax.swing.JLabel blue)
     {
         redArrow = red; blueArrow = blue;
@@ -56,9 +70,60 @@ public class UIManager {
         moveInfo = area;
     }
                                             //Unit Position Visuals\\
-    private static javax.swing.JLabel[] positions = new javax.swing.JLabel[battlePlaces];
     
-    public static void MovePosition(int pos, int location, double dur)
+    public static ArrayList<JLabel> labelOrder = new ArrayList<>(battlePlaces);
+    private static ArrayList<Point> positionLocations = new ArrayList<>(battlePlaces);
+    //private static ArrayList<Unit> labelUnit = new ArrayList<Unit>(battlePlaces);
+    
+    public static void movePosition(int pos, int location, double dur)
+    {
+        TweenLabelTask swap = new TweenLabelTask(labelOrder.get(pos), positionLocations.get(location), dur);
+        swap.start();
+        int direction = 1;
+        if (pos-location < 0) {direction = -1;}
+        for (int i = location; i != pos; i += direction) {
+            TweenLabelTask task = new TweenLabelTask(labelOrder.get(i), positionLocations.get(i+direction), dur);
+            task.start();
+        }
+    }
+    
+    public static class TweenLabelTask extends Thread
+    {
+        private JLabel label;
+        private Point goal;
+        private double dur; 
+        
+        public TweenLabelTask(javax.swing.JLabel label, Point point, double dur)
+        {
+            this.label = label; this.dur = dur;
+            goal = point;
+            System.out.println("goal x is " + goal.x + " given has " + point.x);
+        }
+        public void run()
+        {
+            System.out.println("STARTED");
+            double time = 0;
+            Point start = label.getLocation();
+            System.out.println("start is  " +  start);
+            while (time < dur) {
+                //Incrementing/Waiting Time
+                try {
+                    Thread.sleep((long)easingThreadSpeed);    //Waiting thread time
+                    time += easingThreadSpeed;  //This will increase time to update it
+                } catch (InterruptedException ex) {
+                    Logger.getLogger(UIManager.class.getName()).log(Level.SEVERE, null, ex);
+                }
+                //Updating location
+                double easeTime = easeStyles("Quad", time/dur);
+                int x = start.x + (int)((goal.x-start.x)*easeTime);
+                int y = start.y + (int)((goal.y-start.y)*easeTime);
+                label.setLocation(x, y);    
+            }
+        }
+    }
+    
+    
+    /*public static void MovePosition(int pos, int location, double dur)
     {
         tweenLabelTask taskPlace = new tweenLabelTask(positions[pos], positions[location].getLocation().x, positions[location].getLocation().y, dur);
         taskPlace.start();
@@ -69,17 +134,17 @@ public class UIManager {
             tweenLabelTask task = new tweenLabelTask(positions[i], positions[i+direction].getLocation().x, positions[i+direction].getLocation().y, dur);
             task.start();
         }
-    }
+    }*/
     
-    public static void SwapPosition(int pos1, int pos2, int dur) 
+    /*public static void SwapPosition(int pos1, int pos2, int dur) 
     {
         /*
         
         */
-        tweenLabelTask task1 = new tweenLabelTask(positions[pos1], positions[pos2].getLocation().x, positions[pos2].getLocation().y, dur);
+        /*tweenLabelTask task1 = new tweenLabelTask(positions[pos1], positions[pos2].getLocation().x, positions[pos2].getLocation().y, dur);
         tweenLabelTask task2 = new tweenLabelTask(positions[pos2], positions[pos1].getLocation().x, positions[pos1].getLocation().y, dur);
         task1.start(); task2.start();
-    }
+    }*/
     
                                               //Sorting Visuals\\
     private static int[][] posArrows = new int[battlePlaces][2];
@@ -143,7 +208,7 @@ public class UIManager {
     }
                                             //Easing and Tweening\\
                 
-    public static class tweenLabelTask extends Thread
+    /*public static class tweenLabelTask extends Thread
     {
         private javax.swing.JLabel label;
         int goalX; int goalY;  
@@ -174,7 +239,7 @@ public class UIManager {
                 label.setLocation(x, y);    
             }
         }
-    }
+    }*/
     
     private static double easeStyles(String style, double x) 
     {
