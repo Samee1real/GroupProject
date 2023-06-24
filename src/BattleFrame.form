@@ -225,11 +225,21 @@
               </Events>
             </Component>
             <Component class="javax.swing.JLabel" name="position6">
+              <Properties>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/Images/Crusader.png"/>
+                </Property>
+              </Properties>
               <Events>
                 <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="position6MouseEntered"/>
               </Events>
             </Component>
             <Component class="javax.swing.JLabel" name="position7">
+              <Properties>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/Images/Crusader.png"/>
+                </Property>
+              </Properties>
               <Events>
                 <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="position7MouseEntered"/>
               </Events>
@@ -237,7 +247,7 @@
             <Component class="javax.swing.JLabel" name="position8">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/Images/redArrow.png"/>
+                  <Image iconType="3" name="/Images/Crusader.png"/>
                 </Property>
                 <Property name="toolTipText" type="java.lang.String" value=""/>
               </Properties>

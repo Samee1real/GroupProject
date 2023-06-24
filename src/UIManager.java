@@ -76,17 +76,17 @@ public class UIManager {
         labelIdOrder.set(a, labelIdOrder.get(b));
         labelIdOrder.set(b, tempId);
     }
-    /*public static void MovePosition(int pos, int location, double dur)
+    public static void MovePosition(int pos, int location, double dur)
     {
-        TweenLabelTask swap = new TweenLabelTask(labelOrder.get(pos), positionLocations.get(location), dur);
+        TweenLabelTask swap = new TweenLabelTask(labelOrder.get(pos), positionLocations.get(location), dur, labelOrder.get(location).getIcon());
         swap.start();
         int direction = 1;
         if (pos-location < 0) {direction = -1;}
         for (int i = location; i != pos; i += direction) {
-            TweenLabelTask task = new TweenLabelTask(labelOrder.get(i), positionLocations.get(i+direction), dur);
+            TweenLabelTask task = new TweenLabelTask(labelOrder.get(i), positionLocations.get(i+direction), dur, labelOrder.get(i+direction).getIcon());
             task.start();
         }
-    }*/
+    }
     public static void SwapPosition(int pos1, int pos2, int dur) 
     {
         /*

@@ -136,7 +136,9 @@ public class OrderModule {
                       max = current;
                   }
                 }
-                SwapUnitPositions(sortStep, max);//Swapping 
+                if (sortStep != max) {
+                    SwapUnitPositions(sortStep, max);//Swapping 
+                }
             }
         }
     }
@@ -162,8 +164,9 @@ public class OrderModule {
                     min = current;
                 }
             }
-            SwapUnitPositions(placeOrder.size()-1-sortStep, min);//Swap
-            
+            if (sortStep != min) {
+                SwapUnitPositions(sortStep, min);//Swapping 
+            }
         }
       }
     }
@@ -218,6 +221,7 @@ public class OrderModule {
                         Therefore left will need to be incremented, which is done through the loop,
                         */
                         placeOrder.add(l,placeOrder.remove(r));
+                        UIManager.MovePosition(r, 1, 250);
                         UIManager.labelOrder.add(1, UIManager.labelOrder.remove(r)); //Updating Label Positions as well
                         lb++; //Moving the right item will cause the left side to increase by one | therefore increase left bound by one | no need for right side
                         r++; //The next right index should be the item after current right | therefore increment the right side
@@ -276,7 +280,6 @@ public class OrderModule {
                     addParseInfo(newGroups, left+1, parseInfo.get(1));
                 }
             }
-            
             parseGroups = newGroups; //Apply new groups
         }
     }
@@ -309,10 +312,12 @@ public class OrderModule {
         /*
         This will swap the Units of the given indexs in Placement Order
         */
-        Unit temp = placeOrder.get(a);
-        placeOrder.set(a, placeOrder.get(b));
-        placeOrder.set(b, temp);
-        UIManager.SwapPosition(a, b, 250);
-        UIManager.SwapLabelOrderPositions(a, b);
+        if (a != b) {
+            Unit temp = placeOrder.get(a);
+            placeOrder.set(a, placeOrder.get(b));
+            placeOrder.set(b, temp);
+            UIManager.SwapPosition(a, b, 250);
+            UIManager.SwapLabelOrderPositions(a, b);
+        }
     }
 }
