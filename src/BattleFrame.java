@@ -148,7 +148,7 @@ public class BattleFrame extends javax.swing.JFrame {
             }
         });
 
-        position5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Crusader.png"))); // NOI18N
+        position5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Dagger.png"))); // NOI18N
         position5.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 position5MouseEntered(evt);
@@ -169,7 +169,7 @@ public class BattleFrame extends javax.swing.JFrame {
             }
         });
 
-        position6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Dagger.png"))); // NOI18N
+        position6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/SkeletonMelee.png"))); // NOI18N
         position6.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 position6MouseEntered(evt);
@@ -183,7 +183,7 @@ public class BattleFrame extends javax.swing.JFrame {
             }
         });
 
-        position8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Crusader.png"))); // NOI18N
+        position8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Dagger2.png"))); // NOI18N
         position8.setToolTipText("");
         position8.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {

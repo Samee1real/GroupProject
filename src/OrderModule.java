@@ -213,6 +213,7 @@ public class OrderModule {
             if (sortStep+1 < placeOrder.size()) {
                 for (int i = sortStep+1; i > 0; i--) { //Ignore first index (0)
                     UIManager.PositionArrow("Blue", i);
+                    UIManager.PositionArrow("Red", i-1);
                     try {
                         Thread.sleep(300);
                     } catch (InterruptedException ex) {

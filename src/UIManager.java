@@ -69,12 +69,12 @@ public class UIManager {
     
     public static void SwapLabelOrderPositions(int a, int b)
     {
-        JLabel temp = labelOrder.get(a);
+       /* JLabel temp = labelOrder.get(a);
         labelOrder.set(a, labelOrder.get(b));
         labelOrder.set(b, temp);
         int tempId = labelIdOrder.get(a);
         labelIdOrder.set(a, labelIdOrder.get(b));
-        labelIdOrder.set(b, tempId);
+        labelIdOrder.set(b, tempId);*/
     }
     public static void MovePosition(int pos, int location, double dur)
     {
@@ -97,7 +97,6 @@ public class UIManager {
         task1.start(); task2.start();
         
     }
- 
     
                                               //Sorting Visuals\\
     private static int[][] posArrows = new int[battlePlaces][2];
@@ -143,6 +142,7 @@ public class UIManager {
             hitButtons.get(i).setVisible(show);
         }
     }
+
     public static void UpdateMoveButtons(Unit unit)
     {
         for (int i = 0; i < moveButtons.size(); i++) {
@@ -153,6 +153,7 @@ public class UIManager {
             {moveButtons.get(i).setVisible(false);}
         }
     }
+ 
     public static void UpdateMoveInfo(Unit unit, Move move) 
     {
         if (MovesetModule.IsMoveAv1ailable(unit, move)) 
@@ -178,6 +179,7 @@ public class UIManager {
         {
             double time = 0;
             Point start = label.getLocation();
+            label.setLocation(start);
             while (time < dur) {
                 //Incrementing/Waiting Time
                 try {
@@ -192,8 +194,8 @@ public class UIManager {
                 int y = start.y + (int)((goal.y-start.y)*easeTime);
                 label.setLocation(x, y);    
             }
-            label.setIcon(icon);
             label.setLocation(start);
+            label.setIcon(icon);
         }
     }
     
