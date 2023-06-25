@@ -104,6 +104,22 @@ public class BattleFrame extends javax.swing.JFrame {
         select6 = new javax.swing.JButton();
         select7 = new javax.swing.JButton();
         select8 = new javax.swing.JButton();
+        turnStar1 = new javax.swing.JLabel();
+        turnStar2 = new javax.swing.JLabel();
+        turnStar3 = new javax.swing.JLabel();
+        turnStar4 = new javax.swing.JLabel();
+        turnStar5 = new javax.swing.JLabel();
+        turnStar6 = new javax.swing.JLabel();
+        turnStar7 = new javax.swing.JLabel();
+        turnStar8 = new javax.swing.JLabel();
+        rangeBar1 = new javax.swing.JLabel();
+        rangeBar2 = new javax.swing.JLabel();
+        rangeBar3 = new javax.swing.JLabel();
+        rangeBar4 = new javax.swing.JLabel();
+        rangeBar5 = new javax.swing.JLabel();
+        rangeBar6 = new javax.swing.JLabel();
+        rangeBar7 = new javax.swing.JLabel();
+        rangeBar8 = new javax.swing.JLabel();
         moveSetPanel = new javax.swing.JPanel();
         move1 = new javax.swing.JButton();
         move2 = new javax.swing.JButton();
@@ -373,28 +389,97 @@ public class BattleFrame extends javax.swing.JFrame {
             }
         });
 
+        turnStar1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/turnStar.png"))); // NOI18N
+
+        turnStar2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/turnStar.png"))); // NOI18N
+
+        turnStar3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/turnStar.png"))); // NOI18N
+
+        turnStar4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/turnStar.png"))); // NOI18N
+
+        turnStar5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/turnStar.png"))); // NOI18N
+
+        turnStar6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/turnStar.png"))); // NOI18N
+
+        turnStar7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/turnStar.png"))); // NOI18N
+
+        turnStar8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/turnStar.png"))); // NOI18N
+
+        rangeBar1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/rangeBar.png"))); // NOI18N
+
+        rangeBar2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/rangeBar.png"))); // NOI18N
+
+        rangeBar3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/rangeBar.png"))); // NOI18N
+
+        rangeBar4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/rangeBar.png"))); // NOI18N
+
+        rangeBar5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/rangeBar.png"))); // NOI18N
+
+        rangeBar6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/rangeBar.png"))); // NOI18N
+
+        rangeBar7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/rangeBar.png"))); // NOI18N
+
+        rangeBar8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/rangeBar.png"))); // NOI18N
+
         javax.swing.GroupLayout selectionPanelLayout = new javax.swing.GroupLayout(selectionPanel);
         selectionPanel.setLayout(selectionPanelLayout);
         selectionPanelLayout.setHorizontalGroup(
             selectionPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(selectionPanelLayout.createSequentialGroup()
-                .addGap(75, 75, 75)
-                .addComponent(select1)
-                .addGap(93, 93, 93)
-                .addComponent(select2)
-                .addGap(93, 93, 93)
-                .addComponent(select3)
-                .addGap(93, 93, 93)
-                .addComponent(select4)
-                .addGap(93, 93, 93)
-                .addComponent(select5)
-                .addGap(93, 93, 93)
-                .addComponent(select6)
-                .addGap(93, 93, 93)
-                .addComponent(select7)
-                .addGap(93, 93, 93)
-                .addComponent(select8)
+                .addGroup(selectionPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(selectionPanelLayout.createSequentialGroup()
+                        .addGap(120, 120, 120)
+                        .addComponent(turnStar1)
+                        .addGap(178, 178, 178)
+                        .addComponent(turnStar2)
+                        .addGap(178, 178, 178)
+                        .addComponent(turnStar3)
+                        .addGap(178, 178, 178)
+                        .addComponent(turnStar4)
+                        .addGap(178, 178, 178)
+                        .addComponent(turnStar5)
+                        .addGap(178, 178, 178)
+                        .addComponent(turnStar6)
+                        .addGap(178, 178, 178)
+                        .addComponent(turnStar7)
+                        .addGap(178, 178, 178)
+                        .addComponent(turnStar8))
+                    .addGroup(selectionPanelLayout.createSequentialGroup()
+                        .addGap(75, 75, 75)
+                        .addComponent(select1)
+                        .addGap(93, 93, 93)
+                        .addComponent(select2)
+                        .addGap(96, 96, 96)
+                        .addComponent(select3)
+                        .addGap(93, 93, 93)
+                        .addComponent(select4)
+                        .addGap(93, 93, 93)
+                        .addComponent(select5)
+                        .addGap(93, 93, 93)
+                        .addComponent(select6)
+                        .addGap(93, 93, 93)
+                        .addComponent(select7)
+                        .addGap(93, 93, 93)
+                        .addComponent(select8)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(selectionPanelLayout.createSequentialGroup()
+                .addGap(82, 82, 82)
+                .addComponent(rangeBar1)
+                .addGap(101, 101, 101)
+                .addComponent(rangeBar2)
+                .addGap(101, 101, 101)
+                .addComponent(rangeBar3)
+                .addGap(101, 101, 101)
+                .addComponent(rangeBar4)
+                .addGap(101, 101, 101)
+                .addComponent(rangeBar5)
+                .addGap(101, 101, 101)
+                .addComponent(rangeBar6)
+                .addGap(101, 101, 101)
+                .addComponent(rangeBar7)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 99, Short.MAX_VALUE)
+                .addComponent(rangeBar8)
+                .addGap(83, 83, 83))
         );
         selectionPanelLayout.setVerticalGroup(
             selectionPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -408,7 +493,27 @@ public class BattleFrame extends javax.swing.JFrame {
                     .addComponent(select6)
                     .addComponent(select7)
                     .addComponent(select8))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addGroup(selectionPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(turnStar1)
+                    .addComponent(turnStar2)
+                    .addComponent(turnStar3)
+                    .addComponent(turnStar4)
+                    .addComponent(turnStar5)
+                    .addComponent(turnStar6)
+                    .addComponent(turnStar7)
+                    .addComponent(turnStar8))
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addGroup(selectionPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(rangeBar1)
+                    .addComponent(rangeBar2)
+                    .addComponent(rangeBar3)
+                    .addComponent(rangeBar4)
+                    .addComponent(rangeBar5)
+                    .addComponent(rangeBar6)
+                    .addComponent(rangeBar7)
+                    .addComponent(rangeBar8))
+                .addContainerGap(20, Short.MAX_VALUE))
         );
 
         moveSetPanel.setBackground(new java.awt.Color(102, 102, 102));
@@ -506,7 +611,6 @@ public class BattleFrame extends javax.swing.JFrame {
 
         healthLabel.setFont(new java.awt.Font("Monotype Corsiva", 0, 36)); // NOI18N
         healthLabel.setForeground(new java.awt.Color(255, 153, 153));
-        healthLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/starTest.png"))); // NOI18N
         healthLabel.setText("Health:");
 
         defenceLabel.setFont(new java.awt.Font("Monotype Corsiva", 0, 36)); // NOI18N
@@ -818,6 +922,14 @@ public class BattleFrame extends javax.swing.JFrame {
     private javax.swing.JLabel position7;
     private javax.swing.JLabel position8;
     private javax.swing.JPanel positionPanel;
+    private javax.swing.JLabel rangeBar1;
+    private javax.swing.JLabel rangeBar2;
+    private javax.swing.JLabel rangeBar3;
+    private javax.swing.JLabel rangeBar4;
+    private javax.swing.JLabel rangeBar5;
+    private javax.swing.JLabel rangeBar6;
+    private javax.swing.JLabel rangeBar7;
+    private javax.swing.JLabel rangeBar8;
     private javax.swing.JLabel redArrow;
     private javax.swing.JButton select1;
     private javax.swing.JButton select2;
@@ -831,5 +943,13 @@ public class BattleFrame extends javax.swing.JFrame {
     private javax.swing.JPanel sortPanel;
     private javax.swing.JButton sortSlot1;
     private javax.swing.JLabel speedLabel;
+    private javax.swing.JLabel turnStar1;
+    private javax.swing.JLabel turnStar2;
+    private javax.swing.JLabel turnStar3;
+    private javax.swing.JLabel turnStar4;
+    private javax.swing.JLabel turnStar5;
+    private javax.swing.JLabel turnStar6;
+    private javax.swing.JLabel turnStar7;
+    private javax.swing.JLabel turnStar8;
     // End of variables declaration//GEN-END:variables
 }

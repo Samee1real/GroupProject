@@ -52,10 +52,12 @@ public class UIManager {
     public static void InitilizeHitButton(JButton button, int pos)
     {
         hitButtons.add(pos, button);
+        button.setVisible(false);
     }
     public static void InitilizeMoveButton(JButton button) 
     {
         moveButtons.add(button);
+        button.setVisible(false);
     }
     public static void InitilizeMoveInfo(JTextArea area) 
     {
