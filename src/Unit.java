@@ -93,12 +93,12 @@ public class Unit {
     private void Leader()
     {
         name = "Leader";
-        health = 20; defence = 2; speed = 10;
+        health = 20; defence = 2; speed = 11;
     }
     private void Priest()
     {
         name = "Priest";
-        health = 25; defence = 1; speed = 8;
+        health = 25; defence = 1; speed = 10;
     }
     private void Ranger()
     {
@@ -108,7 +108,7 @@ public class Unit {
     private void Crusader()
     {
         name = "Crusader";
-        health = 30; defence = 5; speed = 7;
+        health = 30; defence = 5; speed = 8;
     }
     private void Dagger()
     {
@@ -118,7 +118,7 @@ public class Unit {
     private void Skeleton()
     {
         name = "Skeleton";
-        health = 20; defence = 1; speed = 13;
+        health = 20; defence = 1; speed = 11;
     }
      private void Musket()
     {

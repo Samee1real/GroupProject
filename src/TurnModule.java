@@ -73,6 +73,7 @@ public class TurnModule {
         }
         
         newOrder.get(0).hasTurn = true; //After finalized, allow the first place their turn
+        System.out.println(newOrder.get(0).name + " hturn");
         turnOrder = newOrder;// Replacing turnOrder with new
         UIManager.UpdateTurnStars(OrderModule.GetUnitPlace(turnOrder.get(0)));
         boolean available = false;
@@ -113,28 +114,7 @@ public class TurnModule {
         
         UpdateTurnOrder();  //Now index 0 is the next unit to get their turn
         
-        //Intergrate AI stuff here
-        /*boolean available = false;
-        for (Move move : turnOrder.get(0).moveset) {
-            if (MovesetModule.IsMoveAv1ailable(turnOrder.get(0), move)) {available = true; break;}
-        }
-        if (available) {
-            if (turnOrder.get(0).team == -1) {
-                try {
-                    Thread.sleep(1000);
-                } catch (InterruptedException ex) {
-                    Logger.getLogger(TurnModule.class.getName()).log(Level.SEVERE, null, ex);
-                }
-                BattleModule.BattleAI(turnOrder.get(0));
-            }
-        } 
-        else {
-            try {
-                Thread.sleep(1000);
-            } catch (InterruptedException ex) {
-                Logger.getLogger(TurnModule.class.getName()).log(Level.SEVERE, null, ex);
-            }
-            BattleModule.SkipTurn();
-        }*/
+        //if (round != 0 && round % 5 == 0) {BattleModule.AddRandomSort();}
+        BattleModule.AddRandomSort();
     }                       
 }

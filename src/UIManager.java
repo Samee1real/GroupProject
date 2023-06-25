@@ -74,6 +74,12 @@ public class UIManager {
         rangeBars.add(label);
         label.setEnabled(false);
     }
+    public static void InitilizeSortSlot(JButton button, int pos)
+    {
+        sortSlotLabels[pos] = button;
+        button.setText("Empty");
+        button.setVisible(false);
+    }
                                             //Unit Position Visuals\\
     
     public static ArrayList<JLabel> labelOrder = new ArrayList<>(battlePlaces);
@@ -143,6 +149,7 @@ public class UIManager {
     private static Icon turnStarIcon;
     private static ArrayList<JLabel> rangeBars = new ArrayList<>();
     private static Icon rangeIcon;
+    private static JButton[] sortSlotLabels = new JButton[3];
     
     public static void UpdateUnitInfo(Unit unit)
     {
@@ -196,6 +203,17 @@ public class UIManager {
         for (Integer pos : positions)
         {rangeBars.get(pos).setEnabled(true);}
     }
+    public static void UpdateSlotLabels(String[] names)
+    {
+        for (int i = 0; i < sortSlotLabels.length; i++) {
+            String name = "Empty";
+            if (i < names.length) {
+                name = names[i];
+            } 
+            JambleButton task = new JambleButton(sortSlotLabels[i], name, 1000);
+            task.start();
+        }
+    }
                                             //Easing and Tweening\\
                 
     public static class TweenLabelTask extends Thread
@@ -231,6 +249,42 @@ public class UIManager {
             }
             label.setLocation(start);
             label.setIcon(icon);
+        }
+    }
+    
+    public static class JambleButton extends Thread
+    {
+        private final String letterPool = 
+        "1234567890-=`qwertyuiopasdfghjkl;zxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM";
+        private JButton button;
+        private String finalText;
+        private double dur; 
+        
+        public JambleButton(JButton button, String text, double dur)
+        {
+            this.button = button; this.dur = dur; finalText = text; 
+        }
+        public void run()
+        {
+            int numOfLetters = finalText.length();
+            double time = 0;
+            long threadSpeed = (long)easingThreadSpeed; //= (long)easingThreadSpeed
+            while (time < dur) {
+                try {
+                    Thread.sleep(threadSpeed);    //Waiting thread time
+                    time += easingThreadSpeed;  //This will increase time to update it
+                    threadSpeed *= 1.1;
+                } catch (InterruptedException ex) {
+                    Logger.getLogger(UIManager.class.getName()).log(Level.SEVERE, null, ex);
+                }
+                String text = "";
+                for (int i = 0; i < numOfLetters; i++) {
+                    int ran = (int)(Math.random()*letterPool.length());
+                    text += letterPool.substring(ran, ran+1);
+                }
+                button.setText(text);
+            }
+            button.setText(finalText);
         }
     }
     

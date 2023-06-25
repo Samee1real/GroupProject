@@ -18,6 +18,7 @@ public class BattleModule {
                                 //Module Variables\\
     
     public static boolean active;
+    private static String[] sortSlots = {"Empty", "Empty", "Empty"};
     
                                 //Setting Up Battle\\
     
@@ -50,7 +51,6 @@ public class BattleModule {
         OrderModule.ScrambleOrder();
         Thread.sleep(2500);
         TurnModule.UpdateTurnOrder();
-        UIManager.UpdateTurnStars(OrderModule.GetUnitPlace(unitWithTurn));
         active = true;
     }
     /*public static void StartBattle()
@@ -79,6 +79,7 @@ public class BattleModule {
     
     public static void ExecuteMove(Unit unit, Move move, int pos)
     {
+        active = false;
         Unit defender = OrderModule.GetUnitAtIndex(pos);
         int defence = defender.defence;
         if (move.dmg < 0) {defence = 0;}
@@ -102,6 +103,7 @@ public class BattleModule {
         //Next Turn
         OrderModule.IterateSort();
         //TurnModule.NextTurn();
+        active = true;
     }
     
     public static void SkipTurn()
@@ -128,5 +130,50 @@ public class BattleModule {
         ArrayList<Integer> positions = MovesetModule.GetMoveHitLocations(unit, move);
         int position = (int)(Math.random()*positions.size());
         ExecuteMove(unit, move, positions.get(position));
+    }
+    
+    public static void AddRandomSort()
+    {
+        String[] pool = {"Selection", "Insertion", "Merge", "Quick"};
+        for (int i = 0; i < sortSlots.length; i++) {
+            if (sortSlots[i].equals("Empty")) {
+                sortSlots[i] = pool[(int)(Math.random()*3)];
+                UIManager.UpdateSlotLabels(sortSlots);
+                break;
+            }
+        }
+    }
+    
+    public static void UseSortSlot(int pos) throws InterruptedException
+    {
+       SortTask task = new SortTask(pos);
+       //task.start();   DISABLED TOO MUCH THREADING
+    }
+    
+    private static class SortTask extends Thread
+    {
+        int pos = 0;
+        public SortTask(int pos) {this.pos = pos;}
+        public void run()
+        {
+            if (!sortSlots[pos].equals("Empty")) {
+                sortSlots[pos] = "Empty";
+                UIManager.UpdateSlotLabels(sortSlots);
+                OrderModule.SetSortMethod(sortSlots[pos]);
+                OrderModule.ScrambleOrder();
+                try {
+                    Thread.sleep(2500);
+                } catch (InterruptedException ex) {
+                    Logger.getLogger(BattleModule.class.getName()).log(Level.SEVERE, null, ex);
+                }
+                OrderModule.IterateSort();
+                try {
+                    Thread.sleep(2000);
+                } catch (InterruptedException ex) {
+                    Logger.getLogger(BattleModule.class.getName()).log(Level.SEVERE, null, ex);
+                }
+                //TurnModule.NextTurn();
+            }
+        }
     }
 }
