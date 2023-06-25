@@ -156,7 +156,6 @@ public class UIManager {
             hitButtons.get(i).setVisible(show);
         }
     }
-
     public static void UpdateMoveButtons(Unit unit)
     {
         for (int i = 0; i < moveButtons.size(); i++) {
@@ -167,13 +166,28 @@ public class UIManager {
             {moveButtons.get(i).setVisible(false);}
         }
     }
- 
     public static void UpdateMoveInfo(Unit unit, Move move) 
     {
         if (MovesetModule.IsMoveAv1ailable(unit, move)) 
         {moveInfo.setText(move.desc);}
         else 
         {moveInfo.setText("This move is not available");}
+    }
+    public static void UpdateTurnStars(int pos)
+    {
+        for (int i = 0; i < turnStars.size(); i++)
+        {
+            boolean set = false;
+            if (i == pos) {set = true;}
+            turnStars.get(i).setVisible(set);
+        }
+    }
+    public static void UpdateRangeBars(ArrayList<Integer> positions)
+    {
+        for (JLabel label : rangeBars)
+        {label.setVisible(false);}
+        for (Integer pos : positions)
+        {rangeBars.get(pos).setVisible(true);}
     }
                                             //Easing and Tweening\\
                 
