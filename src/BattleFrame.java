@@ -506,6 +506,7 @@ public class BattleFrame extends javax.swing.JFrame {
 
         healthLabel.setFont(new java.awt.Font("Monotype Corsiva", 0, 36)); // NOI18N
         healthLabel.setForeground(new java.awt.Color(255, 153, 153));
+        healthLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/starTest.png"))); // NOI18N
         healthLabel.setText("Health:");
 
         defenceLabel.setFont(new java.awt.Font("Monotype Corsiva", 0, 36)); // NOI18N
@@ -561,8 +562,7 @@ public class BattleFrame extends javax.swing.JFrame {
             .addGroup(mainLayout.createSequentialGroup()
                 .addComponent(moveSetPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(infoPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addComponent(infoPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         mainLayout.setVerticalGroup(
             mainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -653,10 +653,7 @@ public class BattleFrame extends javax.swing.JFrame {
     
     private void move1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_move1ActionPerformed
         // TODO add your handling code here:
-        //UIManager.UpdateHitButtons(MovesetModule.GetMoveHitLocations(OrderModule.GetUnitAtIndex(5), OrderModule.GetUnitAtIndex(0).moveset.get(0)), true);
-        //UIManager.MovePosition(2, 5, 250);
         
-        OrderModule.IterateSort();
     }//GEN-LAST:event_move1ActionPerformed
 
     private void move2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_move2ActionPerformed

@@ -5,9 +5,11 @@
         <group>
             <file>file:/D:/GitHub/GroupProject/src/BattleFrame.java</file>
             <file>file:/D:/GitHub/GroupProject/src/Unit.java</file>
-            <file>file:/D:/GitHub/GroupProject/src/TurnModule.java</file>
+            <file>file:/D:/GitHub/GroupProject/src/OrderModule.java</file>
             <file>file:/D:/GitHub/GroupProject/src/BattleModule.java</file>
             <file>file:/D:/GitHub/GroupProject/src/UIManager.java</file>
+            <file>file:/D:/GitHub/GroupProject/src/Testing/TestingInsertion.java</file>
+            <file>file:/D:/GitHub/GroupProject/src/Move.java</file>
         </group>
     </open-files>
 </project-private>

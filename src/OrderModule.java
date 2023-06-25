@@ -58,11 +58,24 @@ public class OrderModule {
         /*
             This will scramble the Place Order Array randomly
         */
-        for (int count = 0; count < battlePlaces*2; count++)
+        ScrambleTask task = new ScrambleTask();
+        task.start();
+    }
+    public static class ScrambleTask extends Thread
+    {
+        public void run()
         {
-            int place1 = (int)(Math.random()*battlePlaces);
-            int place2 = (int)(Math.random()*battlePlaces);
-            SwapUnitPositions(place1, place2); //Swap
+            for (int count = 0; count < battlePlaces; count++)
+            {
+                int place1 = (int)(Math.random()*battlePlaces);
+                int place2 = (int)(Math.random()*battlePlaces);
+                SwapUnitPositions(place1, place2); //Swap
+              try {
+                  Thread.sleep(275);
+              } catch (InterruptedException ex) {
+                  Logger.getLogger(OrderModule.class.getName()).log(Level.SEVERE, null, ex);
+              }
+            }  
         }
     }
     
