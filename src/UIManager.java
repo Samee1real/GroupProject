@@ -63,6 +63,16 @@ public class UIManager {
     {
         moveInfo = area;
     }
+    public static void InitilizeTurnStar(JLabel label)
+    {
+        turnStars.add(label);
+        label.setVisible(false);
+    }
+    public static void InitilizeRangeBar(JLabel label)
+    {
+        rangeBars.add(label);
+        label.setVisible(false);
+    }
                                             //Unit Position Visuals\\
     
     public static ArrayList<JLabel> labelOrder = new ArrayList<>(battlePlaces);
@@ -124,6 +134,8 @@ public class UIManager {
     private static ArrayList<JButton> hitButtons = new ArrayList<JButton>();
     private static ArrayList<JButton> moveButtons = new ArrayList<JButton>();
     private static JTextArea moveInfo;
+    private static ArrayList<JLabel> turnStars = new ArrayList<>();
+    private static ArrayList<JLabel> rangeBars = new ArrayList<>();
     
     public static void UpdateUnitInfo(Unit unit)
     {

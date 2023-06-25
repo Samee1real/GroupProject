@@ -53,14 +53,31 @@ public class BattleFrame extends javax.swing.JFrame {
         UIManager.InitilizeHitButton(select4, 3);
         UIManager.InitilizeHitButton(select5, 4);
         UIManager.InitilizeHitButton(select6, 5);
-        UIManager.InitilizeHitButton(select6, 6);
-        UIManager.InitilizeHitButton(select7, 7);
+        UIManager.InitilizeHitButton(select7, 6);
+        UIManager.InitilizeHitButton(select8, 7);
         UIManager.InitilizeMoveButton(move1);
         UIManager.InitilizeMoveButton(move2);
         UIManager.InitilizeMoveButton(move3);
         UIManager.InitilizeMoveButton(move4);
         UIManager.InitilizeMoveButton(move5);
         UIManager.InitilizeMoveInfo(movesetInfo);
+        UIManager.InitilizeTurnStar(turnStar1);
+        UIManager.InitilizeTurnStar(turnStar2);
+        UIManager.InitilizeTurnStar(turnStar3);
+        UIManager.InitilizeTurnStar(turnStar4);
+        UIManager.InitilizeTurnStar(turnStar5);
+        UIManager.InitilizeTurnStar(turnStar6);
+        UIManager.InitilizeTurnStar(turnStar7);
+        UIManager.InitilizeTurnStar(turnStar8);
+        UIManager.InitilizeRangeBar(rangeBar1);
+        UIManager.InitilizeRangeBar(rangeBar2);
+        UIManager.InitilizeRangeBar(rangeBar3);
+        UIManager.InitilizeRangeBar(rangeBar4);
+        UIManager.InitilizeRangeBar(rangeBar5);
+        UIManager.InitilizeRangeBar(rangeBar6);
+        UIManager.InitilizeRangeBar(rangeBar7);
+        UIManager.InitilizeRangeBar(rangeBar8);
+        
         OrderModule.SetSortMethod("Quick");
     }
 
@@ -228,7 +245,7 @@ public class BattleFrame extends javax.swing.JFrame {
                 .addComponent(position7, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(60, 60, 60)
                 .addComponent(position8, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(61, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         positionPanelLayout.setVerticalGroup(
             positionPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -330,8 +347,8 @@ public class BattleFrame extends javax.swing.JFrame {
         );
 
         selectionPanel.setBackground(new java.awt.Color(153, 153, 153));
-        selectionPanel.setMaximumSize(new java.awt.Dimension(1532, 40));
-        selectionPanel.setMinimumSize(new java.awt.Dimension(1532, 40));
+        selectionPanel.setMaximumSize(new java.awt.Dimension(1707, 120));
+        selectionPanel.setMinimumSize(new java.awt.Dimension(1707, 120));
 
         select1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/selector.png"))); // NOI18N
         select1.addActionListener(new java.awt.event.ActionListener() {
@@ -428,23 +445,6 @@ public class BattleFrame extends javax.swing.JFrame {
             .addGroup(selectionPanelLayout.createSequentialGroup()
                 .addGroup(selectionPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(selectionPanelLayout.createSequentialGroup()
-                        .addGap(120, 120, 120)
-                        .addComponent(turnStar1)
-                        .addGap(178, 178, 178)
-                        .addComponent(turnStar2)
-                        .addGap(178, 178, 178)
-                        .addComponent(turnStar3)
-                        .addGap(178, 178, 178)
-                        .addComponent(turnStar4)
-                        .addGap(178, 178, 178)
-                        .addComponent(turnStar5)
-                        .addGap(178, 178, 178)
-                        .addComponent(turnStar6)
-                        .addGap(178, 178, 178)
-                        .addComponent(turnStar7)
-                        .addGap(178, 178, 178)
-                        .addComponent(turnStar8))
-                    .addGroup(selectionPanelLayout.createSequentialGroup()
                         .addGap(75, 75, 75)
                         .addComponent(select1)
                         .addGap(93, 93, 93)
@@ -460,26 +460,43 @@ public class BattleFrame extends javax.swing.JFrame {
                         .addGap(93, 93, 93)
                         .addComponent(select7)
                         .addGap(93, 93, 93)
-                        .addComponent(select8)))
+                        .addComponent(select8))
+                    .addGroup(selectionPanelLayout.createSequentialGroup()
+                        .addGap(82, 82, 82)
+                        .addComponent(rangeBar1)
+                        .addGap(101, 101, 101)
+                        .addComponent(rangeBar2)
+                        .addGap(101, 101, 101)
+                        .addComponent(rangeBar3)
+                        .addGap(101, 101, 101)
+                        .addComponent(rangeBar4)
+                        .addGap(101, 101, 101)
+                        .addComponent(rangeBar5)
+                        .addGap(101, 101, 101)
+                        .addComponent(rangeBar6)
+                        .addGap(101, 101, 101)
+                        .addComponent(rangeBar7)
+                        .addGap(101, 101, 101)
+                        .addComponent(rangeBar8)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(selectionPanelLayout.createSequentialGroup()
-                .addGap(82, 82, 82)
-                .addComponent(rangeBar1)
-                .addGap(101, 101, 101)
-                .addComponent(rangeBar2)
-                .addGap(101, 101, 101)
-                .addComponent(rangeBar3)
-                .addGap(101, 101, 101)
-                .addComponent(rangeBar4)
-                .addGap(101, 101, 101)
-                .addComponent(rangeBar5)
-                .addGap(101, 101, 101)
-                .addComponent(rangeBar6)
-                .addGap(101, 101, 101)
-                .addComponent(rangeBar7)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 99, Short.MAX_VALUE)
-                .addComponent(rangeBar8)
-                .addGap(83, 83, 83))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, selectionPanelLayout.createSequentialGroup()
+                .addGap(120, 120, 120)
+                .addComponent(turnStar1)
+                .addGap(178, 178, 178)
+                .addComponent(turnStar2)
+                .addGap(178, 178, 178)
+                .addComponent(turnStar3)
+                .addGap(178, 178, 178)
+                .addComponent(turnStar4)
+                .addGap(178, 178, 178)
+                .addComponent(turnStar5)
+                .addGap(178, 178, 178)
+                .addComponent(turnStar6)
+                .addGap(178, 178, 178)
+                .addComponent(turnStar7)
+                .addGap(178, 178, 178)
+                .addComponent(turnStar8)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         selectionPanelLayout.setVerticalGroup(
             selectionPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -493,17 +510,7 @@ public class BattleFrame extends javax.swing.JFrame {
                     .addComponent(select6)
                     .addComponent(select7)
                     .addComponent(select8))
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addGroup(selectionPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(turnStar1)
-                    .addComponent(turnStar2)
-                    .addComponent(turnStar3)
-                    .addComponent(turnStar4)
-                    .addComponent(turnStar5)
-                    .addComponent(turnStar6)
-                    .addComponent(turnStar7)
-                    .addComponent(turnStar8))
-                .addGap(0, 0, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
                 .addGroup(selectionPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(rangeBar1)
                     .addComponent(rangeBar2)
@@ -513,7 +520,17 @@ public class BattleFrame extends javax.swing.JFrame {
                     .addComponent(rangeBar6)
                     .addComponent(rangeBar7)
                     .addComponent(rangeBar8))
-                .addContainerGap(20, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(selectionPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(turnStar1)
+                    .addComponent(turnStar2)
+                    .addComponent(turnStar3)
+                    .addComponent(turnStar4)
+                    .addComponent(turnStar5)
+                    .addComponent(turnStar6)
+                    .addComponent(turnStar7)
+                    .addComponent(turnStar8))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         moveSetPanel.setBackground(new java.awt.Color(102, 102, 102));
@@ -675,7 +692,7 @@ public class BattleFrame extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(positionPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(selectionPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(selectionPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(mainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(moveSetPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
