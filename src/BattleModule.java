@@ -77,7 +77,7 @@ public class BattleModule {
         TurnModule.round = 1; //Resets the round
     }
     
-    public static void ExecuteMove(Unit unit, Move move, int pos)
+    public static int ExecuteMove(Unit unit, Move move, int pos)
     {
         active = false;
         Unit defender = OrderModule.GetUnitAtIndex(pos);
@@ -95,15 +95,18 @@ public class BattleModule {
             TurnModule.RemoveUnit(unit);
             if (OrderModule.GetTeamCount(1) <= 0) {
                 //Lost
+                return -1;
             }
             else if (OrderModule.GetTeamCount(-1) <= 0) {
                 //Won
+                return 1;
             }
         }
         //Next Turn
         OrderModule.IterateSort();
         //TurnModule.NextTurn();
         active = true;
+        return 0;
     }
     
     public static void SkipTurn()

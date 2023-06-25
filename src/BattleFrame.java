@@ -774,12 +774,20 @@ public class BattleFrame extends javax.swing.JFrame {
     private void selectActionPerformed(int pos)
     {
         if (BattleModule.active) {
-            BattleModule.ExecuteMove(selectedUnit, selectedMove, pos);
+            int num = BattleModule.ExecuteMove(selectedUnit, selectedMove, pos);
             UIManager.UpdateMoveButtons(new Unit());
             UIManager.UpdateRangeBars(new ArrayList<>());
             UIManager.UpdateHitButtons(new ArrayList<>(), false);
             movesetInfo.setText("");
             attacking = false;
+            if (num == 1) {
+                this.setVisible(false);
+                new EndFrameWin().setVisible(true);
+            } 
+            else if (num == -1) {
+                this.setVisible(false);
+                new EndFrameLose().setVisible(true);
+            }
         }
     }
     
