@@ -3,6 +3,7 @@
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JButton;
 
 
 
@@ -31,22 +32,6 @@ public class BattleFrame extends javax.swing.JFrame {
         UIManager.InitilizePosition(position6, arrow6, 5);
         UIManager.InitilizePosition(position7, arrow7, 6);
         UIManager.InitilizePosition(position8, arrow8, 7);
-        OrderModule.AddUnit(new Unit(0), 0);
-        OrderModule.AddUnit(new Unit(1), 1);
-        OrderModule.AddUnit(new Unit(2),2);
-        OrderModule.AddUnit(new Unit(3), 3);
-        OrderModule.AddUnit(new Unit(4), 4);
-        OrderModule.AddUnit(new Unit(5), 5);
-        OrderModule.AddUnit(new Unit(6), 6);
-        OrderModule.AddUnit(new Unit(7), 7);
-        /*OrderModule.AddUnit(new Unit(7), 0);
-        OrderModule.AddUnit(new Unit(6), 1);
-        OrderModule.AddUnit(new Unit(5),2);
-        OrderModule.AddUnit(new Unit(4), 3);
-        OrderModule.AddUnit(new Unit(3), 4);
-        OrderModule.AddUnit(new Unit(2), 5);
-        OrderModule.AddUnit(new Unit(1), 6);
-        OrderModule.AddUnit(new Unit(0), 7);*/
         UIManager.InitilizeMainArrows(redArrow, blueArrow);
         UIManager.InitilizeGUI(healthLabel, defenceLabel, speedLabel);
         UIManager.InitilizeHitButton(select1, 0);
@@ -79,12 +64,7 @@ public class BattleFrame extends javax.swing.JFrame {
         UIManager.InitilizeRangeBar(rangeBar6);
         UIManager.InitilizeRangeBar(rangeBar7);
         UIManager.InitilizeRangeBar(rangeBar8);
-        
-        UIManager.UpdateTurnStars(4);
-        ArrayList<Integer> list = new ArrayList<>();
-        list.add(0);
-        list.add(7);
-        UIManager.UpdateRangeBars(list);
+        BattleModule.LoadBattle();
     }
 
     /**
@@ -544,12 +524,15 @@ public class BattleFrame extends javax.swing.JFrame {
         moveSetPanel.setEnabled(false);
         moveSetPanel.setMaximumSize(new java.awt.Dimension(702, 467));
         moveSetPanel.setMinimumSize(new java.awt.Dimension(702, 467));
-        moveSetPanel.addMouseListener(new java.awt.event.MouseAdapter() {
+
+        move1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                moveSetPanelMouseEntered(evt);
+                move1MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                move1MouseExited(evt);
             }
         });
-
         move1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 move1ActionPerformed(evt);
@@ -559,6 +542,9 @@ public class BattleFrame extends javax.swing.JFrame {
         move2.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 move2MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                move2MouseExited(evt);
             }
         });
         move2.addActionListener(new java.awt.event.ActionListener() {
@@ -571,6 +557,9 @@ public class BattleFrame extends javax.swing.JFrame {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 move3MouseEntered(evt);
             }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                move3MouseExited(evt);
+            }
         });
         move3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -582,6 +571,9 @@ public class BattleFrame extends javax.swing.JFrame {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 move4MouseEntered(evt);
             }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                move4MouseExited(evt);
+            }
         });
         move4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -592,6 +584,9 @@ public class BattleFrame extends javax.swing.JFrame {
         move5.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 move5MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                move5MouseExited(evt);
             }
         });
         move5.addActionListener(new java.awt.event.ActionListener() {
@@ -648,7 +643,7 @@ public class BattleFrame extends javax.swing.JFrame {
         movesetInfo.setColumns(20);
         movesetInfo.setFont(new java.awt.Font("Lucida Calligraphy", 1, 14)); // NOI18N
         movesetInfo.setRows(5);
-        movesetInfo.setText("info about move");
+        movesetInfo.setText("loading");
         jScrollPane1.setViewportView(movesetInfo);
 
         javax.swing.GroupLayout infoPanelLayout = new javax.swing.GroupLayout(infoPanel);
@@ -745,136 +740,212 @@ public class BattleFrame extends javax.swing.JFrame {
         System.exit(0);       
     }//GEN-LAST:event_jMenuItem1ActionPerformed
 
+    private void selectActionPerformed(int pos)
+    {
+        if (BattleModule.active) {
+            BattleModule.ExecuteMove(selectedUnit, selectedMove, pos);
+            UIManager.UpdateMoveButtons(new Unit());
+            UIManager.UpdateRangeBars(new ArrayList<>());
+            UIManager.UpdateHitButtons(new ArrayList<>(), false);
+            movesetInfo.setText("");
+            attacking = false;
+        }
+    }
+    
     private void select1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_select1ActionPerformed
-        // TODO add your handling code here:
+        selectActionPerformed(0);
     }//GEN-LAST:event_select1ActionPerformed
 
     private void select2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_select2ActionPerformed
-        // TODO add your handling code here:
+        selectActionPerformed(1);
     }//GEN-LAST:event_select2ActionPerformed
 
     private void select3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_select3ActionPerformed
-        // TODO add your handling code here:
+        selectActionPerformed(2);
     }//GEN-LAST:event_select3ActionPerformed
 
     private void select4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_select4ActionPerformed
-        // TODO add your handling code here:
+        selectActionPerformed(3);
     }//GEN-LAST:event_select4ActionPerformed
 
     private void select5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_select5ActionPerformed
-        // TODO add your handling code here:
+        selectActionPerformed(4);
     }//GEN-LAST:event_select5ActionPerformed
 
     private void select6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_select6ActionPerformed
-        // TODO add your handling code here:
+        selectActionPerformed(5);
     }//GEN-LAST:event_select6ActionPerformed
 
     private void select7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_select7ActionPerformed
-        // TODO add your handling code here:
+        selectActionPerformed(6);
     }//GEN-LAST:event_select7ActionPerformed
 
     private void select8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_select8ActionPerformed
-        // TODO add your handling code here:
+        selectActionPerformed(7);
     }//GEN-LAST:event_select8ActionPerformed
 
                                                                              //Pressing Move Button\\
+    private Move selectedMove = new Move();
+    private boolean attacking; 
+    
+    private void moveActionPerformed(int pos, JButton button)
+    {
+        if (BattleModule.active)
+        {
+            if (!attacking) {
+                attacking = true;
+                selectedMove = selectedUnit.moveset.get(pos);
+                UIManager.UpdateHitButtons(MovesetModule.GetMoveHitLocations(selectedUnit, selectedMove), true);
+                button.setText("Cancel");
+            } else {
+                UIManager.UpdateMoveButtons(selectedUnit);
+                movesetInfo.setText("");
+                UIManager.UpdateRangeBars(new ArrayList<>());
+                UIManager.UpdateHitButtons(new ArrayList<>(), false);
+                attacking = false;
+            }
+        }
+    }
     
     private void move1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_move1ActionPerformed
-        // TODO add your handling code here:
-        
+        moveActionPerformed(0, move1);
     }//GEN-LAST:event_move1ActionPerformed
 
     private void move2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_move2ActionPerformed
-        // TODO add your handling code here:
+        moveActionPerformed(1, move2);
     }//GEN-LAST:event_move2ActionPerformed
 
     private void move3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_move3ActionPerformed
-        // TODO add your handling code here:
+        moveActionPerformed(2, move3);
     }//GEN-LAST:event_move3ActionPerformed
 
     private void move4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_move4ActionPerformed
-        // TODO add your handling code here:
+        moveActionPerformed(3, move4);
     }//GEN-LAST:event_move4ActionPerformed
 
     private void move5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_move5ActionPerformed
-        // TODO add your handling code here:
+        moveActionPerformed(4, move5);
     }//GEN-LAST:event_move5ActionPerformed
     
                                                                             //Selecting Units by Hovering Mouse Over Them
     
     private Unit selectedUnit = new Unit();
+    private void hoverEvent(int pos)
+    {
+        if (BattleModule.active) {
+            if (!attacking) {
+                selectedUnit = OrderModule.GetUnitAtIndex(pos);
+                UIManager.UpdateUnitInfo(selectedUnit);
+                UIManager.UpdateMoveButtons(selectedUnit);
+            }
+            else {
+                UIManager.UpdateUnitInfo(OrderModule.GetUnitAtIndex(pos));
+            }
+        }
+    }
     
     private void position1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_position1MouseEntered
-        int pos = 0;
-        for (int i = 0; i < UIManager.labelIdOrder.size(); i++) {
-            if (UIManager.labelIdOrder.get(i) == 0) {pos = i;}
-        }
-        selectedUnit = OrderModule.GetUnitAtIndex(pos);
-        UIManager.UpdateUnitInfo(selectedUnit);
-        UIManager.UpdateMoveButtons(selectedUnit);
+        hoverEvent(0);
     }//GEN-LAST:event_position1MouseEntered
 
     private void position2MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_position2MouseEntered
-        selectedUnit = OrderModule.GetUnitByValue(1);
-        UIManager.UpdateUnitInfo(selectedUnit);
-        UIManager.UpdateMoveButtons(selectedUnit);
+        hoverEvent(1);
     }//GEN-LAST:event_position2MouseEntered
 
     private void position3MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_position3MouseEntered
-        selectedUnit = OrderModule.GetUnitByValue(2);
-        UIManager.UpdateUnitInfo(selectedUnit);
-        UIManager.UpdateMoveButtons(selectedUnit);
+        hoverEvent(2);
     }//GEN-LAST:event_position3MouseEntered
 
     private void position4MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_position4MouseEntered
-        selectedUnit = OrderModule.GetUnitByValue(3);
-        UIManager.UpdateUnitInfo(selectedUnit);
-        UIManager.UpdateMoveButtons(selectedUnit);
+        hoverEvent(3);
     }//GEN-LAST:event_position4MouseEntered
 
     private void position5MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_position5MouseEntered
-        selectedUnit = OrderModule.GetUnitByValue(4);
-        UIManager.UpdateUnitInfo(selectedUnit);
-        UIManager.UpdateMoveButtons(selectedUnit);
+        hoverEvent(4);
     }//GEN-LAST:event_position5MouseEntered
 
     private void position6MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_position6MouseEntered
-        selectedUnit = OrderModule.GetUnitByValue(5);
-        UIManager.UpdateUnitInfo(selectedUnit);
-        UIManager.UpdateMoveButtons(selectedUnit);
+        hoverEvent(5);
     }//GEN-LAST:event_position6MouseEntered
 
     private void position7MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_position7MouseEntered
-        selectedUnit = OrderModule.GetUnitByValue(6);
-        UIManager.UpdateUnitInfo(selectedUnit);
-        UIManager.UpdateMoveButtons(selectedUnit);
+        hoverEvent(6);
     }//GEN-LAST:event_position7MouseEntered
 
     private void position8MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_position8MouseEntered
-        selectedUnit = OrderModule.GetUnitByValue(7);
-        UIManager.UpdateUnitInfo(selectedUnit);
-        UIManager.UpdateMoveButtons(selectedUnit);
+        hoverEvent(7);
     }//GEN-LAST:event_position8MouseEntered
 
-    private void moveSetPanelMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_moveSetPanelMouseEntered
-        UIManager.UpdateMoveInfo(selectedUnit, selectedUnit.moveset.get(0));
-    }//GEN-LAST:event_moveSetPanelMouseEntered
-
+        
     private void move2MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_move2MouseEntered
-        UIManager.UpdateMoveInfo(selectedUnit, selectedUnit.moveset.get(1));
+        if (BattleModule.active) {
+            UIManager.UpdateMoveInfo(selectedUnit, selectedUnit.moveset.get(1));
+            UIManager.UpdateRangeBars(MovesetModule.GetMoveHitLocations(selectedUnit, selectedUnit.moveset.get(1)));
+        }
     }//GEN-LAST:event_move2MouseEntered
 
     private void move3MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_move3MouseEntered
-        UIManager.UpdateMoveInfo(selectedUnit, selectedUnit.moveset.get(2));
+        if (BattleModule.active) {
+            UIManager.UpdateMoveInfo(selectedUnit, selectedUnit.moveset.get(2));
+            UIManager.UpdateRangeBars(MovesetModule.GetMoveHitLocations(selectedUnit, selectedUnit.moveset.get(2)));
+        }
     }//GEN-LAST:event_move3MouseEntered
 
     private void move4MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_move4MouseEntered
-        UIManager.UpdateMoveInfo(selectedUnit, selectedUnit.moveset.get(3));
+        if (BattleModule.active) {
+            UIManager.UpdateMoveInfo(selectedUnit, selectedUnit.moveset.get(3));
+            UIManager.UpdateRangeBars(MovesetModule.GetMoveHitLocations(selectedUnit, selectedUnit.moveset.get(3)));
+        }
     }//GEN-LAST:event_move4MouseEntered
 
     private void move5MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_move5MouseEntered
-        UIManager.UpdateMoveInfo(selectedUnit, selectedUnit.moveset.get(4));
+        if (BattleModule.active) {
+            UIManager.UpdateMoveInfo(selectedUnit, selectedUnit.moveset.get(4));
+            UIManager.UpdateRangeBars(MovesetModule.GetMoveHitLocations(selectedUnit, selectedUnit.moveset.get(4)));
+        }
     }//GEN-LAST:event_move5MouseEntered
+
+    private void move1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_move1MouseEntered
+        if (BattleModule.active) {
+            UIManager.UpdateMoveInfo(selectedUnit, selectedUnit.moveset.get(0));
+            UIManager.UpdateRangeBars(MovesetModule.GetMoveHitLocations(selectedUnit, selectedUnit.moveset.get(0)));
+        }
+    }//GEN-LAST:event_move1MouseEntered
+
+    private void move1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_move1MouseExited
+        if (!attacking) {
+            movesetInfo.setText("");
+            UIManager.UpdateRangeBars(new ArrayList<>());
+        }
+    }//GEN-LAST:event_move1MouseExited
+
+    private void move2MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_move2MouseExited
+        if (!attacking) {
+            movesetInfo.setText("");
+            UIManager.UpdateRangeBars(new ArrayList<>());
+        }
+    }//GEN-LAST:event_move2MouseExited
+
+    private void move3MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_move3MouseExited
+        if (!attacking) {
+            movesetInfo.setText("");
+            UIManager.UpdateRangeBars(new ArrayList<>());
+        }
+    }//GEN-LAST:event_move3MouseExited
+
+    private void move4MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_move4MouseExited
+        if (!attacking) {
+            movesetInfo.setText("");
+            UIManager.UpdateRangeBars(new ArrayList<>());
+        }
+    }//GEN-LAST:event_move4MouseExited
+
+    private void move5MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_move5MouseExited
+        if (!attacking) {
+            movesetInfo.setText("");
+            UIManager.UpdateRangeBars(new ArrayList<>());
+        }
+    }//GEN-LAST:event_move5MouseExited
 
     /**
      * @param args the command line arguments

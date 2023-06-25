@@ -44,6 +44,7 @@ public class UIManager {
     public static void InitilizeMainArrows(javax.swing.JLabel red, javax.swing.JLabel blue)
     {
         redArrow = red; blueArrow = blue;
+        red.setVisible(false); blue.setVisible(false);
     }
     public static void InitilizeGUI(JLabel health, JLabel defence, JLabel speed)
     {
@@ -108,6 +109,10 @@ public class UIManager {
         TweenLabelTask task2 = new TweenLabelTask(labelOrder.get(pos2), positionLocations.get(pos1), dur, labelOrder.get(pos1).getIcon());
         task1.start(); task2.start();
         
+    }
+    public static void RemovePositionIcon(int pos)
+    {
+        labelOrder.get(pos).setIcon(null);
     }
     
                                               //Sorting Visuals\\

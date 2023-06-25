@@ -23,17 +23,33 @@ public class OrderModule {
     {
         placeOrder.add(pos, unit);
     }
+    public static void SetNull(int pos)
+    {
+        placeOrder.set(pos, null);
+    }
+    public static int GetTeamCount(int team)
+    {
+        int count = 0;
+        for (Unit unit : placeOrder){
+            if (unit != null && unit.team == team) {count++;}
+        }
+        return count;
+    }
     public static int GetUnitPlace(Unit unit)
     {
         /*
         Used to just get the positions of Units
         */
         for (int i = 0; i < battlePlaces; i++) {
-            if (placeOrder.get(i).equals(unit)) {
+            if (placeOrder.get(i) != null && placeOrder.get(i).equals(unit)) {
                 return i;
             }
         }
         return -1;
+    }
+    public static int GetPlaceOrderSize()
+    {
+        return placeOrder.size();
     }
     public static Unit GetUnitAtIndex(int index)
     {

@@ -23,6 +23,16 @@ public class TurnModule {
         */
         turnOrder.add(unit);
     }
+    public static void RemoveUnit(Unit unit)
+    {
+        for (int i = 0; i < turnOrder.size(); i++) {
+            if (turnOrder.get(i).equals(unit)) {
+                turnOrder.remove(i);
+                break;
+            }            
+        }
+    }
+            
     public static void ResetTurnOrder()
     {
         /*
@@ -30,7 +40,10 @@ public class TurnModule {
         */
         turnOrder = new ArrayList<Unit>();
     }
-    
+    public static Unit GetUnitWithTurn()
+    {
+        return turnOrder.get(0);
+    }
     public static void UpdateTurnOrder()
     {
         /*
@@ -60,6 +73,16 @@ public class TurnModule {
         newOrder.get(0).hasTurn = true; //After finalized, allow the first place their turn
         turnOrder = newOrder;// Replacing turnOrder with new
         //Implement AI Module HERE
+        boolean available = false;
+        for (Move move : turnOrder.get(0).moveset) {
+            if (MovesetModule.IsMoveAv1ailable(turnOrder.get(0), move)) {available = true; break;}
+        }
+        if (available) {
+            if (turnOrder.get(0).team == -1) {BattleModule.BattleAI(turnOrder.get(0));}
+        } 
+        else {
+            BattleModule.SkipTurn();
+        }
     }
     public static void NextTurn() 
     {

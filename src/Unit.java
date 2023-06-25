@@ -15,7 +15,7 @@ public class Unit {
     public static int tracker = 0;
     public int id = 0;
     
-    public boolean team; //true if it's your team
+    public int team; //1 if your team | -1 for enemey
     
     public int lastRound; //dont change
     public int orderValue; //the starting position (from index 0)

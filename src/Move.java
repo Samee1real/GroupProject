@@ -13,12 +13,14 @@ public class Move
         public String desc;
         public int dmg;
         public int rangeLeft, rangeRight;
+        public boolean friendlyFire = true;
         
         public Move()
         {
             name = "Default";
             desc = "Default desc";
-            rangeLeft = 1; rangeRight = 0;
+            dmg = 1;
+            rangeLeft = 1; rangeRight = 1;
         }
         
         //Create subclasses for moves

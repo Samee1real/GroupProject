@@ -16,23 +16,25 @@ public class MovesetModule {
         return GetMoveHitLocations(unit, move).size() > 0;
     }
     
-    public static ArrayList<Integer> GetMoveHitLocations(Unit unit, Move move)
+    public static ArrayList<Integer> GetMoveHitLocations(Unit attacker, Move move)
     {
         ArrayList<Integer> posList = new ArrayList<>();
         
-        int pos = OrderModule.GetUnitPlace(unit);
+        int pos = OrderModule.GetUnitPlace(attacker);
         for (int i = pos-1;  i >= 0 && i >= pos-move.rangeLeft; i--) {
-            if (OrderModule.GetUnitAtIndex(i) != null) {
+            Unit defender = OrderModule.GetUnitAtIndex(pos);
+            if (defender != null && (move.friendlyFire || attacker.team*defender.team < 0)) {
                 posList.add(i);
             }
         }
         for (int i = pos+1; i < OrderModule.battlePlaces && i <= pos+move.rangeRight; i++) {
-            if (OrderModule.GetUnitAtIndex(i) != null) {
+            Unit defender = OrderModule.GetUnitAtIndex(pos);
+            if (defender != null && (move.friendlyFire || attacker.team*defender.team < 0)) {
                 posList.add(i);
             }
         }
         
         return posList;
     }
-  
+    
 }
