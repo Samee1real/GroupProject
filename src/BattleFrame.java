@@ -61,7 +61,7 @@ public class BattleFrame extends javax.swing.JFrame {
         UIManager.InitilizeMoveButton(move4);
         UIManager.InitilizeMoveButton(move5);
         UIManager.InitilizeMoveInfo(movesetInfo);
-        OrderModule.SetSortMethod("Insertion");
+        OrderModule.SetSortMethod("Merge");
     }
 
     /**
@@ -314,6 +314,8 @@ public class BattleFrame extends javax.swing.JFrame {
         );
 
         selectionPanel.setBackground(new java.awt.Color(153, 153, 153));
+        selectionPanel.setMaximumSize(new java.awt.Dimension(1532, 40));
+        selectionPanel.setMinimumSize(new java.awt.Dimension(1532, 40));
 
         select1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/selector.png"))); // NOI18N
         select1.addActionListener(new java.awt.event.ActionListener() {
