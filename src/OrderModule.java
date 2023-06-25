@@ -78,6 +78,9 @@ public class OrderModule {
         And resets the sortstep since we are switching methods
          */
         sortMethod = method;
+        if (method.equals("Quick")) {
+            QuickSort.Initilize();
+        }
     }
     public static void IterateSort()
     {
@@ -303,8 +306,8 @@ public class OrderModule {
         Each iteration/turn will be a complete sort of that pivot 
         Pivot will be placed at the end.
         */
-        private ArrayList<ArrayList<Integer>> parseGroups = new ArrayList<>();  //Look into below function for desc
-        private void addParseInfo(ArrayList<ArrayList<Integer>> array, int start, int end)
+        private static  ArrayList<ArrayList<Integer>> parseGroups = new ArrayList<>();  //Look into below function for desc
+        private static void addParseInfo(ArrayList<ArrayList<Integer>> array, int start, int end)
         {
             /*How parseGroups work:
             This arraylist is used to keep track of how quickSort divides the main array with each pivot
@@ -317,29 +320,37 @@ public class OrderModule {
             array.add(info);
         }
         
-        public QuickSort() 
+        public static void Initilize()
         {
+            parseGroups = new ArrayList<>();
             addParseInfo(parseGroups, 0, placeOrder.size()-1);  //Adds placeOrder
         }
         @Override public void run() 
         {  
+            UIManager.ToggleArrow("Red", true);
+            UIManager.ToggleArrow("Blue", true);
             ArrayList<ArrayList<Integer>> newGroups = new ArrayList<>();
-            
             for (ArrayList<Integer> parseInfo : parseGroups) {
                 if (parseInfo.get(0) < parseInfo.get(1)) {  //base case
                     int pivot = parseInfo.get(1), pivotValue = GetOrderValueOfIndex(pivot); 
                     int left = parseInfo.get(0);
-
                     for (int i = left; i < pivot; i++) {
+                        UIManager.PositionArrow("Red", pivot);
+                        UIManager.PositionArrow("Blue", i);
+                        try {
+                            Thread.sleep(200);
+                        } catch (InterruptedException ex) {
+                            Logger.getLogger(OrderModule.class.getName()).log(Level.SEVERE, null, ex);
+                        }
                         if (GetOrderValueOfIndex(i) > pivotValue) {
                             SwapUnitPositions(i, left);
                             left++;
                         }
-                        try {
-                            Thread.sleep(500);
-                        } catch (InterruptedException ex) {
-                            Logger.getLogger(OrderModule.class.getName()).log(Level.SEVERE, null, ex);
-                        }
+                    }
+                    try {
+                        Thread.sleep(300);
+                    } catch (InterruptedException ex) {
+                        Logger.getLogger(OrderModule.class.getName()).log(Level.SEVERE, null, ex);
                     }
                     SwapUnitPositions(pivot, left);
                     //Add to groups
@@ -348,6 +359,13 @@ public class OrderModule {
                 }
             }
             parseGroups = newGroups; //Apply new groups
+            UIManager.ToggleArrow("Red", false);
+            UIManager.ToggleArrow("Blue", false);
+            for (Unit unit : placeOrder) 
+            {
+               System.out.print(unit.orderValue + "\t");
+            }
+            System.out.println("");
         }
     }
     /*private static class BubbleSort extends SelectionSort{        EXTRA FEATURE

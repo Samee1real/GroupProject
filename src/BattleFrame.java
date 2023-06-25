@@ -61,7 +61,7 @@ public class BattleFrame extends javax.swing.JFrame {
         UIManager.InitilizeMoveButton(move4);
         UIManager.InitilizeMoveButton(move5);
         UIManager.InitilizeMoveInfo(movesetInfo);
-        OrderModule.SetSortMethod("Merge");
+        OrderModule.SetSortMethod("Quick");
     }
 
     /**
