@@ -52,7 +52,7 @@ public class UIManager {
     public static void InitilizeHitButton(JButton button, int pos)
     {
         hitButtons.add(pos, button);
-        button.setVisible(false);
+        button.setEnabled(false);
     }
     public static void InitilizeMoveButton(JButton button) 
     {
@@ -71,7 +71,7 @@ public class UIManager {
     public static void InitilizeRangeBar(JLabel label)
     {
         rangeBars.add(label);
-        label.setVisible(false);
+        label.setEnabled(false);
     }
                                             //Unit Position Visuals\\
     
@@ -135,7 +135,9 @@ public class UIManager {
     private static ArrayList<JButton> moveButtons = new ArrayList<JButton>();
     private static JTextArea moveInfo;
     private static ArrayList<JLabel> turnStars = new ArrayList<>();
+    private static Icon turnStarIcon;
     private static ArrayList<JLabel> rangeBars = new ArrayList<>();
+    private static Icon rangeIcon;
     
     public static void UpdateUnitInfo(Unit unit)
     {
@@ -153,7 +155,7 @@ public class UIManager {
                     if (pos == i) {show = true;}
                 }
             }
-            hitButtons.get(i).setVisible(show);
+            hitButtons.get(i).setEnabled(show);
         }
     }
     public static void UpdateMoveButtons(Unit unit)
@@ -185,9 +187,9 @@ public class UIManager {
     public static void UpdateRangeBars(ArrayList<Integer> positions)
     {
         for (JLabel label : rangeBars)
-        {label.setVisible(false);}
+        {label.setEnabled(false);}
         for (Integer pos : positions)
-        {rangeBars.get(pos).setVisible(true);}
+        {rangeBars.get(pos).setEnabled(true);}
     }
                                             //Easing and Tweening\\
                 

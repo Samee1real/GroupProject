@@ -112,7 +112,7 @@
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="positionPanel" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="selectionPanel" max="32767" attributes="0"/>
+                  <Component id="selectionPanel" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Component id="moveSetPanel" max="32767" attributes="0"/>
@@ -274,17 +274,11 @@
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
-                      <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
-                      <Component id="redArrow" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" attributes="0">
-                              <Component id="blueArrow" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="725" max="-2" attributes="0"/>
-                              <Component id="sortSlot1" min="-2" max="-2" attributes="0"/>
-                          </Group>
                           <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="-2" pref="53" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
+                              <Component id="redArrow" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="59" max="-2" attributes="0"/>
                               <Component id="arrow1" min="-2" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="168" max="-2" attributes="0"/>
                               <Component id="arrow2" min="-2" max="-2" attributes="0"/>
@@ -300,6 +294,12 @@
                               <Component id="arrow7" min="-2" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="168" max="-2" attributes="0"/>
                               <Component id="arrow8" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace min="-2" pref="72" max="-2" attributes="0"/>
+                              <Component id="blueArrow" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="745" max="-2" attributes="0"/>
+                              <Component id="sortSlot1" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
@@ -427,7 +427,7 @@
               <Dimension value="[1707, 120]"/>
             </Property>
             <Property name="minimumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-              <Dimension value="[1707, 120]"/>
+              <Dimension value="[1532, 40]"/>
             </Property>
           </Properties>
 
@@ -435,11 +435,11 @@
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
+                      <EmptySpace min="-2" pref="82" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" attributes="0">
-                              <EmptySpace min="-2" pref="75" max="-2" attributes="0"/>
                               <Component id="select1" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="93" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="86" max="-2" attributes="0"/>
                               <Component id="select2" min="-2" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="96" max="-2" attributes="0"/>
                               <Component id="select3" min="-2" max="-2" attributes="0"/>
@@ -453,63 +453,52 @@
                               <Component id="select7" min="-2" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="93" max="-2" attributes="0"/>
                               <Component id="select8" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                           </Group>
-                          <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="-2" pref="82" max="-2" attributes="0"/>
-                              <Component id="rangeBar1" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="101" max="-2" attributes="0"/>
+                          <Group type="102" attributes="0">
+                              <Component id="rangeBar1" max="-2" attributes="0"/>
+                              <EmptySpace pref="101" max="32767" attributes="0"/>
                               <Component id="rangeBar2" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="101" max="-2" attributes="0"/>
+                              <EmptySpace pref="101" max="32767" attributes="0"/>
                               <Component id="rangeBar3" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="101" max="-2" attributes="0"/>
+                              <EmptySpace pref="101" max="32767" attributes="0"/>
                               <Component id="rangeBar4" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="101" max="-2" attributes="0"/>
+                              <EmptySpace pref="101" max="32767" attributes="0"/>
                               <Component id="rangeBar5" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="101" max="-2" attributes="0"/>
+                              <EmptySpace pref="101" max="32767" attributes="0"/>
                               <Component id="rangeBar6" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="101" max="-2" attributes="0"/>
+                              <EmptySpace pref="101" max="32767" attributes="0"/>
                               <Component id="rangeBar7" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="101" max="-2" attributes="0"/>
+                              <EmptySpace pref="100" max="32767" attributes="0"/>
                               <Component id="rangeBar8" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
-                      <EmptySpace max="32767" attributes="0"/>
+                      <EmptySpace min="-2" pref="82" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="1" attributes="0">
                       <EmptySpace min="-2" pref="120" max="-2" attributes="0"/>
                       <Component id="turnStar1" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="178" max="-2" attributes="0"/>
-                      <Component id="turnStar2" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="178" max="-2" attributes="0"/>
-                      <Component id="turnStar3" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="178" max="-2" attributes="0"/>
-                      <Component id="turnStar4" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="178" max="-2" attributes="0"/>
-                      <Component id="turnStar5" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="178" max="-2" attributes="0"/>
-                      <Component id="turnStar6" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="178" max="-2" attributes="0"/>
-                      <Component id="turnStar7" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="178" max="-2" attributes="0"/>
-                      <Component id="turnStar8" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="32767" attributes="0"/>
+                      <Component id="turnStar2" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
+                      <Component id="turnStar3" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
+                      <Component id="turnStar4" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
+                      <Component id="turnStar5" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
+                      <Component id="turnStar6" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
+                      <Component id="turnStar7" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
+                      <Component id="turnStar8" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="120" max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" attributes="0">
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="select1" min="-2" max="-2" attributes="0"/>
-                          <Component id="select2" min="-2" max="-2" attributes="0"/>
-                          <Component id="select3" min="-2" max="-2" attributes="0"/>
-                          <Component id="select4" min="-2" max="-2" attributes="0"/>
-                          <Component id="select5" min="-2" max="-2" attributes="0"/>
-                          <Component id="select6" min="-2" max="-2" attributes="0"/>
-                          <Component id="select7" min="-2" max="-2" attributes="0"/>
-                          <Component id="select8" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <Group type="102" alignment="0" attributes="0">
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="rangeBar1" min="-2" max="-2" attributes="0"/>
                           <Component id="rangeBar2" min="-2" max="-2" attributes="0"/>
@@ -520,16 +509,27 @@
                           <Component id="rangeBar7" min="-2" max="-2" attributes="0"/>
                           <Component id="rangeBar8" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <EmptySpace type="unrelated" max="32767" attributes="0"/>
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                          <Component id="turnStar2" max="32767" attributes="0"/>
+                          <Component id="turnStar3" max="32767" attributes="0"/>
+                          <Component id="turnStar4" max="32767" attributes="0"/>
+                          <Component id="turnStar5" max="32767" attributes="0"/>
+                          <Component id="turnStar6" max="32767" attributes="0"/>
+                          <Component id="turnStar7" max="32767" attributes="0"/>
+                          <Component id="turnStar8" max="32767" attributes="0"/>
+                          <Component id="turnStar1" alignment="0" max="32767" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="turnStar1" min="-2" max="-2" attributes="0"/>
-                          <Component id="turnStar2" min="-2" max="-2" attributes="0"/>
-                          <Component id="turnStar3" min="-2" max="-2" attributes="0"/>
-                          <Component id="turnStar4" min="-2" max="-2" attributes="0"/>
-                          <Component id="turnStar5" min="-2" max="-2" attributes="0"/>
-                          <Component id="turnStar6" min="-2" max="-2" attributes="0"/>
-                          <Component id="turnStar7" min="-2" max="-2" attributes="0"/>
-                          <Component id="turnStar8" min="-2" max="-2" attributes="0"/>
+                          <Component id="select2" min="-2" max="-2" attributes="0"/>
+                          <Component id="select3" min="-2" max="-2" attributes="0"/>
+                          <Component id="select4" min="-2" max="-2" attributes="0"/>
+                          <Component id="select5" min="-2" max="-2" attributes="0"/>
+                          <Component id="select6" min="-2" max="-2" attributes="0"/>
+                          <Component id="select7" min="-2" max="-2" attributes="0"/>
+                          <Component id="select8" min="-2" max="-2" attributes="0"/>
+                          <Component id="select1" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="32767" attributes="0"/>
                   </Group>
@@ -678,6 +678,7 @@
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                   <Image iconType="3" name="/Images/rangeBar.png"/>
                 </Property>
+                <Property name="toolTipText" type="java.lang.String" value=""/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="rangeBar2">
@@ -760,7 +761,7 @@
                           <Component id="move4" min="-2" pref="672" max="-2" attributes="0"/>
                           <Component id="move5" min="-2" pref="672" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace pref="15" max="32767" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -777,7 +778,7 @@
                       <Component id="move4" min="-2" pref="50" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="move5" min="-2" pref="50" max="-2" attributes="0"/>
-                      <EmptySpace pref="178" max="32767" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -825,7 +826,7 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="0" attributes="0">
+                  <Group type="102" attributes="0">
                       <EmptySpace min="-2" pref="44" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="jScrollPane1" min="-2" pref="899" max="-2" attributes="0"/>
@@ -852,7 +853,7 @@
                       </Group>
                       <EmptySpace min="-2" pref="60" max="-2" attributes="0"/>
                       <Component id="jScrollPane1" min="-2" pref="165" max="-2" attributes="0"/>
-                      <EmptySpace pref="178" max="32767" attributes="0"/>
+                      <EmptySpace pref="189" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
