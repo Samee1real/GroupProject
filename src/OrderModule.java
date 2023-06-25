@@ -194,6 +194,7 @@ public class OrderModule {
                 UIManager.ToggleArrow("Blue", false);
             }
             sortStep++;
+            TurnModule.NextTurn();
         }
     }
     private static class ReverseSelectionSort extends SelectionSort{
@@ -267,6 +268,7 @@ public class OrderModule {
                 UIManager.ToggleArrow("Blue",false);
             }
             sortStep++;
+            TurnModule.NextTurn();
         }
     }
     private static class MergeSort extends SelectionSort {
@@ -326,6 +328,7 @@ public class OrderModule {
             sortStep++;
             UIManager.ToggleArrow("Red", false);
             UIManager.ToggleArrow("Blue", false);
+            TurnModule.NextTurn();
         }
     }
     private static class QuickSort extends SelectionSort
@@ -390,11 +393,7 @@ public class OrderModule {
             parseGroups = newGroups; //Apply new groups
             UIManager.ToggleArrow("Red", false);
             UIManager.ToggleArrow("Blue", false);
-            for (Unit unit : placeOrder) 
-            {
-               System.out.print(unit.orderValue + "\t");
-            }
-            System.out.println("");
+            TurnModule.NextTurn();
         }
     }
     /*private static class BubbleSort extends SelectionSort{        EXTRA FEATURE

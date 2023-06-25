@@ -9,6 +9,8 @@
  */
 
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class TurnModule {
                                   //Turn Order\\
@@ -73,17 +75,30 @@ public class TurnModule {
         newOrder.get(0).hasTurn = true; //After finalized, allow the first place their turn
         turnOrder = newOrder;// Replacing turnOrder with new
         UIManager.UpdateTurnStars(OrderModule.GetUnitPlace(turnOrder.get(0)));
-        //Implement AI Module HERE
-        /*boolean available = false;
+        boolean available = false;
         for (Move move : turnOrder.get(0).moveset) {
             if (MovesetModule.IsMoveAv1ailable(turnOrder.get(0), move)) {available = true; break;}
         }
         if (available) {
-            if (turnOrder.get(0).team == -1) {BattleModule.BattleAI(turnOrder.get(0));}
+            if (turnOrder.get(0).team == -1) {
+                try {
+                    Thread.sleep(1000);
+                } catch (InterruptedException ex) {
+                    Logger.getLogger(TurnModule.class.getName()).log(Level.SEVERE, null, ex);
+                }
+                System.out.println("AI attacked");
+                BattleModule.BattleAI(turnOrder.get(0));
+            }
         } 
         else {
-            //BattleModule.SkipTurn();
-        }*/
+            try {
+                Thread.sleep(1000);
+            } catch (InterruptedException ex) {
+                Logger.getLogger(TurnModule.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            System.out.println("Unit cannot do anything, skip turn");
+            BattleModule.SkipTurn();
+        }
     }
     public static void NextTurn() 
     {
@@ -99,5 +114,27 @@ public class TurnModule {
         UpdateTurnOrder();  //Now index 0 is the next unit to get their turn
         
         //Intergrate AI stuff here
+        /*boolean available = false;
+        for (Move move : turnOrder.get(0).moveset) {
+            if (MovesetModule.IsMoveAv1ailable(turnOrder.get(0), move)) {available = true; break;}
+        }
+        if (available) {
+            if (turnOrder.get(0).team == -1) {
+                try {
+                    Thread.sleep(1000);
+                } catch (InterruptedException ex) {
+                    Logger.getLogger(TurnModule.class.getName()).log(Level.SEVERE, null, ex);
+                }
+                BattleModule.BattleAI(turnOrder.get(0));
+            }
+        } 
+        else {
+            try {
+                Thread.sleep(1000);
+            } catch (InterruptedException ex) {
+                Logger.getLogger(TurnModule.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            BattleModule.SkipTurn();
+        }*/
     }                       
 }

@@ -25,13 +25,13 @@ public class Move
             switch (moveName) {
             case "Slash":
                 name = "Slash";
-                dmg = 5;
+                dmg = 7;
                 rangeLeft = 2; rangeRight = 2;
                 desc = "A far reaching slash\nRange: " +rangeLeft+ " titles behind | " +rangeRight+ " titles ahead\nDamage = " + dmg;
                 break;
             case "Shank":
                 name = "Shank";
-                dmg = 7;
+                dmg = 10;
                 rangeLeft = 1; rangeRight = 1;
                 desc = "A close range shank\nRange: " +rangeLeft+ " titles behind | " +rangeRight+ " titles ahead\nDamage = " + dmg;
                 break;
@@ -43,19 +43,19 @@ public class Move
                 break;
             case "Strike":
                 name = "Strike";
-                dmg = 9;
+                dmg = 11;
                 rangeLeft = 1; rangeRight = 1;
                 desc = "A close range attack with decent damage\nRange: " +rangeLeft+ " titles behind | " +rangeRight+ " titles ahead\nDamage = " + dmg;
                 break;
             case "Point Blank":
                 name = "Point Blank";
-                dmg = 8;
+                dmg = 10;
                 rangeLeft = 0; rangeRight = 1;
                 desc = "A powerful close quarters shot\nRange: " +rangeLeft+ " titles behind | " +rangeRight+ " titles ahead\nDamage = " + dmg;
                 break;
             case "Shoot":
                 name = "Shoot";
-                dmg = 4;
+                dmg = 7;
                 rangeLeft = 1; rangeRight = 3;
                 desc = "A long range attack with decent damge, however it has much less range behind\nRange: " +rangeLeft+ " titles behind | " +rangeRight+ " titles ahead\nDamage = " + dmg;
                 break;
@@ -75,31 +75,31 @@ public class Move
                 break;
             case "Melee":
                 name = "Melee";
-                dmg = 3;
+                dmg = 5;
                 rangeLeft = 1; rangeRight = 1;
                 desc = "A decent melee attack\nRange: " +rangeLeft+ " titles behind | " +rangeRight+ " titles ahead\nDamage = " + dmg;
                 break;    
             case "Backstab":
                 name = "Backstab";
-                dmg = 12;
+                dmg = 14;
                 rangeLeft = 1; rangeRight = 0;
                 desc = "A powerful stab capable of high damage, however it requires your enemy to be right behind you\nRange: " +rangeLeft+ " titles behind | " +rangeRight+ " titles ahead\nDamage = " + dmg;
                 break; 
             case "Twin Slash":
                 name = "Twin Slash";
-                dmg = 9;
+                dmg = 13;
                 rangeLeft = 1; rangeRight = 1;
                 desc = "A two close range slashs that will great damage\nRange: " +rangeLeft+ " titles behind | " +rangeRight+ " titles ahead\nDamage = " + dmg;
                 break; 
             case "Fire":
                 name = "Fire";
-                dmg = 4;
+                dmg = 8;
                 rangeLeft = 3; rangeRight = 1;
                 desc = "A long range attack with decent damge, however it has much less range ahead\nRange: " +rangeLeft+ " titles behind | " +rangeRight+ " titles ahead\nDamage = " + dmg;
                 break;
             case "Snipe":
                 name = "Snipe";
-                dmg = 3;
+                dmg = 5;
                 rangeLeft = 5; rangeRight = 0;
                 desc = "A far range attack with low damge, however can't attack ahead\nRange: " +rangeLeft+ " titles behind | " +rangeRight+ " titles ahead\nDamage = " + dmg;
                 break;

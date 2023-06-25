@@ -16,6 +16,7 @@ public class Unit {
     public int id = 0;
     
     public int team; //1 if your team | -1 for enemey
+    public String name;
     
     public int lastRound; //dont change
     public int orderValue; //the starting position (from index 0)
@@ -91,35 +92,43 @@ public class Unit {
     
     private void Leader()
     {
+        name = "Leader";
         health = 20; defence = 2; speed = 10;
     }
     private void Priest()
     {
-        health = 25; defence = 0; speed = 8;
+        name = "Priest";
+        health = 25; defence = 1; speed = 8;
     }
     private void Ranger()
     {
-        health = 21; defence = 5; speed = 12;
+        name = "Ranger";
+        health = 21; defence = 1; speed = 12;
     }
     private void Crusader()
     {
-        health = 30; defence = 8; speed = 7;
+        name = "Crusader";
+        health = 30; defence = 5; speed = 7;
     }
     private void Dagger()
     {
-        health = 35; defence = 1; speed = 7;
+        name = "Dagger Bandit";
+        health = 35; defence = 0; speed = 7;
     }
     private void Skeleton()
     {
-        health = 20; defence = 2; speed = 13;
+        name = "Skeleton";
+        health = 20; defence = 1; speed = 13;
     }
      private void Musket()
     {
-        health = 20; defence = 0; speed = 9;
+        name = "Musketeer";
+        health = 20; defence = 1; speed = 9;
     }
     private void Mask()
     {
-        health = 15; defence = 10; speed = 10;
+        name = "Bandit Leader";
+        health = 10; defence = 8; speed = 10;
     }
     
     //Add subclass for each unit, they just need a constructer to set the values 

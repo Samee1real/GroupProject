@@ -9,6 +9,8 @@
  */
 import java.time.Duration;
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class BattleModule {
                                     //Settings\\
@@ -42,11 +44,12 @@ public class BattleModule {
         OrderModule.AddUnit(u8, 7); TurnModule.AddToTurnOrder(u8);
         Thread.sleep(1000);
         //Setting up order
-        TurnModule.UpdateTurnOrder();
+        
         Unit unitWithTurn = TurnModule.GetUnitWithTurn();
         Thread.sleep(4000);
         OrderModule.ScrambleOrder();
         Thread.sleep(2500);
+        TurnModule.UpdateTurnOrder();
         UIManager.UpdateTurnStars(OrderModule.GetUnitPlace(unitWithTurn));
         active = true;
     }
@@ -82,8 +85,10 @@ public class BattleModule {
         int dmg = move.dmg - defence;
         if (move.dmg > 0 && dmg < 0) {dmg = 0;}
         defender.health -= dmg;
+        System.out.println(unit.name + " used " + move.name + " on " + defender.name + ", it dealt: " + dmg + " damage | " + defender.name + "'s health is now " + defender.health);
         //Check if alive
         if (defender.health < 0) {
+            System.out.println(defender.name + " has died");
             UIManager.RemovePositionIcon(pos);
             OrderModule.SetNull(pos);
             TurnModule.RemoveUnit(unit);
@@ -95,18 +100,26 @@ public class BattleModule {
             }
         }
         //Next Turn
-        TurnModule.NextTurn();
         OrderModule.IterateSort();
+        //TurnModule.NextTurn();
     }
     
     public static void SkipTurn()
     {
-        TurnModule.NextTurn();
+        active = false;
         OrderModule.IterateSort();
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException ex) {
+            Logger.getLogger(BattleModule.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        //TurnModule.NextTurn();
+        active = true;
     }
     
     public static void BattleAI(Unit unit)
     {
+        active = false;
         ArrayList<Move> moves = new ArrayList<>();
         for (Move move : unit.moveset) {
             if (MovesetModule.IsMoveAv1ailable(unit, move)) {moves.add(move);}

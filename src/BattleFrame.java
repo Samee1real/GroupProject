@@ -639,6 +639,7 @@ public class BattleFrame extends javax.swing.JFrame {
         speedLabel.setForeground(new java.awt.Color(102, 255, 102));
         speedLabel.setText("Speed:");
 
+        movesetInfo.setEditable(false);
         movesetInfo.setColumns(20);
         movesetInfo.setFont(new java.awt.Font("Lucida Calligraphy", 1, 14)); // NOI18N
         movesetInfo.setRows(5);
@@ -789,7 +790,7 @@ public class BattleFrame extends javax.swing.JFrame {
     
     private void moveActionPerformed(int pos, JButton button)
     {
-        if (BattleModule.active)
+        if (BattleModule.active && selectedUnit.hasTurn && selectedUnit.team == 1)
         {
             if (!attacking) {
                 attacking = true;
