@@ -168,7 +168,7 @@ public class UIManager {
         for (int i = 0; i < moveButtons.size(); i++) {
             moveButtons.get(i).setVisible(true);
             if (i < unit.moveset.size()) {
-               moveButtons.get(i).setText(unit.moveset.get(i).name + unit.id);
+               moveButtons.get(i).setText(unit.moveset.get(i).name);
             } else 
             {moveButtons.get(i).setVisible(false);}
         }
@@ -178,7 +178,7 @@ public class UIManager {
         if (MovesetModule.IsMoveAv1ailable(unit, move)) 
         {moveInfo.setText(move.desc);}
         else 
-        {moveInfo.setText("This move is not available");}
+        {moveInfo.setText("This move is not available\n"+move.desc);}
     }
     public static void UpdateTurnStars(int pos)
     {

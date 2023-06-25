@@ -72,8 +72,9 @@ public class TurnModule {
         
         newOrder.get(0).hasTurn = true; //After finalized, allow the first place their turn
         turnOrder = newOrder;// Replacing turnOrder with new
+        UIManager.UpdateTurnStars(OrderModule.GetUnitPlace(turnOrder.get(0)));
         //Implement AI Module HERE
-        boolean available = false;
+        /*boolean available = false;
         for (Move move : turnOrder.get(0).moveset) {
             if (MovesetModule.IsMoveAv1ailable(turnOrder.get(0), move)) {available = true; break;}
         }
@@ -81,8 +82,8 @@ public class TurnModule {
             if (turnOrder.get(0).team == -1) {BattleModule.BattleAI(turnOrder.get(0));}
         } 
         else {
-            BattleModule.SkipTurn();
-        }
+            //BattleModule.SkipTurn();
+        }*/
     }
     public static void NextTurn() 
     {

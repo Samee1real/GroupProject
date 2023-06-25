@@ -22,13 +22,13 @@ public class MovesetModule {
         
         int pos = OrderModule.GetUnitPlace(attacker);
         for (int i = pos-1;  i >= 0 && i >= pos-move.rangeLeft; i--) {
-            Unit defender = OrderModule.GetUnitAtIndex(pos);
+            Unit defender = OrderModule.GetUnitAtIndex(i);
             if (defender != null && (move.friendlyFire || attacker.team*defender.team < 0)) {
                 posList.add(i);
             }
         }
         for (int i = pos+1; i < OrderModule.battlePlaces && i <= pos+move.rangeRight; i++) {
-            Unit defender = OrderModule.GetUnitAtIndex(pos);
+            Unit defender = OrderModule.GetUnitAtIndex(i);
             if (defender != null && (move.friendlyFire || attacker.team*defender.team < 0)) {
                 posList.add(i);
             }

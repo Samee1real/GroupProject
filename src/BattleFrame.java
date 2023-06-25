@@ -64,7 +64,6 @@ public class BattleFrame extends javax.swing.JFrame {
         UIManager.InitilizeRangeBar(rangeBar6);
         UIManager.InitilizeRangeBar(rangeBar7);
         UIManager.InitilizeRangeBar(rangeBar8);
-        BattleModule.LoadBattle();
     }
 
     /**
@@ -980,6 +979,11 @@ public class BattleFrame extends javax.swing.JFrame {
                 new BattleFrame().setVisible(true);
             }
         });
+        try {
+            BattleModule.LoadBattle();
+        } catch (InterruptedException ex) {
+            Logger.getLogger(BattleFrame.class.getName()).log(Level.SEVERE, null, ex);
+        } 
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

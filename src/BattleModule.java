@@ -7,6 +7,7 @@
  *
  * @author saliy5109
  */
+import java.time.Duration;
 import java.util.ArrayList;
 
 public class BattleModule {
@@ -18,19 +19,19 @@ public class BattleModule {
     
                                 //Setting Up Battle\\
     
-    public static void LoadBattle()
+    public static void LoadBattle() throws InterruptedException
     {
         /*
         
         */
-        Unit u1 = new Unit(0);
-        Unit u2 = new Unit(1);
-        Unit u3 = new Unit(2);
-        Unit u4 = new Unit(3);
-        Unit u5 = new Unit(4);
-        Unit u6 = new Unit(5);
-        Unit u7 = new Unit(6);
-        Unit u8 = new Unit(7);
+        Unit u1 = new Unit(0, 1, "Leader");
+        Unit u2 = new Unit(1, 1, "Priest");
+        Unit u3 = new Unit(2, 1, "Ranger");
+        Unit u4 = new Unit(3, 1, "Crusader");
+        Unit u5 = new Unit(4, -1, "Dagger");
+        Unit u6 = new Unit(5, -1, "Skeleton");
+        Unit u7 = new Unit(6, -1, "Musket");
+        Unit u8 = new Unit(7, -1, "Mask");
         OrderModule.AddUnit(u1, 0); TurnModule.AddToTurnOrder(u1);
         OrderModule.AddUnit(u2, 1); TurnModule.AddToTurnOrder(u2);
         OrderModule.AddUnit(u3, 2); TurnModule.AddToTurnOrder(u3);
@@ -39,27 +40,30 @@ public class BattleModule {
         OrderModule.AddUnit(u6, 5); TurnModule.AddToTurnOrder(u6);
         OrderModule.AddUnit(u7, 6); TurnModule.AddToTurnOrder(u7);
         OrderModule.AddUnit(u8, 7); TurnModule.AddToTurnOrder(u8);
+        Thread.sleep(1000);
         //Setting up order
         TurnModule.UpdateTurnOrder();
         Unit unitWithTurn = TurnModule.GetUnitWithTurn();
+        Thread.sleep(4000);
+        OrderModule.ScrambleOrder();
+        Thread.sleep(2500);
         UIManager.UpdateTurnStars(OrderModule.GetUnitPlace(unitWithTurn));
         active = true;
-        
     }
-    public static void StartBattle()
+    /*public static void StartBattle()
     {
         /*
         This will start the battle
         Scramble placement order and set up turn order
         active boolean will need to be toggled seperatly for more flexabilty
-        */
+        
         if (active) {  
             
             OrderModule.ScrambleOrder();//Scramble Placement Order
             TurnModule.UpdateTurnOrder();//Setups up order and gives first unit their turn
             //Mostly GUI Visual stuff here            
         }
-    }
+    }*/
     public static void CloseBattle()
     {
         /*
