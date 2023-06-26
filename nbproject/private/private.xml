@@ -3,16 +3,13 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/D:/GitHub/GroupProject/src/BattleFrame.java</file>
-            <file>file:/D:/GitHub/GroupProject/src/Unit.java</file>
-            <file>file:/D:/GitHub/GroupProject/src/TurnModule.java</file>
-            <file>file:/D:/GitHub/GroupProject/src/OrderModule.java</file>
-            <file>file:/D:/GitHub/GroupProject/src/BattleModule.java</file>
-            <file>file:/D:/GitHub/GroupProject/src/MovesetModule.java</file>
-            <file>file:/D:/GitHub/GroupProject/src/EndFrameLose.java</file>
-            <file>file:/D:/GitHub/GroupProject/src/UIManager.java</file>
-            <file>file:/D:/GitHub/GroupProject/src/Move.java</file>
-            <file>file:/D:/GitHub/GroupProject/src/EndFrameWin.java</file>
+            <file>file:/C:/Users/nisha/OneDrive/Documents/NetBeansProjects/mavenproject1/GroupProject/src/EndFrameWin.java</file>
+            <file>file:/C:/Users/nisha/OneDrive/Documents/NetBeansProjects/mavenproject1/GroupProject/src/BattleModule.java</file>
+            <file>file:/C:/Users/nisha/OneDrive/Documents/NetBeansProjects/mavenproject1/GroupProject/src/EndFrameLose.java</file>
+            <file>file:/C:/Users/nisha/OneDrive/Documents/NetBeansProjects/mavenproject1/GroupProject/src/OrderModule.java</file>
+            <file>file:/C:/Users/nisha/OneDrive/Documents/NetBeansProjects/mavenproject1/GroupProject/src/BattleFrame.java</file>
+            <file>file:/C:/Users/nisha/OneDrive/Documents/NetBeansProjects/mavenproject1/GroupProject/src/UIManager.java</file>
+            <file>file:/C:/Users/nisha/OneDrive/Documents/NetBeansProjects/mavenproject1/GroupProject/src/Unit.java</file>
         </group>
     </open-files>
 </project-private>
