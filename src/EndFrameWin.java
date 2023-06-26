@@ -25,29 +25,69 @@ public class EndFrameWin extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel2 = new javax.swing.JLabel();
+        jPanel1 = new javax.swing.JPanel();
+        winnerTxt = new javax.swing.JLabel();
+        quitBtn2 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setBackground(new java.awt.Color(255, 204, 255));
+        setPreferredSize(new java.awt.Dimension(927, 524));
+        setResizable(false);
 
-        jLabel2.setText("jLabel2");
-        jLabel2.setDisabledIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Meadowthingy.jpg"))); // NOI18N
-        jLabel2.setEnabled(false);
+        jPanel1.setBackground(new java.awt.Color(255, 204, 255));
+
+        winnerTxt.setFont(new java.awt.Font("Myanmar Text", 1, 48)); // NOI18N
+        winnerTxt.setText("YOU WIN!!!!!!!");
+
+        quitBtn2.setBackground(new java.awt.Color(204, 204, 255));
+        quitBtn2.setFont(new java.awt.Font("Malgun Gothic", 1, 24)); // NOI18N
+        quitBtn2.setText("Quit");
+        quitBtn2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                quitBtn2ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap(311, Short.MAX_VALUE)
+                .addComponent(winnerTxt)
+                .addGap(290, 290, 290))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(407, 407, 407)
+                .addComponent(quitBtn2)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(164, 164, 164)
+                .addComponent(winnerTxt)
+                .addGap(55, 55, 55)
+                .addComponent(quitBtn2)
+                .addContainerGap(243, Short.MAX_VALUE))
+        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 1344, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel2)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void quitBtn2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_quitBtn2ActionPerformed
+        this.setVisible(false);
+    }//GEN-LAST:event_quitBtn2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -85,6 +125,8 @@ public class EndFrameWin extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel jLabel2;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JButton quitBtn2;
+    private javax.swing.JLabel winnerTxt;
     // End of variables declaration//GEN-END:variables
 }
