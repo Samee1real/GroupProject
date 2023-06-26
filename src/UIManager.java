@@ -78,7 +78,7 @@ public class UIManager {
     {
         sortSlotLabels[pos] = button;
         button.setText("Empty");
-        button.setVisible(false);
+        button.setVisible(true);
     }
                                             //Unit Position Visuals\\
     

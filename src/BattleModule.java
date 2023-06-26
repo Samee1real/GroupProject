@@ -150,7 +150,7 @@ public class BattleModule {
     public static void UseSortSlot(int pos) throws InterruptedException
     {
        SortTask task = new SortTask(pos);
-       //task.start();   DISABLED TOO MUCH THREADING
+       task.start();   //DISABLED TOO MUCH THREADING
     }
     
     private static class SortTask extends Thread
